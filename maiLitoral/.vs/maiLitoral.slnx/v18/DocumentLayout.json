@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\Assets\\Sprites\\README.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Sprites\\README.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\Assets\\Scripts\\README.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\README.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\Library\\PackageCache\\com.unity.ugui@bb329a87fcdc\\Runtime\\UGUI\\UI\\Core\\VertexModifiers\\Shadow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.ugui@bb329a87fcdc\\Runtime\\UGUI\\UI\\Core\\VertexModifiers\\Shadow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\daria\\desktop\\proiect ii\\mailitoral\\assets\\scripts\\selectablecardui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\selectablecardui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,44 +14,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "README.txt",
-              "DocumentMoniker": "C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\Assets\\Scripts\\README.txt",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\README.txt",
-              "ToolTip": "C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\Assets\\Scripts\\README.txt",
-              "RelativeToolTip": "Assets\\Scripts\\README.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2026-03-18T12:38:00.42Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "README.txt",
-              "DocumentMoniker": "C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\Assets\\Sprites\\README.txt",
-              "RelativeDocumentMoniker": "Assets\\Sprites\\README.txt",
-              "ToolTip": "C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\Assets\\Sprites\\README.txt",
-              "RelativeToolTip": "Assets\\Sprites\\README.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2026-03-18T12:38:54.136Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Shadow.cs",
-              "DocumentMoniker": "C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\Library\\PackageCache\\com.unity.ugui@bb329a87fcdc\\Runtime\\UGUI\\UI\\Core\\VertexModifiers\\Shadow.cs",
-              "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.ugui@bb329a87fcdc\\Runtime\\UGUI\\UI\\Core\\VertexModifiers\\Shadow.cs",
-              "ToolTip": "C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\Library\\PackageCache\\com.unity.ugui@bb329a87fcdc\\Runtime\\UGUI\\UI\\Core\\VertexModifiers\\Shadow.cs",
-              "RelativeToolTip": "Library\\PackageCache\\com.unity.ugui@bb329a87fcdc\\Runtime\\UGUI\\UI\\Core\\VertexModifiers\\Shadow.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "SelectableCardUI.cs",
+              "DocumentMoniker": "C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\Assets\\Scripts\\SelectableCardUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SelectableCardUI.cs",
+              "ToolTip": "C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\Assets\\Scripts\\SelectableCardUI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SelectableCardUI.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-20T13:37:59.628Z",
+              "WhenOpened": "2026-03-29T08:51:47.02Z",
               "EditorCaption": ""
             }
           ]
