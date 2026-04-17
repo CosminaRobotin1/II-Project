@@ -3,39 +3,28 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System.Globalization;
 
 // Controls the calendar, day selection, info panel and month navigation.
 public class BeachCalendarManager : MonoBehaviour
 {
-    [Header("All days from the calendar grid")]
-    [SerializeField] private List<CalendarDayUI> allDays = new List<CalendarDayUI>();
+    [Header("All Days")]
+    public List<CalendarDayUI> allDays = new List<CalendarDayUI>();
 
-    [Header("Info panel")]
-    [SerializeField] private GameObject infoPanel;
-    [SerializeField] private TMP_Text selectedDateText;
-    [SerializeField] private TMP_Text selectedStatusText;
-    [SerializeField] private TMP_Text selectedReasonText;
-
-    [Header("Navigation")]
-    [SerializeField] private Button leftButton;
-    [SerializeField] private Button rightButton;
-    [SerializeField] private TMP_Text monthTitleText;
+    [Header("Navigation Buttons")]
+    public Button leftButton;
+    public Button rightButton;
+    public TMP_Text monthTitleText;
 
     private CalendarDayUI currentlySelectedDay;
-
-    private DateTime today;
-    private DateTime minAllowedDate;
-    private DateTime maxAllowedDate;
     private DateTime currentMonth;
 
     void Start()
     {
-        today = DateTime.Today;
-        maxAllowedDate = today;
-        minAllowedDate = today.AddDays(-30);
+        DateTime today = DateTime.Today;
         currentMonth = new DateTime(today.Year, today.Month, 1);
 
-        ResetTopPanel();
         SetupNavigationButtons();
         GenerateCalendar();
         UpdateNavigationButtons();
@@ -60,52 +49,47 @@ public class BeachCalendarManager : MonoBehaviour
     {
         foreach (CalendarDayUI day in allDays)
             if (day != null)
-                day.gameObject.SetActive(false);
+                day.SetEmpty();
 
         if (monthTitleText != null)
-            monthTitleText.text = currentMonth.ToString("MMMM yyyy");
-
-        DateTime firstDayOfMonth = new DateTime(currentMonth.Year, currentMonth.Month, 1);
-        int daysInMonth = DateTime.DaysInMonth(currentMonth.Year, currentMonth.Month);
-        int startIndex = GetMondayBasedIndex(firstDayOfMonth.DayOfWeek);
-
-        for (int dayNumber = 1; dayNumber <= daysInMonth; dayNumber++)
         {
-            int index = startIndex + (dayNumber - 1);
-            if (index < 0 || index >= allDays.Count)
-                continue;
+            CultureInfo culture = new CultureInfo("ro-RO");
+            string text = currentMonth.ToString("MMMM yyyy", culture);
+            monthTitleText.text = char.ToUpper(text[0]) + text.Substring(1);
+        }
 
-            DateTime fullDate = new DateTime(currentMonth.Year, currentMonth.Month, dayNumber);
-            if (fullDate < minAllowedDate || fullDate > maxAllowedDate)
-                continue;
+        DateTime firstDay = new DateTime(currentMonth.Year, currentMonth.Month, 1);
+        int daysInMonth = DateTime.DaysInMonth(currentMonth.Year, currentMonth.Month);
+        int startIndex = GetMondayIndex(firstDay.DayOfWeek);
 
-            string status = GetStatusForDay(dayNumber);
+        for (int d = 1; d <= daysInMonth; d++)
+        {
+            int index = startIndex + (d - 1);
+            if (index < 0 || index >= allDays.Count) continue;
+
+            string status = GetStatusForDay(d);
             string reason = GetReasonForStatus(status);
-            Color statusColor = GetColorForStatus(status);
+            Color color = GetColorForStatus(status);
 
-            allDays[index].gameObject.SetActive(true);
-            allDays[index].InitializeDay(dayNumber, status, reason, statusColor, this);
+            allDays[index].InitializeDay(d, status, reason, color, this);
         }
     }
 
-    int GetMondayBasedIndex(DayOfWeek dayOfWeek)
+    int GetMondayIndex(DayOfWeek day)
     {
-        return dayOfWeek == DayOfWeek.Sunday ? 6 : (int)dayOfWeek - 1;
+        return day == DayOfWeek.Sunday ? 6 : (int)day - 1;
     }
 
     void GoToPreviousMonth()
     {
-        DateTime previousMonth = currentMonth.AddMonths(-1);
-        DateTime lastDayOfPreviousMonth = new DateTime(
-            previousMonth.Year,
-            previousMonth.Month,
-            DateTime.DaysInMonth(previousMonth.Year, previousMonth.Month)
-        );
+        DateTime limit = DateTime.Today.AddMonths(-1);
 
-        if (lastDayOfPreviousMonth < minAllowedDate)
+        DateTime prevMonth = currentMonth.AddMonths(-1);
+
+        if (prevMonth < new DateTime(limit.Year, limit.Month, 1))
             return;
 
-        currentMonth = previousMonth;
+        currentMonth = prevMonth;
         ClearSelection();
         GenerateCalendar();
         UpdateNavigationButtons();
@@ -113,13 +97,7 @@ public class BeachCalendarManager : MonoBehaviour
 
     void GoToNextMonth()
     {
-        DateTime nextMonth = currentMonth.AddMonths(1);
-        DateTime firstDayOfNextMonth = new DateTime(nextMonth.Year, nextMonth.Month, 1);
-
-        if (firstDayOfNextMonth > maxAllowedDate)
-            return;
-
-        currentMonth = nextMonth;
+        currentMonth = currentMonth.AddMonths(1);
         ClearSelection();
         GenerateCalendar();
         UpdateNavigationButtons();
@@ -128,38 +106,22 @@ public class BeachCalendarManager : MonoBehaviour
     void UpdateNavigationButtons()
     {
         if (leftButton != null)
-        {
-            DateTime previousMonth = currentMonth.AddMonths(-1);
-            DateTime lastDayOfPreviousMonth = new DateTime(
-                previousMonth.Year,
-                previousMonth.Month,
-                DateTime.DaysInMonth(previousMonth.Year, previousMonth.Month)
-            );
-
-            bool canGoLeft = lastDayOfPreviousMonth >= minAllowedDate;
-            leftButton.interactable = canGoLeft;
-            SetButtonAlpha(leftButton, canGoLeft ? 1f : 0.3f);
-        }
+            SetButtonAlpha(leftButton, 1f);
 
         if (rightButton != null)
-        {
-            DateTime nextMonth = currentMonth.AddMonths(1);
-            DateTime firstDayOfNextMonth = new DateTime(nextMonth.Year, nextMonth.Month, 1);
-
-            bool canGoRight = firstDayOfNextMonth <= maxAllowedDate;
-            rightButton.interactable = canGoRight;
-            SetButtonAlpha(rightButton, canGoRight ? 1f : 0.3f);
-        }
+            SetButtonAlpha(rightButton, 1f);
     }
 
     void SetButtonAlpha(Button button, float alpha)
     {
-        Image image = button.GetComponent<Image>();
-        if (image == null) return;
+        Image img = button.GetComponent<Image>();
 
-        Color color = image.color;
-        color.a = alpha;
-        image.color = color;
+        if (img != null)
+        {
+            Color c = img.color;
+            c.a = alpha;
+            img.color = c;
+        }
     }
 
     void ClearSelection()
@@ -168,7 +130,6 @@ public class BeachCalendarManager : MonoBehaviour
             currentlySelectedDay.SetHighlight(false);
 
         currentlySelectedDay = null;
-        ResetTopPanel();
     }
 
     public void SelectDay(CalendarDayUI day)
@@ -179,44 +140,23 @@ public class BeachCalendarManager : MonoBehaviour
         currentlySelectedDay = day;
         currentlySelectedDay.SetHighlight(true);
 
-        if (infoPanel != null)
-            infoPanel.SetActive(true);
+        SelectedDayData.dayNumber = day.DayNumber;
+        SelectedDayData.status = day.Status;
+        SelectedDayData.reason = day.Reason;
 
-        if (selectedDateText != null)
-            selectedDateText.text = "Ziua selectata: " + day.DayNumber;
-
-        if (selectedStatusText != null)
-            selectedStatusText.text = "Status: " + day.Status;
-
-        if (selectedReasonText != null)
-            selectedReasonText.text = "Motiv: " + day.Reason;
+        SceneManager.LoadScene("DayDetailsScene");
     }
 
-    void ResetTopPanel()
+    string GetStatusForDay(int d)
     {
-        if (infoPanel != null)
-            infoPanel.SetActive(false);
-
-        if (selectedDateText != null)
-            selectedDateText.text = "Ziua selectata:";
-
-        if (selectedStatusText != null)
-            selectedStatusText.text = "Status:";
-
-        if (selectedReasonText != null)
-            selectedReasonText.text = "Motiv:";
-    }
-
-    string GetStatusForDay(int dayNumber)
-    {
-        if (dayNumber % 3 == 1) return "Bun pentru baie";
-        if (dayNumber % 3 == 2) return "Atentie";
+        if (d % 3 == 1) return "Bun pentru baie";
+        if (d % 3 == 2) return "Atentie";
         return "Risc ridicat";
     }
 
-    string GetReasonForStatus(string status)
+    string GetReasonForStatus(string s)
     {
-        switch (status)
+        switch (s)
         {
             case "Risc ridicat": return "Valuri mari.";
             case "Atentie": return "Conditii instabile.";
@@ -225,9 +165,9 @@ public class BeachCalendarManager : MonoBehaviour
         }
     }
 
-    Color GetColorForStatus(string status)
+    Color GetColorForStatus(string s)
     {
-        switch (status)
+        switch (s)
         {
             case "Risc ridicat": return Color.red;
             case "Atentie": return Color.yellow;
