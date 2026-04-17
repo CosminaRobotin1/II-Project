@@ -28,9 +28,9 @@ public class SearchAutoCompleteController : MonoBehaviour {
     }
 
     // Update search state
-    private void OnSearchValueChanged(string currentText) {
-        UpdateSuggestion(currentText);
-        FilterItems(currentText);
+     private void OnSearchValueChanged(string currentText) {
+       UpdateSuggestion(currentText);
+       FilterItems(currentText);
     }
 
     // Update ghost suggestion

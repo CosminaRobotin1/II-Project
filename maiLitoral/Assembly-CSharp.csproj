@@ -62,19 +62,17 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\SelectableCardUI.cs" />
     <Compile Include="Assets\Scripts\SettingsNavigationManager.cs" />
-    <Compile Include="Assets\Scripts\BeachCalendarManager.cs" />
     <Compile Include="Assets\Scripts\ZoneNavigation\ZoneNavigationManager.cs" />
-    <Compile Include="Assets\Scripts\BeachManager.cs" />
     <Compile Include="Assets\Scripts\Search\SearchAutoCompleteController.cs" />
+    <Compile Include="Assets\Scripts\BeachManager.cs" />
     <Compile Include="Assets\Scripts\Settings\LanguageSelectionManager.cs" />
-    <Compile Include="Assets\Scripts\BeachCalendar.cs" />
-    <Compile Include="Assets\Scripts\CalendarDayUI.cs" />
     <Compile Include="Assets\Scripts\Settings\NotificationsSelectionManager.cs" />
     <Compile Include="Assets\Scripts\Search\BeachSearchData.cs" />
     <Compile Include="Assets\Scripts\Settings\BeachRecommendationSelectionManager.cs" />
+    <Compile Include="Assets\Scripts\Calendar\CalendarDayUI.cs" />
     <Compile Include="Assets\Scripts\Search\MainContentSearchHandler.cs" />
-    <Compile Include="Assets\Scripts\DayUI.cs" />
     <Compile Include="Assets\Scripts\Search\TESTSCRIPT.cs" />
+    <Compile Include="Assets\Scripts\Calendar\BeachCalendarManager.cs" />
     <Compile Include="Assets\Scripts\Search\SearchBarScript.cs" />
     <Compile Include="Assets\Scripts\Settings\AppearanceSelectionManager.cs" />
     <Compile Include="Assets\Scripts\BeachProperties.cs" />
