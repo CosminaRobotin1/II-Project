@@ -36,7 +36,7 @@ public class ZonesManager : MonoBehaviour {
             zones.Add(newZone); // Adding the zone in the list
         }
     }
-    private void SelectZone(int index) { // Open selected zone panel
+    public void SelectZone(int index) { // Open selected zone panel
         currentPressedZone = index; // Saving the current pressed zone
         ButtonsManager.ReturnToPage("BeachPage"); // Switching scene
     }

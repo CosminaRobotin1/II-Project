@@ -9,6 +9,7 @@ public class SearchManager : MonoBehaviour {
     [SerializeField] private GameObject zonesManager; // Attribute for zones manager
     [SerializeField] private TMP_InputField searchInputField; // Attribute for search input field
     [SerializeField] private TMP_Text autoCompleteText; // Attribute for auto complete text
+    [SerializeField] private GameObject searchNotFoundPanel; // Attribute for search not found panel
     private List<GameObject> zones = new List<GameObject>(); // Attribute for zones list
     private string currentSuggestion = ""; // Attribute for current zone suggestion
 
@@ -25,8 +26,14 @@ public class SearchManager : MonoBehaviour {
         searchInputField.onValueChanged.AddListener(OnSearchValueChanged); // Adding the listener for input field
         autoCompleteText.text = ""; // Making sure the autocomplete is empty first
         ShowAllZones(); // Showing all zones in the start (because none was searched)
-    } 
-    private void OnSearchValueChanged(string currentText) { // Listener for updating the panels when typing
+    }
+    private void OnSearchValueChanged(string currentText)
+    { // Listener for updating the panels when typing
+        if (searchNotFoundPanel.activeSelf)
+        { // Checking if the search not found panel is active
+            ButtonsManager.ToggleObject(searchNotFoundPanel); // Hiding the search not found panel
+        }
+
         UpdateSuggestion(currentText); // Updating the panels when typing
         FilterZones(currentText); // Showing only the matched searched zones
     }
@@ -74,4 +81,25 @@ public class SearchManager : MonoBehaviour {
     public void ShowZonesManager(bool mode) { // Activate / Deactivate the zones panel
         zonesManager.SetActive(mode);
     }
-}
+    //Task - week 10
+    public void SearchButtonPressed()
+    { // Method called when the search button is pressed
+        string searchedText = searchInputField.text.Trim(); // Getting the searched text without empty spaces
+
+        if (string.IsNullOrWhiteSpace(searchedText))
+        { // Checking if the search input is empty
+            return; // Stopping the method because there is nothing to search
+        }
+
+        for (int i = 0; i < zones.Count; i++)
+        { // Going through all available zones
+            if (zones[i].name.ToLower() == searchedText.ToLower())
+            { // Checking if the searched text is exactly a zone name
+                zonesManager.GetComponent<ZonesManager>().SelectZone(i); // Calling the same action as the zone button
+                return; // Stopping the method because the zone was found
+            }
+        }
+
+        ButtonsManager.ToggleObject(searchNotFoundPanel); // Showing the search not found panel
+    }
+} 
