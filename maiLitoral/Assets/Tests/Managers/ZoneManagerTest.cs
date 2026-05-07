@@ -70,7 +70,7 @@ public class ZonesManagerTest {
     }
 
     [Test]
-    public void Awake_WhenSceneIsNotStartingPage_ShouldNotLoadZones() { // Tests that zones are not loaded outside the StartingPage scene.
+    public void AwakeSceneIsNotStartingPageNotLoadZones() { // Tests that zones are not loaded outside the StartingPage scene.
         SetActiveScene("SafeTestScene");
 
         GameObject obj = new GameObject("ZonesManager_TestObject");
@@ -80,7 +80,7 @@ public class ZonesManagerTest {
     }
 
     [Test]
-    public void LoadZonesFromDatabase_WhenSceneIsStartingPage_ShouldCreateTenZones() { // Tests that ten zones are created in the StartingPage scene.
+    public void LoadZonesFromDatabaseSceneIsStartingPage() { // Tests that ten zones are created in the StartingPage scene.
         GameObject zonesContent = new GameObject("ZonesContent");
         GameObject zonePrefab = CreateValidZonePrefab();
 
@@ -94,7 +94,7 @@ public class ZonesManagerTest {
     }
 
     [Test]
-    public void LoadZonesFromDatabase_ShouldCreateZonesWithCorrectNamesAndText() { // Tests that created zones have correct names, text, parent, and button.
+    public void LoadZonesFromDatabaseCreateZonesCorrectly() { // Tests that created zones have correct names, text, parent, and button.
         GameObject zonesContent = new GameObject("ZonesContent");
         GameObject zonePrefab = CreateValidZonePrefab();
 
@@ -118,7 +118,7 @@ public class ZonesManagerTest {
     }
 
     [Test]
-    public void LoadZonesFromDatabase_WhenCalledTwice_ShouldCreateDuplicateZones_CurrentBug() { // Tests that calling the loader twice creates duplicate zones.
+    public void LoadZonesFromDatabaseCalledTwiceCreateDuplicateZones() { // Tests that calling the loader twice creates duplicate zones.
         GameObject zonesContent = new GameObject("ZonesContent");
         GameObject zonePrefab = CreateValidZonePrefab();
 
@@ -137,7 +137,7 @@ public class ZonesManagerTest {
     }
 
     [Test]
-    public void LoadZonesFromDatabase_WithNullPrefab_ShouldThrowException() { // Tests that a missing prefab causes an exception.
+    public void LoadZonesFromDatabaseNullPrefab() { // Tests that a missing prefab causes an exception.
         GameObject zonesContent = new GameObject("ZonesContent");
 
         ZonesManager manager = CreateManager(zonesContent, null);
@@ -150,7 +150,7 @@ public class ZonesManagerTest {
     }
 
     [Test]
-    public void LoadZonesFromDatabase_WithPrefabMissingButton_ShouldThrowException() { // Tests that a prefab without a Button causes an exception.
+    public void LoadZonesFromDatabasePrefabMissingButton() { // Tests that a prefab without a Button causes an exception.
         GameObject zonesContent = new GameObject("ZonesContent");
         GameObject zonePrefab = CreatePrefabWithoutButton();
 
@@ -164,7 +164,7 @@ public class ZonesManagerTest {
     }
 
     [Test]
-    public void GetZones_ShouldExposeInternalListReference() { // Tests that GetZones exposes the internal zones list.
+    public void GetZonesExposeInternalListReference() { // Tests that GetZones exposes the internal zones list.
         GameObject zonesContent = new GameObject("ZonesContent");
         GameObject zonePrefab = CreateValidZonePrefab();
 

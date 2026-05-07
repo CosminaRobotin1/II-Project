@@ -79,7 +79,7 @@ public class SearchManagerTest {
     }
 
     [Test]
-    public void SearchInit_ShouldClearAutocompleteAndShowAllZones() { // Tests that search initialization clears autocomplete and shows all zones.
+    public void SearchInitClearAutocompleteAllZones() { // Tests that search initialization clears autocomplete and shows all zones.
         List<GameObject> zones = new List<GameObject>() {
             CreateZone("Zone_0"),
             CreateZone("Zone_1"),
@@ -104,7 +104,7 @@ public class SearchManagerTest {
     }
 
     [Test]
-    public void OnSearchValueChanged_WithPartialMatch_ShouldShowSuggestionAndFilterZones() { // Tests that partial input shows a suggestion and filters zones.
+    public void OnSearchValueChangedPartialMatch() { // Tests that partial input shows a suggestion and filters zones.
         List<GameObject> zones = new List<GameObject>() {
             CreateZone("Mamaia"),
             CreateZone("VamaVeche"),
@@ -129,7 +129,7 @@ public class SearchManagerTest {
     }
 
     [Test]
-    public void OnSearchValueChanged_WithExactMatch_ShouldClearSuggestion() { // Tests that exact matches clear the autocomplete suggestion.
+    public void OnSearchValueChangedExactMatchClearS() { // Tests that exact matches clear the autocomplete suggestion.
         List<GameObject> zones = new List<GameObject>() {
             CreateZone("Mamaia"),
             CreateZone("VamaVeche")
@@ -152,7 +152,7 @@ public class SearchManagerTest {
     }
 
     [Test]
-    public void OnSearchValueChanged_WithNoMatch_ShouldHideAllZonesAndClearSuggestion() { // Tests that unknown input hides all zones and clears the suggestion.
+    public void OnSearchValueChangedNoMatchHideZones() { // Tests that unknown input hides all zones and clears the suggestion.
         List<GameObject> zones = new List<GameObject>() {
             CreateZone("Mamaia"),
             CreateZone("VamaVeche"),
@@ -177,7 +177,7 @@ public class SearchManagerTest {
     }
 
     [Test]
-    public void OnSearchValueChanged_WithEmptyInput_ShouldShowAllZonesAndClearSuggestion() { // Tests that empty input resets the search and shows all zones.
+    public void OnSearchValueChangedEmptyInput() { // Tests that empty input resets the search and shows all zones.
         List<GameObject> zones = new List<GameObject>() {
             CreateZone("Mamaia"),
             CreateZone("VamaVeche"),
@@ -203,7 +203,7 @@ public class SearchManagerTest {
     }
 
     [Test]
-    public void ShowZonesManager_ShouldToggleZonesManagerPanel() { // Tests that the zones manager panel can be shown and hidden.
+    public void ShowZonesManagerToggleZonesManager() { // Tests that the zones manager panel can be shown and hidden.
         List<GameObject> zones = new List<GameObject>();
 
         ZonesManager zonesManager = CreateZonesManagerWithZones(zones);
@@ -224,7 +224,7 @@ public class SearchManagerTest {
     }
 
     [Test]
-    public void SearchInit_WithMissingZonesManagerComponent_ShouldThrowException() { // Tests that a missing ZonesManager component causes an exception.
+    public void SearchInitMissingZonesManagerComponent() { // Tests that a missing ZonesManager component causes an exception.
         GameObject fakeZonesManagerObject = new GameObject("FakeZonesManagerObject");
 
         TMP_InputField input = CreateInputField();
@@ -243,7 +243,7 @@ public class SearchManagerTest {
     }
 
     [Test]
-    public void SearchInit_WithNullInputField_ShouldThrowException() { // Tests that a missing input field causes an exception.
+    public void SearchInitNullInputField() { // Tests that a missing input field causes an exception.
         List<GameObject> zones = new List<GameObject>() {
             CreateZone("Mamaia")
         };
@@ -264,7 +264,7 @@ public class SearchManagerTest {
     }
 
     [Test]
-    public void SearchInit_WithNullAutoCompleteText_ShouldThrowException() { // Tests that a missing autocomplete text object causes an exception.
+    public void SearchInitNullAutoCompleteText() { // Tests that a missing autocomplete text object causes an exception.
         List<GameObject> zones = new List<GameObject>() {
             CreateZone("Mamaia")
         };
@@ -285,7 +285,7 @@ public class SearchManagerTest {
     }
 
     [Test]
-    public void ShowAllZones_WithNullZoneInList_ShouldThrowException() { // Tests that a null zone in the list causes an exception.
+    public void ShowAllZonesNullZoneInList() { // Tests that a null zone in the list causes an exception.
         GameObject searchManagerObject = new GameObject("SearchManagerObject");
         SearchManager searchManager = searchManagerObject.AddComponent<SearchManager>();
 

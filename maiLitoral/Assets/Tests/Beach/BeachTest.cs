@@ -11,7 +11,7 @@ public class BeachTest {
     }
 
     [Test]
-    public void AddProperty_ShouldAddPropertyAndModifiedFlagForDate() { // Tests that adding properties stores both the property and its modified flag.
+    public void PropertyAndModifiedFlagForDate() { // Tests that adding properties stores both the property and its modified flag.
         Beach beach = CreateBeach();
 
         beach.AddProperty("2025-06-01", "Clean water", true); // Add first property.
@@ -34,7 +34,7 @@ public class BeachTest {
     }
 
     [Test]
-    public void AddProperty_ShouldKeepPropertiesAndModifiedFlagsAligned() { // Tests that properties and modified flags stay the same length.
+    public void PropertyAndModifiedFlagsAligned() { // Tests that properties and modified flags stay the same length.
         Beach beach = CreateBeach();
 
         beach.AddProperty("2025-06-01", "Clean water", true);
@@ -52,7 +52,7 @@ public class BeachTest {
     }
 
     [Test]
-    public void ModifyProperty_ShouldUpdateOnlySelectedProperty() { // Tests that modifying a property only changes the selected entry.
+    public void ModifyPropertyUpdateOnlySelected() { // Tests that modifying a property only changes the selected entry.
         Beach beach = CreateBeach();
 
         beach.AddProperty("2025-06-01", "Dirty beach", false);
@@ -70,7 +70,7 @@ public class BeachTest {
     }
 
     [Test]
-    public void ModifyProperty_WithUnavailableDate_ShouldThrowException() { // Tests that modifying a missing date causes an exception.
+    public void ModifyPropertyWithUnavailableDate() { // Tests that modifying a missing date causes an exception.
         Beach beach = CreateBeach();
 
         Assert.Throws<KeyNotFoundException>(() => {
@@ -79,7 +79,7 @@ public class BeachTest {
     }
 
     [Test]
-    public void ModifyProperty_WithInvalidIndex_ShouldThrowException() { // Tests that modifying with an invalid index causes an exception.
+    public void ModifyPropertyWithInvalidIndex() { // Tests that modifying with an invalid index causes an exception.
         Beach beach = CreateBeach();
 
         beach.AddProperty("2025-06-01", "Clean water", true);
@@ -90,7 +90,7 @@ public class BeachTest {
     }
 
     [Test]
-    public void DeleteProperty_ShouldRemovePropertyAndMatchingModifiedFlag() { // Tests that deleting a property also removes its modified flag.
+    public void DeletePropertyRemovePropertyAndFlag() { // Tests that deleting a property also removes its modified flag.
         Beach beach = CreateBeach();
 
         beach.AddProperty("2025-06-01", "Property A", true);
@@ -110,7 +110,7 @@ public class BeachTest {
     }
 
     [Test]
-    public void DeleteProperty_WithInvalidIndex_ShouldThrowException() { // Tests that deleting with an invalid index causes an exception.
+    public void DeletePropertyInvalidIndex() { // Tests that deleting with an invalid index causes an exception.
         Beach beach = CreateBeach();
 
         beach.AddProperty("2025-06-01", "Clean water", true);
@@ -121,7 +121,7 @@ public class BeachTest {
     }
 
     [Test]
-    public void DeleteProperty_WithUnavailableDate_ShouldThrowException() { // Tests that deleting from a missing date causes an exception.
+    public void DeletePropertyUnavailableDate() { // Tests that deleting from a missing date causes an exception.
         Beach beach = CreateBeach();
 
         Assert.Throws<KeyNotFoundException>(() => {
@@ -130,7 +130,7 @@ public class BeachTest {
     }
 
     [Test]
-    public void DeleteAllProperties_ShouldClearPropertiesAndModifiedFlags() { // Tests that all stored properties and flags are cleared.
+    public void DeleteAllPropertiesTest() { // Tests that all stored properties and flags are cleared.
         Beach beach = CreateBeach();
 
         beach.AddProperty("2025-06-01", "Clean water", true);
@@ -143,7 +143,7 @@ public class BeachTest {
     }
 
     [Test]
-    public void AddRank_ShouldClampRankBetweenZeroAndFour() { // Tests that beach rank is limited between 0 and 4.
+    public void AddRankBetweenZeroAndFour() { // Tests that beach rank is limited between 0 and 4.
         Beach beach = CreateBeach();
 
         beach.AddRank("low", -5f); // Below valid range.
@@ -158,7 +158,7 @@ public class BeachTest {
     }
 
     [Test]
-    public void AddRank_ShouldOverwriteExistingRankForSameDate() { // Tests that adding a rank for the same date replaces the old value.
+    public void AddRankOverwriteExistingRankForSameDate() { // Tests that adding a rank for the same date replaces the old value.
         Beach beach = CreateBeach();
 
         beach.AddRank("2025-06-01", 1f);
@@ -170,7 +170,7 @@ public class BeachTest {
     }
 
     [Test]
-    public void CopyBeachProperties_ShouldCreateIndependentCopy() { // Tests that copied property data is independent from the original source.
+    public void CopyBeachPropertiesCreateIndependentCopy() { // Tests that copied property data is independent from the original source.
         Beach beach = CreateBeach();
 
         var sourceProperties = new Dictionary<string, List<(string description, bool status)>>() {
@@ -207,7 +207,7 @@ public class BeachTest {
     }
 
     [Test]
-    public void CopyBeachProperties_WithNullSourceProperties_ShouldThrowException() { // Tests that copying from a null properties source causes an exception.
+    public void CopyBeachPropertiesNullSourceProperties() { // Tests that copying from a null properties source causes an exception.
         Beach beach = CreateBeach();
 
         var sourceModified = new Dictionary<string, List<bool>>();
@@ -218,7 +218,7 @@ public class BeachTest {
     }
 
     [Test]
-    public void CopyBeachProperties_WithNullSourceModified_ShouldThrowException() { // Tests that copying from a null modified-flags source causes an exception.
+    public void CopyBeachPropertiesNullSourceModified() { // Tests that copying from a null modified-flags source causes an exception.
         Beach beach = CreateBeach();
 
         var sourceProperties = new Dictionary<string, List<(string description, bool status)>>();
@@ -229,7 +229,7 @@ public class BeachTest {
     }
 
     [Test]
-    public void GetBeachProperties_ShouldExposeInternalDictionaryReference() { // Tests that the getter exposes the internal dictionary reference.
+    public void GetBeachPropertiesTest() { // Tests that the getter exposes the internal dictionary reference.
         Beach beach = CreateBeach();
 
         beach.AddProperty("2025-06-01", "Clean water", true);
