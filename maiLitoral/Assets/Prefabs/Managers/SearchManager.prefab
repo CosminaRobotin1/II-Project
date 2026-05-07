@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5522845888528687675}
   - component: {fileID: 1369492131755686519}
   - component: {fileID: 7459360198255998245}
+  - component: {fileID: 8175003001993256474}
   m_Layer: 5
   m_Name: AutoCompleteText
   m_TagString: Untagged
@@ -137,6 +138,21 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8175003001993256474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396912252554677548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf88eecb0ff2b6549a61b1943e469a7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
+  targetText: {fileID: 7459360198255998245}
+  romanianText: 
+  englishText: 
 --- !u!1 &1009583837961593914
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,6 +270,8 @@ GameObject:
   - component: {fileID: 3755061271708063349}
   - component: {fileID: 665508526943402947}
   - component: {fileID: 9113940332202923573}
+  - component: {fileID: 8436636616618737812}
+  - component: {fileID: 4530817356612302484}
   m_Layer: 5
   m_Name: SearchBar
   m_TagString: Untagged
@@ -384,8 +402,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3056998228006915634}
         m_TargetAssemblyTypeName: SearchManager, Assembly-CSharp
-        m_MethodName: ShowZonesManager
-        m_Mode: 6
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -445,6 +463,38 @@ MonoBehaviour:
   isAlert: 0
   m_InputValidator: {fileID: 0}
   m_ShouldActivateOnSelect: 1
+--- !u!114 &8436636616618737812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4552533523216686535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 665508526943402947}
+  targetText: {fileID: 0}
+  colorRole: 0
+  preserveAlpha: 1
+--- !u!114 &4530817356612302484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4552533523216686535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 665508526943402947}
+  targetText: {fileID: 0}
+  colorRole: 0
+  preserveAlpha: 1
 --- !u!1 &5851497600899094834
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,6 +506,7 @@ GameObject:
   - component: {fileID: 6027736595750735610}
   - component: {fileID: 2992874446618112761}
   - component: {fileID: 3302322343101366386}
+  - component: {fileID: 8344462281940294785}
   m_Layer: 5
   m_Name: SearchContent
   m_TagString: Untagged
@@ -582,6 +633,21 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8344462281940294785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5851497600899094834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf88eecb0ff2b6549a61b1943e469a7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
+  targetText: {fileID: 3302322343101366386}
+  romanianText: 
+  englishText: 
 --- !u!1 &6448333548697340569
 GameObject:
   m_ObjectHideFlags: 0
@@ -594,6 +660,7 @@ GameObject:
   - component: {fileID: 8167935195501906808}
   - component: {fileID: 5438224990839041291}
   - component: {fileID: 5785738647757362527}
+  - component: {fileID: 742124586216496637}
   m_Layer: 0
   m_Name: Icon
   m_TagString: Untagged
@@ -641,7 +708,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8941177, g: 0.95294124, b: 0.9921569, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -678,6 +745,22 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &742124586216496637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6448333548697340569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 5438224990839041291}
+  targetText: {fileID: 0}
+  colorRole: 0
+  preserveAlpha: 1
 --- !u!1 &6708338171012365478
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,6 +775,8 @@ GameObject:
   - component: {fileID: 6337645916959270682}
   - component: {fileID: 4097068375979396481}
   - component: {fileID: 6610299585496353577}
+  - component: {fileID: 3222831134714515665}
+  - component: {fileID: 3390373787084536990}
   m_Layer: 0
   m_Name: SearchButton
   m_TagString: Untagged
@@ -850,6 +935,38 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 0.7778148, b: 0.495283, a: 1}
   m_EffectDistance: {x: 6, y: 6}
   m_UseGraphicAlpha: 1
+--- !u!114 &3222831134714515665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6708338171012365478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 5809095228234429186}
+  targetText: {fileID: 0}
+  colorRole: 2
+  preserveAlpha: 1
+--- !u!114 &3390373787084536990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6708338171012365478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 5809095228234429186}
+  targetText: {fileID: 0}
+  colorRole: 2
+  preserveAlpha: 1
 --- !u!1 &6960553404208731167
 GameObject:
   m_ObjectHideFlags: 0
@@ -862,6 +979,8 @@ GameObject:
   - component: {fileID: 7834375925550916929}
   - component: {fileID: 3795892471415281973}
   - component: {fileID: 8830736136210009607}
+  - component: {fileID: 7514130292038397562}
+  - component: {fileID: 1037445500576681847}
   m_Layer: 5
   m_Name: Placeholder
   m_TagString: Untagged
@@ -1008,3 +1127,34 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &7514130292038397562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6960553404208731167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf88eecb0ff2b6549a61b1943e469a7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
+  targetText: {fileID: 3795892471415281973}
+  romanianText: "Caut\u0103 o plaj\u0103..."
+  englishText: Search...
+--- !u!114 &1037445500576681847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6960553404208731167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 0}
+  targetText: {fileID: 3795892471415281973}
+  colorRole: 3
+  preserveAlpha: 1

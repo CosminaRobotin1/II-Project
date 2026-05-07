@@ -25,7 +25,18 @@ public class CalendarManager : MonoBehaviour {
     };
 
     /* Custom methods */
-    
+
+    // Returns the culture that matches the selected language
+    private CultureInfo GetCurrentCulture() {
+        if (SettingsOptionsManager.Instance == null) {
+            return new CultureInfo("ro-RO");
+        }
+        if (SettingsOptionsManager.Instance.GetSelectedLanguageIndex() == 0) {
+            return new CultureInfo("ro-RO");
+        }
+        return new CultureInfo("en-US");
+    }
+
     public void LoadCalendar(DateTime currentDate, GameObject currentBeach) { // Loading the calendar data
         this.currentBeach = currentBeach;
         for(int i = 0; i < 5; i++) {  // Destroying already shown days (for each week)
@@ -34,9 +45,9 @@ public class CalendarManager : MonoBehaviour {
             }
         }
         currentBeachText.text = currentBeach.name;
-        CultureInfo culture = new CultureInfo("ro-RO");
-        string text = currentDate.ToString("MMMM yyyy", culture); // Formatting the date text
-        currentDateText.text = char.ToUpper(text[0]) + text.Substring(1);
+        CultureInfo culture = GetCurrentCulture(); // Gets the culture based on the selected language
+        string text = currentDate.ToString("MMMM yyyy", culture); // Formats the date using the selected language
+        currentDateText.text = char.ToUpper(text[0]) + text.Substring(1); // Capitalizes the first letter
 
         int totalDaysLastMonth = DateTime.DaysInMonth(currentDate.Year, currentDate.AddMonths(-1).Month); // Last month number of days
         int totalDaysThisMonth = DateTime.DaysInMonth(currentDate.Year, currentDate.Month); // Current month number of days

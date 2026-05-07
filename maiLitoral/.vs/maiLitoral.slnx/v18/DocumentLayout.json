@@ -3,8 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\Assets\\Scripts\\Beach\\BeachPropertiesNavigationManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Beach\\BeachPropertiesNavigationManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\daria\\desktop\\proiect ii\\mailitoral\\assets\\scripts\\managers\\beachmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\managers\\beachmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\Assets\\Scripts\\Managers\\SettingsManagers\\SettingsOptionsManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Managers\\SettingsManagers\\SettingsOptionsManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\daria\\desktop\\proiect ii\\mailitoral\\assets\\scripts\\managers\\settingsmanagers\\palettetarget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\managers\\settingsmanagers\\palettetarget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\daria\\desktop\\proiect ii\\mailitoral\\assets\\scripts\\managers\\settingsmanagers\\optionbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\managers\\settingsmanagers\\optionbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\daria\\desktop\\proiect ii\\mailitoral\\assets\\scripts\\managers\\settingsmanagers\\localizedtext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\managers\\settingsmanagers\\localizedtext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\daria\\desktop\\proiect ii\\mailitoral\\assets\\scripts\\managers\\calendarmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\managers\\calendarmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:2:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\Assets\\Scripts\\Managers\\SettingsManagers\\SettingsOptionsManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:2:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Managers\\SettingsManagers\\SettingsOptionsManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,15 +43,92 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "BeachPropertiesNavigationManager.cs",
-              "DocumentMoniker": "C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\Assets\\Scripts\\Beach\\BeachPropertiesNavigationManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Beach\\BeachPropertiesNavigationManager.cs",
-              "ToolTip": "C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\Assets\\Scripts\\Beach\\BeachPropertiesNavigationManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Beach\\BeachPropertiesNavigationManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Title": "BeachManager.cs",
+              "DocumentMoniker": "C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\Assets\\Scripts\\Managers\\BeachManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\BeachManager.cs",
+              "ToolTip": "C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\Assets\\Scripts\\Managers\\BeachManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Managers\\BeachManager.cs",
+              "ViewState": "AgIAAIwAAAAAAAAAAAA7wJkAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-26T13:21:00.579Z",
+              "WhenOpened": "2026-05-07T17:17:20.285Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CalendarManager.cs",
+              "DocumentMoniker": "C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\Assets\\Scripts\\Managers\\CalendarManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\CalendarManager.cs",
+              "ToolTip": "C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\Assets\\Scripts\\Managers\\CalendarManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Managers\\CalendarManager.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAYwGQAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T16:03:18.154Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LocalizedText.cs",
+              "DocumentMoniker": "C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\Assets\\Scripts\\Managers\\SettingsManagers\\LocalizedText.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\SettingsManagers\\LocalizedText.cs",
+              "ToolTip": "C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\Assets\\Scripts\\Managers\\SettingsManagers\\LocalizedText.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Managers\\SettingsManagers\\LocalizedText.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T08:16:34.118Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "OptionButton.cs",
+              "DocumentMoniker": "C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\Assets\\Scripts\\Managers\\SettingsManagers\\OptionButton.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\SettingsManagers\\OptionButton.cs",
+              "ToolTip": "C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\Assets\\Scripts\\Managers\\SettingsManagers\\OptionButton.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Managers\\SettingsManagers\\OptionButton.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T08:15:42.474Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PaletteTarget.cs",
+              "DocumentMoniker": "C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\Assets\\Scripts\\Managers\\SettingsManagers\\PaletteTarget.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\SettingsManagers\\PaletteTarget.cs",
+              "ToolTip": "C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\Assets\\Scripts\\Managers\\SettingsManagers\\PaletteTarget.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Managers\\SettingsManagers\\PaletteTarget.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T08:11:03.754Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SettingsOptionsManager.cs",
+              "DocumentMoniker": "C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\Assets\\Scripts\\Managers\\SettingsManagers\\SettingsOptionsManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\SettingsManagers\\SettingsOptionsManager.cs",
+              "ToolTip": "C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\Assets\\Scripts\\Managers\\SettingsManagers\\SettingsOptionsManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Managers\\SettingsManagers\\SettingsOptionsManager.cs",
+              "ViewState": "AgIAACoBAAAAAAAAAAAUwDUBAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T17:53:17.037Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SettingsOptionsManager.cs",
+              "DocumentMoniker": "C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\Assets\\Scripts\\Managers\\SettingsManagers\\SettingsOptionsManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\SettingsManagers\\SettingsOptionsManager.cs",
+              "ToolTip": "C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\Assets\\Scripts\\Managers\\SettingsManagers\\SettingsOptionsManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Managers\\SettingsManagers\\SettingsOptionsManager.cs",
+              "ViewState": "AgIAAFABAAAAAAAAAADwv1YBAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T08:12:18.696Z"
             }
           ]
         }
