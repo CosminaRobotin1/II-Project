@@ -2,17 +2,14 @@ using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
 
-public class BeachTest
-{
-    private Beach CreateBeach()
-    {
+public class BeachTest{
+    private Beach CreateBeach(){
         GameObject obj = new GameObject();
         return obj.AddComponent<Beach>();
     }
 
     [Test]
-    public void AddProperty_ShouldAddPropertyAndModifiedFlagForDate()
-    {
+    public void AddProperty_ShouldAddPropertyAndModifiedFlagForDate(){
         Beach beach = CreateBeach();
 
         beach.AddProperty("2025-06-01", "Clean water", true);
@@ -35,8 +32,7 @@ public class BeachTest
     }
 
     [Test]
-    public void AddProperty_ShouldKeepPropertiesAndModifiedFlagsAligned()
-    {
+    public void AddProperty_ShouldKeepPropertiesAndModifiedFlagsAligned(){
         Beach beach = CreateBeach();
 
         beach.AddProperty("2025-06-01", "Clean water", true);
@@ -54,8 +50,7 @@ public class BeachTest
     }
 
     [Test]
-    public void ModifyProperty_ShouldUpdateOnlySelectedProperty()
-    {
+    public void ModifyProperty_ShouldUpdateOnlySelectedProperty(){
         Beach beach = CreateBeach();
 
         beach.AddProperty("2025-06-01", "Dirty beach", false);
@@ -73,8 +68,7 @@ public class BeachTest
     }
 
     [Test]
-    public void ModifyProperty_WithUnavailableDate_ShouldThrowException()
-    {
+    public void ModifyProperty_WithUnavailableDate_ShouldThrowException(){
         Beach beach = CreateBeach();
 
         Assert.Throws<KeyNotFoundException>(() =>
@@ -84,8 +78,7 @@ public class BeachTest
     }
 
     [Test]
-    public void ModifyProperty_WithInvalidIndex_ShouldThrowException()
-    {
+    public void ModifyProperty_WithInvalidIndex_ShouldThrowException(){
         Beach beach = CreateBeach();
 
         beach.AddProperty("2025-06-01", "Clean water", true);
@@ -97,8 +90,7 @@ public class BeachTest
     }
 
     [Test]
-    public void DeleteProperty_ShouldRemovePropertyAndMatchingModifiedFlag()
-    {
+    public void DeleteProperty_ShouldRemovePropertyAndMatchingModifiedFlag(){
         Beach beach = CreateBeach();
 
         beach.AddProperty("2025-06-01", "Property A", true);
@@ -118,8 +110,7 @@ public class BeachTest
     }
 
     [Test]
-    public void DeleteProperty_WithInvalidIndex_ShouldThrowException()
-    {
+    public void DeleteProperty_WithInvalidIndex_ShouldThrowException(){
         Beach beach = CreateBeach();
 
         beach.AddProperty("2025-06-01", "Clean water", true);
@@ -131,8 +122,7 @@ public class BeachTest
     }
 
     [Test]
-    public void DeleteProperty_WithUnavailableDate_ShouldThrowException()
-    {
+    public void DeleteProperty_WithUnavailableDate_ShouldThrowException(){
         Beach beach = CreateBeach();
 
         Assert.Throws<KeyNotFoundException>(() =>
@@ -142,8 +132,7 @@ public class BeachTest
     }
 
     [Test]
-    public void DeleteAllProperties_ShouldClearPropertiesAndModifiedFlags()
-    {
+    public void DeleteAllProperties_ShouldClearPropertiesAndModifiedFlags(){
         Beach beach = CreateBeach();
 
         beach.AddProperty("2025-06-01", "Clean water", true);
@@ -156,8 +145,7 @@ public class BeachTest
     }
 
     [Test]
-    public void AddRank_ShouldClampRankBetweenZeroAndFour()
-    {
+    public void AddRank_ShouldClampRankBetweenZeroAndFour(){
         Beach beach = CreateBeach();
 
         beach.AddRank("low", -5f);
@@ -172,8 +160,7 @@ public class BeachTest
     }
 
     [Test]
-    public void AddRank_ShouldOverwriteExistingRankForSameDate()
-    {
+    public void AddRank_ShouldOverwriteExistingRankForSameDate(){
         Beach beach = CreateBeach();
 
         beach.AddRank("2025-06-01", 1f);
@@ -185,8 +172,7 @@ public class BeachTest
     }
 
     [Test]
-    public void CopyBeachProperties_ShouldCreateIndependentCopy()
-    {
+    public void CopyBeachProperties_ShouldCreateIndependentCopy(){
         Beach beach = CreateBeach();
 
         var sourceProperties = new Dictionary<string, List<(string description, bool status)>>()
@@ -227,8 +213,7 @@ public class BeachTest
     }
 
     [Test]
-    public void CopyBeachProperties_WithNullSourceProperties_ShouldThrowException()
-    {
+    public void CopyBeachProperties_WithNullSourceProperties_ShouldThrowException(){
         Beach beach = CreateBeach();
 
         var sourceModified = new Dictionary<string, List<bool>>();
@@ -240,8 +225,7 @@ public class BeachTest
     }
 
     [Test]
-    public void CopyBeachProperties_WithNullSourceModified_ShouldThrowException()
-    {
+    public void CopyBeachProperties_WithNullSourceModified_ShouldThrowException(){
         Beach beach = CreateBeach();
 
         var sourceProperties = new Dictionary<string, List<(string description, bool status)>>();
@@ -253,8 +237,7 @@ public class BeachTest
     }
 
     [Test]
-    public void GetBeachProperties_ShouldExposeInternalDictionaryReference()
-    {
+    public void GetBeachProperties_ShouldExposeInternalDictionaryReference(){
         Beach beach = CreateBeach();
 
         beach.AddProperty("2025-06-01", "Clean water", true);

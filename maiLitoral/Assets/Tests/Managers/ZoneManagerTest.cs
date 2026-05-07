@@ -5,8 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Reflection;
 
-public class ZonesManagerTest
-{
+public class ZonesManagerTest{
     private Scene GetOrCreateScene(string sceneName)
     {
         Scene scene = SceneManager.GetSceneByName(sceneName);
@@ -19,28 +18,24 @@ public class ZonesManagerTest
         return scene;
     }
 
-    private void SetActiveScene(string sceneName)
-    {
+    private void SetActiveScene(string sceneName){
         Scene scene = GetOrCreateScene(sceneName);
         SceneManager.SetActiveScene(scene);
     }
 
-    private void SetPrivateField(object target, string fieldName, object value)
-    {
+    private void SetPrivateField(object target, string fieldName, object value){
         target.GetType()
             .GetField(fieldName, BindingFlags.NonPublic | BindingFlags.Instance)
             .SetValue(target, value);
     }
 
-    private void InvokeLoadZonesFromDatabase(ZonesManager manager)
-    {
+    private void InvokeLoadZonesFromDatabase(ZonesManager manager){
         typeof(ZonesManager)
             .GetMethod("LoadZonesFromDatabase", BindingFlags.NonPublic | BindingFlags.Instance)
             .Invoke(manager, null);
     }
 
-    private ZonesManager CreateManager(GameObject zonesContent, GameObject zonePrefab)
-    {
+    private ZonesManager CreateManager(GameObject zonesContent, GameObject zonePrefab){
         // Important: keep the scene NOT StartingPage while adding the component,
         // because Awake() runs immediately when AddComponent is called.
         SetActiveScene("SafeTestScene");
@@ -54,8 +49,7 @@ public class ZonesManagerTest
         return manager;
     }
 
-    private GameObject CreateValidZonePrefab()
-    {
+    private GameObject CreateValidZonePrefab(){
         GameObject prefab = new GameObject("ZonePrefab");
 
         prefab.AddComponent<Button>();
@@ -68,8 +62,7 @@ public class ZonesManagerTest
         return prefab;
     }
 
-    private GameObject CreatePrefabWithoutButton()
-    {
+    private GameObject CreatePrefabWithoutButton(){
         GameObject prefab = new GameObject("ZonePrefab_NoButton");
 
         GameObject textChild = new GameObject("ZoneText");
@@ -81,8 +74,7 @@ public class ZonesManagerTest
     }
 
     [Test]
-    public void Awake_WhenSceneIsNotStartingPage_ShouldNotLoadZones()
-    {
+    public void Awake_WhenSceneIsNotStartingPage_ShouldNotLoadZones(){
         SetActiveScene("SafeTestScene");
 
         GameObject obj = new GameObject("ZonesManager_TestObject");
@@ -92,8 +84,7 @@ public class ZonesManagerTest
     }
 
     [Test]
-    public void LoadZonesFromDatabase_WhenSceneIsStartingPage_ShouldCreateTenZones()
-    {
+    public void LoadZonesFromDatabase_WhenSceneIsStartingPage_ShouldCreateTenZones(){
         GameObject zonesContent = new GameObject("ZonesContent");
         GameObject zonePrefab = CreateValidZonePrefab();
 
@@ -107,8 +98,7 @@ public class ZonesManagerTest
     }
 
     [Test]
-    public void LoadZonesFromDatabase_ShouldCreateZonesWithCorrectNamesAndText()
-    {
+    public void LoadZonesFromDatabase_ShouldCreateZonesWithCorrectNamesAndText(){
         GameObject zonesContent = new GameObject("ZonesContent");
         GameObject zonePrefab = CreateValidZonePrefab();
 
@@ -133,8 +123,7 @@ public class ZonesManagerTest
     }
 
     [Test]
-    public void LoadZonesFromDatabase_WhenCalledTwice_ShouldCreateDuplicateZones_CurrentBug()
-    {
+    public void LoadZonesFromDatabase_WhenCalledTwice_ShouldCreateDuplicateZones_CurrentBug(){
         GameObject zonesContent = new GameObject("ZonesContent");
         GameObject zonePrefab = CreateValidZonePrefab();
 
@@ -153,8 +142,7 @@ public class ZonesManagerTest
     }
 
     [Test]
-    public void LoadZonesFromDatabase_WithNullPrefab_ShouldThrowException()
-    {
+    public void LoadZonesFromDatabase_WithNullPrefab_ShouldThrowException(){
         GameObject zonesContent = new GameObject("ZonesContent");
 
         ZonesManager manager = CreateManager(zonesContent, null);
@@ -168,8 +156,7 @@ public class ZonesManagerTest
     }
 
     [Test]
-    public void LoadZonesFromDatabase_WithPrefabMissingButton_ShouldThrowException()
-    {
+    public void LoadZonesFromDatabase_WithPrefabMissingButton_ShouldThrowException(){
         GameObject zonesContent = new GameObject("ZonesContent");
         GameObject zonePrefab = CreatePrefabWithoutButton();
 
@@ -184,8 +171,7 @@ public class ZonesManagerTest
     }
 
     [Test]
-    public void GetZones_ShouldExposeInternalListReference()
-    {
+    public void GetZones_ShouldExposeInternalListReference(){
         GameObject zonesContent = new GameObject("ZonesContent");
         GameObject zonePrefab = CreateValidZonePrefab();
 

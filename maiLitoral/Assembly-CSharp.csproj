@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\Beach\BeachProperties.cs" />
     <Compile Include="Assets\Tests\Managers\ZoneManagerTest.cs" />
     <Compile Include="Assets\Scripts\Managers\ZonesManager.cs" />
+    <Compile Include="Assets\Tests\Managers\SearchManagerTest.cs" />
     <Compile Include="Assets\Scripts\Managers\ButtonsManager.cs" />
     <Compile Include="Assets\Scripts\Managers\SoundManager.cs" />
     <Compile Include="Assets\Scripts\Managers\SearchManager.cs" />
