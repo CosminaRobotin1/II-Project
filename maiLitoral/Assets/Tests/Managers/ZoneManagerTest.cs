@@ -5,92 +5,88 @@ using UnityEngine.UI;
 using TMPro;
 using System.Reflection;
 
-public class ZonesManagerTest{
-    private Scene GetOrCreateScene(string sceneName)
-    {
+public class ZonesManagerTest {
+
+    private Scene GetOrCreateScene(string sceneName) { // Gets or creates a scene used for safe testing.
         Scene scene = SceneManager.GetSceneByName(sceneName);
 
-        if (!scene.IsValid() || !scene.isLoaded)
-        {
+        if (!scene.IsValid() || !scene.isLoaded) {
             scene = SceneManager.CreateScene(sceneName);
         }
 
         return scene;
     }
 
-    private void SetActiveScene(string sceneName){
+    private void SetActiveScene(string sceneName) { // Sets the active scene before creating test objects.
         Scene scene = GetOrCreateScene(sceneName);
         SceneManager.SetActiveScene(scene);
     }
 
-    private void SetPrivateField(object target, string fieldName, object value){
+    private void SetPrivateField(object target, string fieldName, object value) { // Sets a private field using reflection.
         target.GetType()
             .GetField(fieldName, BindingFlags.NonPublic | BindingFlags.Instance)
             .SetValue(target, value);
     }
 
-    private void InvokeLoadZonesFromDatabase(ZonesManager manager){
+    private void InvokeLoadZonesFromDatabase(ZonesManager manager) { // Calls the private LoadZonesFromDatabase method.
         typeof(ZonesManager)
             .GetMethod("LoadZonesFromDatabase", BindingFlags.NonPublic | BindingFlags.Instance)
             .Invoke(manager, null);
     }
 
-    private ZonesManager CreateManager(GameObject zonesContent, GameObject zonePrefab){
-        // Important: keep the scene NOT StartingPage while adding the component,
-        // because Awake() runs immediately when AddComponent is called.
-        SetActiveScene("SafeTestScene");
+    private ZonesManager CreateManager(GameObject zonesContent, GameObject zonePrefab) { // Creates a ZonesManager with test references assigned.
+        SetActiveScene("SafeTestScene"); // Prevents Awake from loading zones too early.
 
         GameObject obj = new GameObject("ZonesManager_TestObject");
         ZonesManager manager = obj.AddComponent<ZonesManager>();
 
-        SetPrivateField(manager, "zonesContent", zonesContent);
-        SetPrivateField(manager, "zonePrefab", zonePrefab);
+        SetPrivateField(manager, "zonesContent", zonesContent); // Assign private content object.
+        SetPrivateField(manager, "zonePrefab", zonePrefab); // Assign private prefab object.
 
         return manager;
     }
 
-    private GameObject CreateValidZonePrefab(){
+    private GameObject CreateValidZonePrefab() { // Creates a valid zone prefab with a button and text child.
         GameObject prefab = new GameObject("ZonePrefab");
 
-        prefab.AddComponent<Button>();
+        prefab.AddComponent<Button>(); // Production code expects a Button component.
 
         GameObject textChild = new GameObject("ZoneText");
         textChild.transform.SetParent(prefab.transform);
 
-        textChild.AddComponent<TextMeshProUGUI>();
+        textChild.AddComponent<TextMeshProUGUI>(); // Production code expects text on child index 0.
 
         return prefab;
     }
 
-    private GameObject CreatePrefabWithoutButton(){
+    private GameObject CreatePrefabWithoutButton() { // Creates an invalid prefab without a Button component.
         GameObject prefab = new GameObject("ZonePrefab_NoButton");
 
         GameObject textChild = new GameObject("ZoneText");
         textChild.transform.SetParent(prefab.transform);
-
         textChild.AddComponent<TextMeshProUGUI>();
 
         return prefab;
     }
 
     [Test]
-    public void Awake_WhenSceneIsNotStartingPage_ShouldNotLoadZones(){
+    public void Awake_WhenSceneIsNotStartingPage_ShouldNotLoadZones() { // Tests that zones are not loaded outside the StartingPage scene.
         SetActiveScene("SafeTestScene");
 
         GameObject obj = new GameObject("ZonesManager_TestObject");
         ZonesManager manager = obj.AddComponent<ZonesManager>();
 
-        Assert.AreEqual(0, manager.GetZones().Count);
+        Assert.AreEqual(0, manager.GetZones().Count); // Loading should be skipped outside StartingPage.
     }
 
     [Test]
-    public void LoadZonesFromDatabase_WhenSceneIsStartingPage_ShouldCreateTenZones(){
+    public void LoadZonesFromDatabase_WhenSceneIsStartingPage_ShouldCreateTenZones() { // Tests that ten zones are created in the StartingPage scene.
         GameObject zonesContent = new GameObject("ZonesContent");
         GameObject zonePrefab = CreateValidZonePrefab();
 
         ZonesManager manager = CreateManager(zonesContent, zonePrefab);
 
-        SetActiveScene("StartingPage");
+        SetActiveScene("StartingPage"); // This scene name allows loading to continue.
 
         InvokeLoadZonesFromDatabase(manager);
 
@@ -98,7 +94,7 @@ public class ZonesManagerTest{
     }
 
     [Test]
-    public void LoadZonesFromDatabase_ShouldCreateZonesWithCorrectNamesAndText(){
+    public void LoadZonesFromDatabase_ShouldCreateZonesWithCorrectNamesAndText() { // Tests that created zones have correct names, text, parent, and button.
         GameObject zonesContent = new GameObject("ZonesContent");
         GameObject zonePrefab = CreateValidZonePrefab();
 
@@ -108,22 +104,21 @@ public class ZonesManagerTest{
 
         InvokeLoadZonesFromDatabase(manager);
 
-        for (int i = 0; i < manager.GetZones().Count; i++)
-        {
+        for (int i = 0; i < manager.GetZones().Count; i++) {
             GameObject zone = manager.GetZones()[i];
 
-            Assert.AreEqual("Zone_" + i, zone.name);
-            Assert.AreEqual(zonesContent.transform, zone.transform.parent);
+            Assert.AreEqual("Zone_" + i, zone.name); // Zone name should follow expected pattern.
+            Assert.AreEqual(zonesContent.transform, zone.transform.parent); // Zone should be under content object.
 
             TextMeshProUGUI text = zone.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-            Assert.AreEqual("Zone_" + i, text.text);
 
-            Assert.IsNotNull(zone.GetComponent<Button>());
+            Assert.AreEqual("Zone_" + i, text.text); // Visible text should match object name.
+            Assert.IsNotNull(zone.GetComponent<Button>()); // Zone should have a Button.
         }
     }
 
     [Test]
-    public void LoadZonesFromDatabase_WhenCalledTwice_ShouldCreateDuplicateZones_CurrentBug(){
+    public void LoadZonesFromDatabase_WhenCalledTwice_ShouldCreateDuplicateZones_CurrentBug() { // Tests that calling the loader twice creates duplicate zones.
         GameObject zonesContent = new GameObject("ZonesContent");
         GameObject zonePrefab = CreateValidZonePrefab();
 
@@ -132,7 +127,7 @@ public class ZonesManagerTest{
         SetActiveScene("StartingPage");
 
         InvokeLoadZonesFromDatabase(manager);
-        InvokeLoadZonesFromDatabase(manager);
+        InvokeLoadZonesFromDatabase(manager); // Second call creates duplicates.
 
         Assert.AreEqual(
             20,
@@ -142,21 +137,20 @@ public class ZonesManagerTest{
     }
 
     [Test]
-    public void LoadZonesFromDatabase_WithNullPrefab_ShouldThrowException(){
+    public void LoadZonesFromDatabase_WithNullPrefab_ShouldThrowException() { // Tests that a missing prefab causes an exception.
         GameObject zonesContent = new GameObject("ZonesContent");
 
         ZonesManager manager = CreateManager(zonesContent, null);
 
         SetActiveScene("StartingPage");
 
-        Assert.Throws<TargetInvocationException>(() =>
-        {
-            InvokeLoadZonesFromDatabase(manager);
+        Assert.Throws<TargetInvocationException>(() => {
+            InvokeLoadZonesFromDatabase(manager); // Instantiate fails because prefab is null.
         });
     }
 
     [Test]
-    public void LoadZonesFromDatabase_WithPrefabMissingButton_ShouldThrowException(){
+    public void LoadZonesFromDatabase_WithPrefabMissingButton_ShouldThrowException() { // Tests that a prefab without a Button causes an exception.
         GameObject zonesContent = new GameObject("ZonesContent");
         GameObject zonePrefab = CreatePrefabWithoutButton();
 
@@ -164,14 +158,13 @@ public class ZonesManagerTest{
 
         SetActiveScene("StartingPage");
 
-        Assert.Throws<TargetInvocationException>(() =>
-        {
-            InvokeLoadZonesFromDatabase(manager);
+        Assert.Throws<TargetInvocationException>(() => {
+            InvokeLoadZonesFromDatabase(manager); // GetComponent<Button>() returns null.
         });
     }
 
     [Test]
-    public void GetZones_ShouldExposeInternalListReference(){
+    public void GetZones_ShouldExposeInternalListReference() { // Tests that GetZones exposes the internal zones list.
         GameObject zonesContent = new GameObject("ZonesContent");
         GameObject zonePrefab = CreateValidZonePrefab();
 
@@ -183,7 +176,7 @@ public class ZonesManagerTest{
 
         var exposedZonesList = manager.GetZones();
 
-        exposedZonesList.Clear();
+        exposedZonesList.Clear(); // Simulates another script clearing the internal list.
 
         Assert.AreEqual(
             0,

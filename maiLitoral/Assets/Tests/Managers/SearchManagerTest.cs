@@ -5,92 +5,82 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine.SceneManagement;
 
-public class SearchManagerTest{
-    private Scene GetOrCreateScene(string sceneName)
-    {
+public class SearchManagerTest {
+
+    private Scene GetOrCreateScene(string sceneName) { // Gets or creates a scene used during testing.
         Scene scene = SceneManager.GetSceneByName(sceneName);
 
-        if (!scene.IsValid() || !scene.isLoaded)
-        {
+        if (!scene.IsValid() || !scene.isLoaded) {
             scene = SceneManager.CreateScene(sceneName);
         }
 
         return scene;
     }
 
-    private void SetActiveScene(string sceneName){
+    private void SetActiveScene(string sceneName) { // Changes the active scene for safe test setup.
         Scene scene = GetOrCreateScene(sceneName);
         SceneManager.SetActiveScene(scene);
     }
 
-    private void SetPrivateField(object target, string fieldName, object value){
+    private void SetPrivateField(object target, string fieldName, object value) { // Sets private fields inside the SearchManager.
         target.GetType()
             .GetField(fieldName, BindingFlags.NonPublic | BindingFlags.Instance)
             .SetValue(target, value);
     }
 
-    private void InvokePrivateMethod(object target, string methodName, params object[] parameters){
-        try
-        {
+    private void InvokePrivateMethod(object target, string methodName, params object[] parameters) { // Calls private methods and unwraps reflection exceptions.
+        try {
             target.GetType()
                 .GetMethod(methodName, BindingFlags.NonPublic | BindingFlags.Instance)
                 .Invoke(target, parameters);
-        }
-        catch (TargetInvocationException exception)
-        {
+        } catch (TargetInvocationException exception) {
             throw exception.InnerException;
         }
     }
 
-    private GameObject CreateZone(string name){
+    private GameObject CreateZone(string name) { // Creates a test zone GameObject with a given name.
         GameObject zone = new GameObject(name);
-        zone.SetActive(false);
+        zone.SetActive(false); // Start hidden so tests can check if the script makes it visible.
         return zone;
     }
 
-    private ZonesManager CreateZonesManagerWithZones(List<GameObject> zones){
-        SetActiveScene("SafeSearchManagerTestScene");
+    private ZonesManager CreateZonesManagerWithZones(List<GameObject> zones) { // Creates a ZonesManager with a custom zones list.
+        SetActiveScene("SafeSearchManagerTestScene"); // Prevents automatic zone loading during setup.
 
         GameObject zonesManagerObject = new GameObject("ZonesManagerObject");
         ZonesManager zonesManager = zonesManagerObject.AddComponent<ZonesManager>();
 
         typeof(ZonesManager)
             .GetField("zones", BindingFlags.NonPublic | BindingFlags.Instance)
-            .SetValue(zonesManager, zones);
+            .SetValue(zonesManager, zones); // Replace private zone list with controlled test data.
 
         return zonesManager;
     }
 
-    private TMP_InputField CreateInputField(){
+    private TMP_InputField CreateInputField() { // Creates a test TMP input field.
         GameObject inputObject = new GameObject("SearchInputField");
         return inputObject.AddComponent<TMP_InputField>();
     }
 
-    private TMP_Text CreateAutoCompleteText(){
+    private TMP_Text CreateAutoCompleteText() { // Creates a test TMP autocomplete text object.
         GameObject textObject = new GameObject("AutoCompleteText");
         return textObject.AddComponent<TextMeshProUGUI>();
     }
 
-    private SearchManager CreateSearchManager(
-        ZonesManager zonesManager,
-        TMP_InputField inputField,
-        TMP_Text autoCompleteText
-    )
-    {
+    private SearchManager CreateSearchManager(ZonesManager zonesManager, TMP_InputField inputField, TMP_Text autoCompleteText) { // Creates a SearchManager with all required references assigned.
         GameObject searchManagerObject = new GameObject("SearchManagerObject");
         SearchManager searchManager = searchManagerObject.AddComponent<SearchManager>();
 
-        SetPrivateField(searchManager, "zonesManager", zonesManager.gameObject);
-        SetPrivateField(searchManager, "searchInputField", inputField);
-        SetPrivateField(searchManager, "autoCompleteText", autoCompleteText);
+        SetPrivateField(searchManager, "zonesManager", zonesManager.gameObject); // Assign private zones manager reference.
+        SetPrivateField(searchManager, "searchInputField", inputField); // Assign private input field reference.
+        SetPrivateField(searchManager, "autoCompleteText", autoCompleteText); // Assign private autocomplete text reference.
 
         return searchManager;
     }
 
     [Test]
-    public void SearchInit_ShouldClearAutocompleteAndShowAllZones(){
-        List<GameObject> zones = new List<GameObject>()
-        {
+    public void SearchInit_ShouldClearAutocompleteAndShowAllZones() { // Tests that search initialization clears autocomplete and shows all zones.
+        List<GameObject> zones = new List<GameObject>() {
             CreateZone("Zone_0"),
             CreateZone("Zone_1"),
             CreateZone("Zone_2")
@@ -100,13 +90,13 @@ public class SearchManagerTest{
         TMP_InputField input = CreateInputField();
         TMP_Text autoText = CreateAutoCompleteText();
 
-        autoText.text = "Old suggestion";
+        autoText.text = "Old suggestion"; // Start with old text to verify it gets cleared.
 
         SearchManager searchManager = CreateSearchManager(zonesManager, input, autoText);
 
         InvokePrivateMethod(searchManager, "SearchInit");
 
-        Assert.AreEqual("", autoText.text);
+        Assert.AreEqual("", autoText.text); // Autocomplete should be empty after init.
 
         Assert.IsTrue(zones[0].activeSelf);
         Assert.IsTrue(zones[1].activeSelf);
@@ -114,9 +104,8 @@ public class SearchManagerTest{
     }
 
     [Test]
-    public void OnSearchValueChanged_WithPartialMatch_ShouldShowSuggestionAndFilterZones(){
-        List<GameObject> zones = new List<GameObject>()
-        {
+    public void OnSearchValueChanged_WithPartialMatch_ShouldShowSuggestionAndFilterZones() { // Tests that partial input shows a suggestion and filters zones.
+        List<GameObject> zones = new List<GameObject>() {
             CreateZone("Mamaia"),
             CreateZone("VamaVeche"),
             CreateZone("Eforie")
@@ -130,7 +119,7 @@ public class SearchManagerTest{
 
         InvokePrivateMethod(searchManager, "SearchInit");
 
-        input.onValueChanged.Invoke("mam");
+        input.onValueChanged.Invoke("mam"); // This should only match Mamaia.
 
         Assert.AreEqual("Mamaia", autoText.text);
 
@@ -140,9 +129,8 @@ public class SearchManagerTest{
     }
 
     [Test]
-    public void OnSearchValueChanged_WithExactMatch_ShouldClearSuggestion(){
-        List<GameObject> zones = new List<GameObject>()
-        {
+    public void OnSearchValueChanged_WithExactMatch_ShouldClearSuggestion() { // Tests that exact matches clear the autocomplete suggestion.
+        List<GameObject> zones = new List<GameObject>() {
             CreateZone("Mamaia"),
             CreateZone("VamaVeche")
         };
@@ -155,7 +143,7 @@ public class SearchManagerTest{
 
         InvokePrivateMethod(searchManager, "SearchInit");
 
-        input.onValueChanged.Invoke("Mamaia");
+        input.onValueChanged.Invoke("Mamaia"); // Exact match should not show suggestion text.
 
         Assert.AreEqual("", autoText.text);
 
@@ -164,9 +152,8 @@ public class SearchManagerTest{
     }
 
     [Test]
-    public void OnSearchValueChanged_WithNoMatch_ShouldHideAllZonesAndClearSuggestion(){
-        List<GameObject> zones = new List<GameObject>()
-        {
+    public void OnSearchValueChanged_WithNoMatch_ShouldHideAllZonesAndClearSuggestion() { // Tests that unknown input hides all zones and clears the suggestion.
+        List<GameObject> zones = new List<GameObject>() {
             CreateZone("Mamaia"),
             CreateZone("VamaVeche"),
             CreateZone("Eforie")
@@ -180,7 +167,7 @@ public class SearchManagerTest{
 
         InvokePrivateMethod(searchManager, "SearchInit");
 
-        input.onValueChanged.Invoke("unknown");
+        input.onValueChanged.Invoke("unknown"); // No zone should match this input.
 
         Assert.AreEqual("", autoText.text);
 
@@ -190,9 +177,8 @@ public class SearchManagerTest{
     }
 
     [Test]
-    public void OnSearchValueChanged_WithEmptyInput_ShouldShowAllZonesAndClearSuggestion(){
-        List<GameObject> zones = new List<GameObject>()
-        {
+    public void OnSearchValueChanged_WithEmptyInput_ShouldShowAllZonesAndClearSuggestion() { // Tests that empty input resets the search and shows all zones.
+        List<GameObject> zones = new List<GameObject>() {
             CreateZone("Mamaia"),
             CreateZone("VamaVeche"),
             CreateZone("Eforie")
@@ -206,8 +192,8 @@ public class SearchManagerTest{
 
         InvokePrivateMethod(searchManager, "SearchInit");
 
-        input.onValueChanged.Invoke("mam");
-        input.onValueChanged.Invoke("");
+        input.onValueChanged.Invoke("mam"); // First filter the list.
+        input.onValueChanged.Invoke(""); // Then clear the input.
 
         Assert.AreEqual("", autoText.text);
 
@@ -217,7 +203,7 @@ public class SearchManagerTest{
     }
 
     [Test]
-    public void ShowZonesManager_ShouldToggleZonesManagerPanel(){
+    public void ShowZonesManager_ShouldToggleZonesManagerPanel() { // Tests that the zones manager panel can be shown and hidden.
         List<GameObject> zones = new List<GameObject>();
 
         ZonesManager zonesManager = CreateZonesManagerWithZones(zones);
@@ -238,7 +224,7 @@ public class SearchManagerTest{
     }
 
     [Test]
-    public void SearchInit_WithMissingZonesManagerComponent_ShouldThrowException(){
+    public void SearchInit_WithMissingZonesManagerComponent_ShouldThrowException() { // Tests that a missing ZonesManager component causes an exception.
         GameObject fakeZonesManagerObject = new GameObject("FakeZonesManagerObject");
 
         TMP_InputField input = CreateInputField();
@@ -247,20 +233,18 @@ public class SearchManagerTest{
         GameObject searchManagerObject = new GameObject("SearchManagerObject");
         SearchManager searchManager = searchManagerObject.AddComponent<SearchManager>();
 
-        SetPrivateField(searchManager, "zonesManager", fakeZonesManagerObject);
+        SetPrivateField(searchManager, "zonesManager", fakeZonesManagerObject); // Object has no ZonesManager component.
         SetPrivateField(searchManager, "searchInputField", input);
         SetPrivateField(searchManager, "autoCompleteText", autoText);
 
-        Assert.Throws<System.NullReferenceException>(() =>
-        {
+        Assert.Throws<System.NullReferenceException>(() => {
             InvokePrivateMethod(searchManager, "SearchInit");
         });
     }
 
     [Test]
-    public void SearchInit_WithNullInputField_ShouldThrowException(){
-        List<GameObject> zones = new List<GameObject>()
-        {
+    public void SearchInit_WithNullInputField_ShouldThrowException() { // Tests that a missing input field causes an exception.
+        List<GameObject> zones = new List<GameObject>() {
             CreateZone("Mamaia")
         };
 
@@ -271,19 +255,17 @@ public class SearchManagerTest{
         SearchManager searchManager = searchManagerObject.AddComponent<SearchManager>();
 
         SetPrivateField(searchManager, "zonesManager", zonesManager.gameObject);
-        SetPrivateField(searchManager, "searchInputField", null);
+        SetPrivateField(searchManager, "searchInputField", null); // Missing input field.
         SetPrivateField(searchManager, "autoCompleteText", autoText);
 
-        Assert.Throws<System.NullReferenceException>(() =>
-        {
+        Assert.Throws<System.NullReferenceException>(() => {
             InvokePrivateMethod(searchManager, "SearchInit");
         });
     }
 
     [Test]
-    public void SearchInit_WithNullAutoCompleteText_ShouldThrowException(){
-        List<GameObject> zones = new List<GameObject>()
-        {
+    public void SearchInit_WithNullAutoCompleteText_ShouldThrowException() { // Tests that a missing autocomplete text object causes an exception.
+        List<GameObject> zones = new List<GameObject>() {
             CreateZone("Mamaia")
         };
 
@@ -295,29 +277,26 @@ public class SearchManagerTest{
 
         SetPrivateField(searchManager, "zonesManager", zonesManager.gameObject);
         SetPrivateField(searchManager, "searchInputField", input);
-        SetPrivateField(searchManager, "autoCompleteText", null);
+        SetPrivateField(searchManager, "autoCompleteText", null); // Missing autocomplete text object.
 
-        Assert.Throws<System.NullReferenceException>(() =>
-        {
+        Assert.Throws<System.NullReferenceException>(() => {
             InvokePrivateMethod(searchManager, "SearchInit");
         });
     }
 
     [Test]
-    public void ShowAllZones_WithNullZoneInList_ShouldThrowException(){
+    public void ShowAllZones_WithNullZoneInList_ShouldThrowException() { // Tests that a null zone in the list causes an exception.
         GameObject searchManagerObject = new GameObject("SearchManagerObject");
         SearchManager searchManager = searchManagerObject.AddComponent<SearchManager>();
 
-        List<GameObject> zones = new List<GameObject>()
-        {
+        List<GameObject> zones = new List<GameObject>() {
             CreateZone("Mamaia"),
             null
         };
 
-        SetPrivateField(searchManager, "zones", zones);
+        SetPrivateField(searchManager, "zones", zones); // Inject corrupted list containing a null zone.
 
-        Assert.Throws<System.NullReferenceException>(() =>
-        {
+        Assert.Throws<System.NullReferenceException>(() => {
             InvokePrivateMethod(searchManager, "ShowAllZones");
         });
     }

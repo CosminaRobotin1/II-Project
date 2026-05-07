@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1462.8572
     height: 872.00006
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Project
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -262,7 +262,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: GameView
+  m_Name: SceneView
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -273,12 +273,12 @@ MonoBehaviour:
     height: 570.2857
   m_MinSize: {x: 202, y: 226}
   m_MaxSize: {x: 4002, y: 4026}
-  m_ActualView: {fileID: 19}
+  m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
-  - {fileID: 19}
   - {fileID: 12}
-  m_Selected: 1
+  - {fileID: 19}
+  m_Selected: 0
   m_LastSelected: 2
 --- !u!114 &12
 MonoBehaviour:
@@ -301,10 +301,10 @@ MonoBehaviour:
     m_TextWithWhitespace: "Animator\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 383
-    y: 79
-    width: 1048
-    height: 626
+    x: 292
+    y: 78.28572
+    width: 798
+    height: 544.2857
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -686,7 +686,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Sounds
+    - Assets/Tests/Managers
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -696,26 +696,28 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Sounds
+  - Assets/Tests/Managers
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Personal\School\College\Year III\Sem II\II\II-Project\maiLitoral
+  m_LastProjectPath: D:\II Project\II-Project\maiLitoral
   m_LockTracker:
     m_IsLocked: 0
   m_LastLocalAssetsSearchArea: 1
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
+    scrollPos: {x: 0, y: 140.2857}
     m_SelectedIDs:
-    - m_Data: 58060
+    - m_Data: 63816
     m_LastClickedID:
-      m_Data: 58060
+      m_Data: 63816
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 50108
-    - m_Data: 50110
-    - m_Data: 50112
-    - m_Data: 50114
-    - m_Data: 50116
-    - m_Data: 50118
+    - m_Data: 52138
+    - m_Data: 52140
+    - m_Data: 52142
+    - m_Data: 52144
+    - m_Data: 52146
+    - m_Data: 52148
+    - m_Data: 52150
+    - m_Data: 52152
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -748,12 +750,14 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 50108
-    - m_Data: 50110
-    - m_Data: 50112
-    - m_Data: 50114
-    - m_Data: 50116
-    - m_Data: 50118
+    - m_Data: 52138
+    - m_Data: 52140
+    - m_Data: 52142
+    - m_Data: 52144
+    - m_Data: 52146
+    - m_Data: 52148
+    - m_Data: 52150
+    - m_Data: 52152
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -782,7 +786,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: []
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs:
     - m_Data: 75720
     - m_Data: 75818
@@ -918,45 +922,21 @@ MonoBehaviour:
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
-      - m_Data: -341532
-      - m_Data: -332620
-      - m_Data: -323592
-      - m_Data: -322794
-      - m_Data: -319818
-      - m_Data: -319218
-      - m_Data: -318768
-      - m_Data: -284300
-      - m_Data: -284258
-      - m_Data: -244900
-      - m_Data: -215672
-      - m_Data: -190780
-      - m_Data: -190754
-      - m_Data: -190744
-      - m_Data: -116750
-      - m_Data: -116626
-      - m_Data: -85994
-      - m_Data: -39990
-      - m_Data: -39980
-      - m_Data: -39968
-      - m_Data: -39960
-      - m_Data: -39958
-      - m_Data: -1348
-      - m_Data: 74296
-      - m_Data: 93998
-      - m_Data: 95264
-      - m_Data: 97228
-      - m_Data: 97708
-      - m_Data: 98892
-      - m_Data: 100184
-      - m_Data: 133236
-      - m_Data: 133520
-      - m_Data: 135228
-      - m_Data: 135588
-      - m_Data: 136440
-      - m_Data: 137964
-      - m_Data: 138428
-      - m_Data: 138670
-      - m_Data: 138742
+      - m_Data: -29794
+      - m_Data: -29306
+      - m_Data: -28408
+      - m_Data: -26698
+      - m_Data: -24384
+      - m_Data: -22052
+      - m_Data: -19638
+      - m_Data: -19210
+      - m_Data: -16708
+      - m_Data: -15460
+      - m_Data: -14442
+      - m_Data: -14014
+      - m_Data: -3060
+      - m_Data: -2420
+      - m_Data: -1784
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1003,10 +983,10 @@ MonoBehaviour:
     m_TextWithWhitespace: "Scene\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 407
-    y: 87
-    width: 1131
-    height: 636
+    x: 293
+    y: 24
+    width: 798
+    height: 544.2857
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1591,9 +1571,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 610.0959, y: 1135.629, z: 4.4228415}
+    m_Target: {x: 614.94696, y: 991.7144, z: -10.243552}
     speed: 2
-    m_Value: {x: -1789.0605, y: 760.82806, z: -40.143368}
+    m_Value: {x: 614.94696, y: 991.7144, z: -10.243552}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1643,9 +1623,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1568.1226
+    m_Target: 3034.7605
     speed: 2
-    m_Value: 4024.3462
+    m_Value: 3034.7605
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1738,8 +1718,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Game\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 293
-    y: 24
+    x: 292
+    y: 78.28572
     width: 798
     height: 544.2857
   m_SerializedDataModeController:
@@ -1758,7 +1738,7 @@ MonoBehaviour:
   m_SerializedViewNames:
   - UnityEditor.DeviceSimulation.SimulatorWindow
   m_SerializedViewValues:
-  - D:\II Project\II-Project\maiLitoral\Library\PlayModeViewStates\5dce58f1e51b98a4cbdd8b199b693d1f
+  - D:\II Project\II-Project\maiLitoral\Library\PlayModeViewStates\4100cf41280902643b51fe3419494291
   m_PlayModeViewName: GameView
   m_ShowGizmos: 0
   m_TargetDisplay: 0
@@ -1790,7 +1770,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -1799,23 +1779,23 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 1048
-      height: 605
-    m_Scale: {x: 0.55143225, y: 0.55143225}
-    m_Translation: {x: 524, y: 302.5}
+      width: 798
+      height: 523.2857
+    m_Scale: {x: 0.4769531, y: 0.4769531}
+    m_Translation: {x: 399, y: 261.64285}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -950.25275
+      x: -836.56024
       y: -548.5715
-      width: 1900.5055
+      width: 1673.1205
       height: 1097.143
     m_MinimalGUI: 1
-  m_defaultScale: 0.55143225
-  m_LastWindowPixelSize: {x: 1048, y: 626}
+  m_defaultScale: 0.4769531
+  m_LastWindowPixelSize: {x: 798, y: 544.2857}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000001000000000000
