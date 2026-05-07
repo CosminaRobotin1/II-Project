@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "D:\\Facultate\\AnIII Sem 2\\Proiect c#\\II-Project\\maiLitoral\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Facultate\\AnIII Sem 2\\Proiect c#\\II-Project\\maiLitoral\\Assets\\Scripts\\Managers\\SearchManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Managers\\SearchManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Facultate\\AnIII Sem 2\\Proiect c#\\II-Project\\maiLitoral\\Assets\\Scripts\\Managers\\AdminManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Managers\\AdminManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Facultate\\AnIII Sem 2\\Proiect c#\\II-Project\\maiLitoral\\Assets\\Scripts\\Managers\\ButtonsManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -13,6 +13,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Facultate\\AnIII Sem 2\\Proiect c#\\II-Project\\maiLitoral\\Assets\\Scripts\\Managers\\ZonesManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Managers\\ZonesManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Facultate\\AnIII Sem 2\\Proiect c#\\II-Project\\maiLitoral\\Assets\\Scripts\\Managers\\SearchManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Managers\\SearchManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Facultate\\AnIII Sem 2\\Proiect c#\\II-Project\\maiLitoral\\Assets\\Scripts\\Beach\\Beach.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,8 +46,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AdminManager.cs",
+              "DocumentMoniker": "D:\\Facultate\\AnIII Sem 2\\Proiect c#\\II-Project\\maiLitoral\\Assets\\Scripts\\Managers\\AdminManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\AdminManager.cs",
+              "ToolTip": "D:\\Facultate\\AnIII Sem 2\\Proiect c#\\II-Project\\maiLitoral\\Assets\\Scripts\\Managers\\AdminManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Managers\\AdminManager.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAEcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T08:50:41.199Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -52,7 +69,7 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\ButtonsManager.cs",
               "ToolTip": "D:\\Facultate\\AnIII Sem 2\\Proiect c#\\II-Project\\maiLitoral\\Assets\\Scripts\\Managers\\ButtonsManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\Managers\\ButtonsManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-06T06:36:17.852Z"
             },
@@ -64,26 +81,25 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\ZonesManager.cs",
               "ToolTip": "D:\\Facultate\\AnIII Sem 2\\Proiect c#\\II-Project\\maiLitoral\\Assets\\Scripts\\Managers\\ZonesManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\Managers\\ZonesManager.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAIBJwCYAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-06T06:13:43.454Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "SearchManager.cs",
               "DocumentMoniker": "D:\\Facultate\\AnIII Sem 2\\Proiect c#\\II-Project\\maiLitoral\\Assets\\Scripts\\Managers\\SearchManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\SearchManager.cs",
               "ToolTip": "D:\\Facultate\\AnIII Sem 2\\Proiect c#\\II-Project\\maiLitoral\\Assets\\Scripts\\Managers\\SearchManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\Managers\\SearchManager.cs",
-              "ViewState": "AgIAADwAAAAAAAAAAAAAAGAAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-06T06:12:53.834Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-06T06:12:53.834Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Beach.cs",
               "DocumentMoniker": "D:\\Facultate\\AnIII Sem 2\\Proiect c#\\II-Project\\maiLitoral\\Assets\\Scripts\\Beach\\Beach.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Beach\\Beach.cs",
@@ -95,7 +111,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "NotificationsSelectionManagerTest.cs",
               "DocumentMoniker": "D:\\Facultate\\AnIII Sem 2\\Proiect c#\\II-Project\\maiLitoral\\Assets\\Tests\\Settings\\NotificationsSelectionManagerTest.cs",
               "RelativeDocumentMoniker": "Assets\\Tests\\Settings\\NotificationsSelectionManagerTest.cs",
@@ -107,7 +123,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "LanguageSelectionManagerTest.cs",
               "DocumentMoniker": "D:\\Facultate\\AnIII Sem 2\\Proiect c#\\II-Project\\maiLitoral\\Assets\\Tests\\Settings\\LanguageSelectionManagerTest.cs",
               "RelativeDocumentMoniker": "Assets\\Tests\\Settings\\LanguageSelectionManagerTest.cs",
@@ -119,7 +135,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "BeachRecommendationSelectionManagerTest.cs",
               "DocumentMoniker": "D:\\Facultate\\AnIII Sem 2\\Proiect c#\\II-Project\\maiLitoral\\Assets\\Tests\\Settings\\BeachRecommendationSelectionManagerTest.cs",
               "RelativeDocumentMoniker": "Assets\\Tests\\Settings\\BeachRecommendationSelectionManagerTest.cs",
@@ -131,7 +147,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "AppearanceSelectionManagerTest.cs",
               "DocumentMoniker": "D:\\Facultate\\AnIII Sem 2\\Proiect c#\\II-Project\\maiLitoral\\Assets\\Tests\\Settings\\AppearanceSelectionManagerTest.cs",
               "RelativeDocumentMoniker": "Assets\\Tests\\Settings\\AppearanceSelectionManagerTest.cs",
