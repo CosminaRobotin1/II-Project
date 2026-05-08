@@ -67,16 +67,10 @@ Assets/Scripts/Settings/
  OptionButton.cs
  Style/PaletteTarget.cs
 Assets/Tests/
- Beach/BeachPropertiesNavigationManagerTest.cs
- Search/
-  MainContentSearchHandlerTest.cs
-  SearchAutoCompleteControllerTest.cs
-  SearchBarScriptTest.cs
- Settings/
-  AppearanceSelectionManagerTest.cs
-  BeachRecommendationSelectionManagerTest.cs
-  LanguageSelectionManagerTest.cs
-  NotificationsSelectionManagerTest.cs
+ Beach/BeachTest.cs
+ Managers/
+  SearchManagerTest.cs
+  ZoneManagerTest.cs
 Temp/obj/Assembly-CSharp/.NETStandard,Version=v2.1.AssemblyAttributes.cs
 
 [metadataReferences]
