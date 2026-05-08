@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 87291196687355226}
   - component: {fileID: 4079531168753740662}
   - component: {fileID: 7080686622915042488}
+  - component: {fileID: 585728318789135826}
+  - component: {fileID: 7939650398765765786}
   m_Layer: 5
   m_Name: ReviewText
   m_TagString: Untagged
@@ -137,6 +139,37 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &585728318789135826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258732952839741120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf88eecb0ff2b6549a61b1943e469a7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
+  targetText: {fileID: 7080686622915042488}
+  romanianText: "Nu este a\u0219a?"
+  englishText: Not right?
+--- !u!114 &7939650398765765786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258732952839741120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 0}
+  targetText: {fileID: 7080686622915042488}
+  colorRole: 0
+  preserveAlpha: 1
 --- !u!1 &2957053726443983963
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,6 +181,8 @@ GameObject:
   - component: {fileID: 3763969827733823293}
   - component: {fileID: 5383286325884944869}
   - component: {fileID: 7821037916526049047}
+  - component: {fileID: 2626297455364769800}
+  - component: {fileID: 4435771148304485169}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -274,6 +309,37 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &2626297455364769800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2957053726443983963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 0}
+  targetText: {fileID: 7821037916526049047}
+  colorRole: 2
+  preserveAlpha: 1
+--- !u!114 &4435771148304485169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2957053726443983963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf88eecb0ff2b6549a61b1943e469a7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
+  targetText: {fileID: 7821037916526049047}
+  romanianText: "Las\u0103 un review!"
+  englishText: Leave review!
 --- !u!1 &4161525381430906223
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,6 +351,8 @@ GameObject:
   - component: {fileID: 5075458309260835436}
   - component: {fileID: 5124377990390846040}
   - component: {fileID: 8067339519047269764}
+  - component: {fileID: 6452554637528432632}
+  - component: {fileID: 4912432069072252782}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -413,6 +481,37 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6452554637528432632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4161525381430906223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 0}
+  targetText: {fileID: 8067339519047269764}
+  colorRole: 2
+  preserveAlpha: 1
+--- !u!114 &4912432069072252782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4161525381430906223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf88eecb0ff2b6549a61b1943e469a7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
+  targetText: {fileID: 8067339519047269764}
+  romanianText: Vezi Calendar
+  englishText: See Calendar
 --- !u!1 &4559644393487153199
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,6 +524,7 @@ GameObject:
   - component: {fileID: 5998830957974019326}
   - component: {fileID: 8633346529034562333}
   - component: {fileID: 8025770445694418188}
+  - component: {fileID: 4823361996632063806}
   m_Layer: 5
   m_Name: CalendarButton
   m_TagString: Untagged
@@ -535,6 +635,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4823361996632063806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4559644393487153199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 8633346529034562333}
+  targetText: {fileID: 0}
+  colorRole: 0
+  preserveAlpha: 1
 --- !u!1 &4635612284451819057
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,6 +662,8 @@ GameObject:
   - component: {fileID: 5350953673262548390}
   - component: {fileID: 25318582757041313}
   - component: {fileID: 3650250772233975738}
+  - component: {fileID: 809203073296526372}
+  - component: {fileID: 817085554939630008}
   m_Layer: 5
   m_Name: CalendarText
   m_TagString: Untagged
@@ -672,6 +790,37 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &809203073296526372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4635612284451819057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf88eecb0ff2b6549a61b1943e469a7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
+  targetText: {fileID: 3650250772233975738}
+  romanianText: Vrei istoric?
+  englishText: History?
+--- !u!114 &817085554939630008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4635612284451819057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 0}
+  targetText: {fileID: 3650250772233975738}
+  colorRole: 0
+  preserveAlpha: 1
 --- !u!1 &6942025687210616913
 GameObject:
   m_ObjectHideFlags: 0
@@ -684,6 +833,7 @@ GameObject:
   - component: {fileID: 3210846843324226577}
   - component: {fileID: 7039159771786328236}
   - component: {fileID: 2814970204716559963}
+  - component: {fileID: 4658292710807838719}
   m_Layer: 5
   m_Name: Review_Calendar
   m_TagString: Untagged
@@ -770,6 +920,22 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &4658292710807838719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6942025687210616913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 7039159771786328236}
+  targetText: {fileID: 0}
+  colorRole: 2
+  preserveAlpha: 1
 --- !u!1 &7452496642863090129
 GameObject:
   m_ObjectHideFlags: 0
@@ -782,6 +948,7 @@ GameObject:
   - component: {fileID: 7854187553288718968}
   - component: {fileID: 7162725650522684203}
   - component: {fileID: 1727744083140355291}
+  - component: {fileID: 7160991853177852812}
   m_Layer: 5
   m_Name: ReviewButton
   m_TagString: Untagged
@@ -892,3 +1059,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7160991853177852812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7452496642863090129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 7162725650522684203}
+  targetText: {fileID: 0}
+  colorRole: 0
+  preserveAlpha: 1

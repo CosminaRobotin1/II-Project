@@ -121,12 +121,15 @@ public class BeachManager : MonoBehaviour {
         }
         if(reviewMode == false) { // If user is not in review mode already he can review the beach or search in calendar
             GameObject reviewCalendar = Instantiate(reviewCalendarPrefab, propertiesContent.transform); // Instantiating a new review&calendar panel
+            if (SettingsOptionsManager.Instance != null) {
+                SettingsOptionsManager.Instance.ApplyCurrentLanguageToChildren(reviewCalendar); // Applies the selected language to the newly instantiated review calendar
+            }
             reviewCalendar.transform.GetChild(1).GetComponent<Button>().onClick.AddListener(() => ReviewButton(currentDate)); // Adding the correspondent listener to review button
             reviewCalendar.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(() => CalendarButton(beaches[beachIndex])); // Adding the correspondent listener to calendar button
             if (currentDate.Date == DateTime.Now.Date || currentDate.Date == DateTime.Now.AddDays(-1).Date) { // User can add review only today or yesterday
                 reviewCalendar.transform.GetChild(1).gameObject.SetActive(true);
             }
-            propertiesText.text = "Facilitățile din " + date;
+            propertiesText.text = GetPropertiesTitle(date);
         }
     }
     private void SelectBeach(int index) { // Open selected beach panel
@@ -147,7 +150,7 @@ public class BeachManager : MonoBehaviour {
     }
     private void ReviewButton(DateTime currentDate) { // Enters review mode
         reviewMode = true;
-        propertiesText.text = "Finalizează";
+        propertiesText.text = GetFinishReviewText();
         scrollViews[1].transform.GetChild(1).GetComponent<Scrollbar>().value = 1; // Resetting the slider
         LoadBeachProperties(currentDate, currentPressedBeach); // Loading properties in review mode
     }
@@ -159,7 +162,31 @@ public class BeachManager : MonoBehaviour {
         reviewMode = false;
     }
 
+    /* Localization methods */
+
+    // Checks if the selected application language is English
+    private bool IsEnglishSelected() {
+        return SettingsOptionsManager.Instance != null
+            && SettingsOptionsManager.Instance.GetSelectedLanguageIndex() == 1;
+    }
+
     /* Getters */
+
+    // Returns the localized title used for the properties panel
+    private string GetPropertiesTitle(string date) {
+        if (IsEnglishSelected()) {
+            return "Facilities     " + date; // English version of the dynamic properties title
+        }
+        return "Facilitățile din " + date; // Romanian version of the dynamic properties title
+    }
+
+    // Returns the localized text used while the user is reviewing properties
+    private string GetFinishReviewText() {
+        if (IsEnglishSelected()) {
+            return "Finish"; // English version of the review completion text
+        }
+        return "Finalizează"; // Romanian version of the review completion text
+    }
 
     public static int GetCurrentPressedBeach() { // Getter for the current beach pressed
         return currentPressedBeach;

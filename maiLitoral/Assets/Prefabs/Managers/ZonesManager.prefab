@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8990465674874668760}
   - component: {fileID: 3374588874540972840}
   - component: {fileID: 6990971279660775464}
+  - component: {fileID: 3757839028348527819}
   m_Layer: 5
   m_Name: ZonesScrollbarHandle
   m_TagString: Untagged
@@ -75,6 +76,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3757839028348527819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553845807871109217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 6990971279660775464}
+  targetText: {fileID: 0}
+  colorRole: 1
+  preserveAlpha: 1
 --- !u!1 &729681595271210144
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,6 +105,7 @@ GameObject:
   - component: {fileID: 502171082319558268}
   - component: {fileID: 3011273611062819623}
   - component: {fileID: 5934020118069821818}
+  - component: {fileID: 7126361731075951009}
   m_Layer: 5
   m_Name: ZonesScrollView
   m_TagString: Untagged
@@ -198,6 +216,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RectMask2D
   m_Padding: {x: 0, y: 0, z: 0, w: 0}
   m_Softness: {x: 0, y: 0}
+--- !u!114 &7126361731075951009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729681595271210144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 502171082319558268}
+  targetText: {fileID: 0}
+  colorRole: 0
+  preserveAlpha: 1
 --- !u!1 &3553846330584350449
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,7 +303,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 20, y: 0.00048828125}
-  m_SizeDelta: {x: -20, y: -1350}
+  m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &7686873098991341872
 MonoBehaviour:
@@ -323,6 +357,8 @@ GameObject:
   - component: {fileID: 2910193002731557737}
   - component: {fileID: 5376566671445505219}
   - component: {fileID: 8236409121565024334}
+  - component: {fileID: 7911374635314597398}
+  - component: {fileID: 1642163446103110971}
   m_Layer: 5
   m_Name: ZonesManager
   m_TagString: Untagged
@@ -403,6 +439,38 @@ MonoBehaviour:
   zonesManager: {fileID: 4477940362000543535}
   zonesContent: {fileID: 4426501480668402071}
   zonePrefab: {fileID: 5058398451775846923, guid: dc26b3d4ad720e14c9c184108300f66a, type: 3}
+--- !u!114 &7911374635314597398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4477940362000543535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 5376566671445505219}
+  targetText: {fileID: 0}
+  colorRole: 0
+  preserveAlpha: 1
+--- !u!114 &1642163446103110971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4477940362000543535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 5376566671445505219}
+  targetText: {fileID: 0}
+  colorRole: 0
+  preserveAlpha: 1
 --- !u!1 &6048920479323664480
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,6 +484,7 @@ GameObject:
   - component: {fileID: 6161278074991418088}
   - component: {fileID: 6111079702328593009}
   - component: {fileID: 6680400134039690915}
+  - component: {fileID: 441932070708511154}
   m_Layer: 5
   m_Name: ZonesScrollbar
   m_TagString: Untagged
@@ -560,6 +629,22 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &441932070708511154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6048920479323664480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 6161278074991418088}
+  targetText: {fileID: 0}
+  colorRole: 0
+  preserveAlpha: 1
 --- !u!1 &8334905569975444517
 GameObject:
   m_ObjectHideFlags: 0
