@@ -32,7 +32,6 @@ public class SettingsManager : MonoBehaviour {
             }
         }
     }
-
     [Serializable]
     private class Theme {
         [SerializeField] private string themeName; // Name used only for Inspector readability
@@ -71,7 +70,7 @@ public class SettingsManager : MonoBehaviour {
     /* Custom Methods */
 
     private void Awake() { // Initializes the manager and keeps it alive between scenes
-        // ResetSavedSettings(); // ONLY FOR NOW *TO BE DELETED WHEN FINISHING THE APP*
+        ResetSavedSettings(); // ONLY FOR NOW *TO BE DELETED WHEN FINISHING THE APP*
         if (Instance != null && Instance != this) {
             Destroy(gameObject); // Prevents duplicated settings managers after scene reloads
             return;
