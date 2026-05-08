@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SettingsOptionsManager : MonoBehaviour {
+public class SettingsManager : MonoBehaviour {
+
     /* Serializable classes */
 
     [Serializable]
@@ -14,9 +15,7 @@ public class SettingsOptionsManager : MonoBehaviour {
         [SerializeField] private Color mediumColor; // Color used for secondary UI elements
         [SerializeField] private Color accentColor; // Color used for important buttons and highlights
         [SerializeField] private Color darkColor; // Color used for titles, text and strong details
-
-        // Returns the color that matches the requested palette role
-        public Color GetColor(PaletteColorRole colorRole) {
+        public Color GetColor(PaletteColorRole colorRole) { // Returns the color that matches the requested palette role
             switch (colorRole) {
                 case PaletteColorRole.Light:
                     return lightColor;
@@ -35,12 +34,10 @@ public class SettingsOptionsManager : MonoBehaviour {
     }
 
     [Serializable]
-    private class ThemeMode {
+    private class Theme {
         [SerializeField] private string themeName; // Name used only for Inspector readability
         [SerializeField] private float brightnessMultiplier = 1f; // Controls how bright or dark the theme appears
-
-        // Applies the theme brightness over a palette color
-        public Color ApplyTheme(Color color) {
+        public Color ApplyTheme(Color color) { // Applies the theme brightness over a palette color
             color.r = Mathf.Clamp01(color.r * brightnessMultiplier);
             color.g = Mathf.Clamp01(color.g * brightnessMultiplier);
             color.b = Mathf.Clamp01(color.b * brightnessMultiplier);
@@ -53,80 +50,59 @@ public class SettingsOptionsManager : MonoBehaviour {
     private const string PaletteKey = "selected_palette"; // Key used to save the selected palette locally
     private const string ThemeKey = "selected_theme"; // Key used to save the selected theme locally
     private const string LanguageKey = "selected_language"; // Key used to save the selected language locally
-
-    [SerializeField] private ColorPalette defaultPalette; // Default palette that matches the original team leader design
+    [SerializeField] private ColorPalette defaultPalette; // Default palette that matches the original design
     [SerializeField] private int defaultThemeIndex = 0; // Default theme used when no theme was selected
     [SerializeField] private int defaultLanguageIndex = 0; // Default language used when no language was selected
-
     private List<OptionButton> paletteButtons = new List<OptionButton>(); // Palette buttons found automatically in the active scene
     private List<OptionButton> themeButtons = new List<OptionButton>(); // Theme buttons found automatically in the active scene
     private List<OptionButton> languageButtons = new List<OptionButton>(); // Language buttons found automatically in the active scene
-
     [SerializeField] private List<ColorPalette> colorPalettes = new List<ColorPalette>(); // All available color palettes
-    [SerializeField] private List<ThemeMode> themeModes = new List<ThemeMode>(); // All available theme modes
-
+    [SerializeField] private List<Theme> themes = new List<Theme>(); // All available theme modes
     private PaletteTarget[] paletteTargets; // All UI elements affected by palette and theme changes
     private LocalizedText[] localizedTexts; // All UI texts affected by language changes
-
     private int selectedPaletteIndex; // Currently selected palette index
     private int selectedThemeIndex; // Currently selected theme index
     private int selectedLanguageIndex; // Currently selected language index
-
     private bool hasSavedPalette; // True if the user selected a palette before
     private bool hasSavedTheme; // True if the user selected a theme before
     private bool hasSavedLanguage; // True if the user selected a language before
+    public static SettingsManager Instance { get; private set; } // Global access to the active settings manager
 
-    public static SettingsOptionsManager Instance { get; private set; } // Global access to the active settings manager
+    /* Custom Methods */
 
-    /* Unity methods */
-
-    // Initializes the manager and keeps it alive between scenes
-    private void Awake() {
+    private void Awake() { // Initializes the manager and keeps it alive between scenes
+        ResetSavedSettings(); // ONLY FOR NOW *TO BE DELETED WHEN FINISHING THE APP*
         if (Instance != null && Instance != this) {
             Destroy(gameObject); // Prevents duplicated settings managers after scene reloads
             return;
         }
         Instance = this;
-        DontDestroyOnLoad(gameObject); // Keeps settings active between StartingPage and BeachPage !!!
-        LoadOptions();
+        DontDestroyOnLoad(gameObject); // Keeps settings active between StartingPage and BeachPage
+        LoadSettings();
         FindTargets();
         ApplySavedOptions();
     }
-
-    // Registers the scene loading callback
-    private void OnEnable() {
+    private void OnEnable() { // Registers the scene loading callback
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
-
-    // Unregisters the scene loading callback
-    private void OnDisable() {
+    private void OnDisable() { // Unregisters the scene loading callback
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
-
-    // Reconnects UI elements after a new scene was loaded
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode) { // Reconnects UI elements after a new scene was loaded
         FindTargets();
         ApplySavedOptions();
     }
-
-    /* Initialization methods */
-
-    // Finds all palette, language and option targets in the active scene
-    private void FindTargets() {
+    private void FindTargets() { // Finds all palette, language and option targets in the active scene
         paletteTargets = FindObjectsByType<PaletteTarget>(FindObjectsInactive.Include, FindObjectsSortMode.None);
         localizedTexts = FindObjectsByType<LocalizedText>(FindObjectsInactive.Include, FindObjectsSortMode.None);
         paletteButtons.Clear();
         themeButtons.Clear();
         languageButtons.Clear();
-
         OptionButton[] optionButtons = FindObjectsByType<OptionButton>(FindObjectsInactive.Include, FindObjectsSortMode.None);
-
         foreach (OptionButton optionButton in optionButtons) {
             if (optionButton == null) {
                 continue; // Ignores empty references safely
             }
-
-            // Groups buttons automatically by their configured type
             if (optionButton.ButtonType == OptionButtonType.Palette) {
                 paletteButtons.Add(optionButton);
             } else if (optionButton.ButtonType == OptionButtonType.Theme) {
@@ -140,58 +116,41 @@ public class SettingsOptionsManager : MonoBehaviour {
         SortOptionButtons(languageButtons);
         InitializeButtons();
     }
-
-    // Loads saved options from local device storage
-    private void LoadOptions() {
+    private void LoadSettings() { // Loads saved options from local device storage
         hasSavedPalette = PlayerPrefs.HasKey(PaletteKey);
         hasSavedTheme = PlayerPrefs.HasKey(ThemeKey);
         hasSavedLanguage = PlayerPrefs.HasKey(LanguageKey);
-
         selectedPaletteIndex = PlayerPrefs.GetInt(PaletteKey, 0);
         selectedThemeIndex = PlayerPrefs.GetInt(ThemeKey, defaultThemeIndex);
         selectedLanguageIndex = PlayerPrefs.GetInt(LanguageKey, defaultLanguageIndex);
     }
-
-    // Sorts option buttons by their configured option index
-    private void SortOptionButtons(List<OptionButton> buttons) {
+    private void SortOptionButtons(List<OptionButton> buttons) { // Sorts option buttons by their configured option index
         if (buttons == null) {
             return;
         }
         buttons.Sort((firstButton, secondButton) => firstButton.OptionIndex.CompareTo(secondButton.OptionIndex));
     }
-
-    // Initializes all option button groups with their correct callbacks
-    private void InitializeButtons() {
+    private void InitializeButtons() { // Initializes all option button groups with their correct callbacks
         InitializeOptionButtons(paletteButtons, SelectPalette);
         InitializeOptionButtons(themeButtons, SelectTheme);
         InitializeOptionButtons(languageButtons, SelectLanguage);
     }
-
-    // Initializes one option button group
-    private void InitializeOptionButtons(List<OptionButton> buttons, Action<int> onSelected) {
+    private void InitializeOptionButtons(List<OptionButton> buttons, Action<int> onSelected) { // Initializes one option button group
         for (int i = 0; i < buttons.Count; i++) {
             if (buttons[i] != null) {
                 buttons[i].Initialize(onSelected);
             }
         }
     }
-
-    /* Selection methods */
-
-    // Selects a new palette and saves it locally
-    private void SelectPalette(int index) {
+    private void SelectPalette(int index) { // Selects a new palette and saves it locally
         selectedPaletteIndex = index;
         hasSavedPalette = true;
-
         PlayerPrefs.SetInt(PaletteKey, selectedPaletteIndex); // Stores the selected palette index
         PlayerPrefs.Save(); // Forces Unity to save the updated preference
-
         ApplyVisualOptions();
         RefreshChecks();
     }
-
-    // Selects a new theme and saves it locally
-    private void SelectTheme(int index) {
+    private void SelectTheme(int index) { // Selects a new theme and saves it locally
         selectedThemeIndex = index;
         hasSavedTheme = true;
 
@@ -201,9 +160,7 @@ public class SettingsOptionsManager : MonoBehaviour {
         ApplyVisualOptions();
         RefreshChecks();
     }
-
-    // Selects a new language and saves it locally
-    private void SelectLanguage(int index) {
+    private void SelectLanguage(int index) { // Selects a new language and saves it locally
         selectedLanguageIndex = index;
         hasSavedLanguage = true;
 
@@ -213,11 +170,7 @@ public class SettingsOptionsManager : MonoBehaviour {
         ApplyLanguage();
         RefreshChecks();
     }
-
-    /* Apply methods */
-
-    // Applies only the options that were previously selected by the user
-    private void ApplySavedOptions() {
+    private void ApplySavedOptions() { // Applies only the options that were previously selected by the user
         if (hasSavedPalette || hasSavedTheme) {
             ApplyVisualOptions();
         }
@@ -226,15 +179,12 @@ public class SettingsOptionsManager : MonoBehaviour {
         }
         RefreshChecks();
     }
-
-    // Applies the selected palette and selected theme to all palette targets
-    private void ApplyVisualOptions() {
+    private void ApplyVisualOptions() { // Applies the selected palette and selected theme to all palette targets
         if (paletteTargets == null) {
             FindTargets(); // Reconnects targets if the scene was not initialized yet
         }
         ColorPalette activePalette = GetActivePalette();
-        ThemeMode activeTheme = GetActiveTheme();
-
+        Theme activeTheme = GetActiveTheme();
         foreach (PaletteTarget paletteTarget in paletteTargets) {
             if (paletteTarget != null) {
                 Color roleColor = activePalette.GetColor(paletteTarget.ColorRole); // Gets the color based on the target role
@@ -243,9 +193,7 @@ public class SettingsOptionsManager : MonoBehaviour {
             }
         }
     }
-
-    // Applies the selected language to all localized texts
-    private void ApplyLanguage() {
+    private void ApplyLanguage() { // Applies the selected language to all localized texts
         if (localizedTexts == null) {
             FindTargets(); // Reconnects localized texts if the scene was not initialized yet
         }
@@ -255,9 +203,7 @@ public class SettingsOptionsManager : MonoBehaviour {
             }
         }
     }
-
-    // Applies current visual settings to one newly enabled palette target
-    public void ApplyCurrentSettingsToTarget(PaletteTarget paletteTarget) {
+    public void ApplyCurrentSettingsToTarget(PaletteTarget paletteTarget) { // Applies current visual settings to one newly enabled palette target
         if (paletteTarget == null) {
             return;
         }
@@ -266,14 +212,12 @@ public class SettingsOptionsManager : MonoBehaviour {
         }
 
         ColorPalette activePalette = GetActivePalette();
-        ThemeMode activeTheme = GetActiveTheme();
+        Theme activeTheme = GetActiveTheme();
         Color roleColor = activePalette.GetColor(paletteTarget.ColorRole);
         Color themedColor = activeTheme.ApplyTheme(roleColor);
         paletteTarget.ApplyColor(themedColor);
     }
-
-    // Applies the current language to one newly enabled localized text
-    public void ApplyCurrentLanguageToText(LocalizedText localizedText) {
+    public void ApplyCurrentLanguageToText(LocalizedText localizedText) { // Applies the current language to one newly enabled localized text
         if (localizedText == null) {
             return;
         }
@@ -282,9 +226,7 @@ public class SettingsOptionsManager : MonoBehaviour {
         }
         localizedText.ApplyLanguage(selectedLanguageIndex);
     }
-
-    // Applies the current language to all localized texts found under a specific object
-    public void ApplyCurrentLanguageToChildren(GameObject rootObject) {
+    public void ApplyCurrentLanguageToChildren(GameObject rootObject) { // Applies the current language to all localized texts found under a specific object
         if (rootObject == null) {
             return; // Prevents errors if the instantiated object is missing
         }
@@ -299,51 +241,15 @@ public class SettingsOptionsManager : MonoBehaviour {
             }
         }
     }
-
-    /* Getter methods */
-
-    // Returns the selected palette or the default team leader palette
-    private ColorPalette GetActivePalette() {
-        if (hasSavedPalette && IsValidIndex(selectedPaletteIndex, colorPalettes.Count)) {
-            return colorPalettes[selectedPaletteIndex];
-        }
-        return defaultPalette;
-    }
-
-    // Returns the selected theme or a safe default theme
-    private ThemeMode GetActiveTheme() {
-        if (themeModes == null || themeModes.Count == 0) {
-            return new ThemeMode(); // Safe fallback if themes were not configured yet
-        }
-        if (IsValidIndex(selectedThemeIndex, themeModes.Count)) {
-            return themeModes[selectedThemeIndex];
-        }
-        if (IsValidIndex(defaultThemeIndex, themeModes.Count)) {
-            return themeModes[defaultThemeIndex];
-        }
-        return themeModes[0];
-    }
-
-    // Returns the currently selected language index
-    public int GetSelectedLanguageIndex() {
-        return selectedLanguageIndex;
-    }
-
-    /* Visual update methods */
-
-    // Refreshes all selected check marks
-    private void RefreshChecks() {
+    private void RefreshChecks() { // Refreshes all selected check marks
         RefreshButtonGroup(paletteButtons, hasSavedPalette, selectedPaletteIndex);
         RefreshButtonGroup(themeButtons, hasSavedTheme, selectedThemeIndex);
         RefreshButtonGroup(languageButtons, hasSavedLanguage, selectedLanguageIndex);
     }
-
-    // Refreshes one option button group
-    private void RefreshButtonGroup(List<OptionButton> buttons, bool hasSavedSelection, int selectedIndex) {
+    private void RefreshButtonGroup(List<OptionButton> buttons, bool hasSavedSelection, int selectedIndex) { // Refreshes one option button group
         if (buttons == null) {
             return;
         }
-
         for (int i = 0; i < buttons.Count; i++) {
             if (buttons[i] == null) {
                 continue;
@@ -352,11 +258,7 @@ public class SettingsOptionsManager : MonoBehaviour {
             buttons[i].SetSelected(isSelected);
         }
     }
-
-    /* Testing method */
-
-    // Resets all saved settings for testing from the component context menu
-    [ContextMenu("Reset Saved Settings")]
+    [ContextMenu("Reset Saved Settings")] // Resets all saved settings for testing from the component context menu
     private void ResetSavedSettings() {
         PlayerPrefs.DeleteKey(PaletteKey);
         PlayerPrefs.DeleteKey(ThemeKey);
@@ -369,11 +271,31 @@ public class SettingsOptionsManager : MonoBehaviour {
 
         RefreshChecks();
     }
-
-    /* Validation method */
-
-    // Checks if an index exists in a list
-    private bool IsValidIndex(int index, int count) {
+    private bool IsValidIndex(int index, int count) { // Checks if an index exists in a list
         return index >= 0 && index < count;
     }
+
+    /* Getter methods */
+
+    private ColorPalette GetActivePalette() { // Returns the selected palette or the default palette
+        if (hasSavedPalette && IsValidIndex(selectedPaletteIndex, colorPalettes.Count)) {
+            return colorPalettes[selectedPaletteIndex];
+        }
+        return defaultPalette;
+    }
+    private Theme GetActiveTheme() {
+        if (themes == null || themes.Count == 0) {
+            return new Theme(); // Safe fallback if themes were not configured yet
+        }
+        if (IsValidIndex(selectedThemeIndex, themes.Count)) {
+            return themes[selectedThemeIndex];
+        }
+        if (IsValidIndex(defaultThemeIndex, themes.Count)) {
+            return themes[defaultThemeIndex];
+        }
+        return themes[0];
+    }
+    public int GetSelectedLanguageIndex() { // Returns the currently selected language index
+        return selectedLanguageIndex;
+    }    
 }

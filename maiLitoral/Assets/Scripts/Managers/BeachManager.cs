@@ -121,8 +121,8 @@ public class BeachManager : MonoBehaviour {
         }
         if(reviewMode == false) { // If user is not in review mode already he can review the beach or search in calendar
             GameObject reviewCalendar = Instantiate(reviewCalendarPrefab, propertiesContent.transform); // Instantiating a new review&calendar panel
-            if (SettingsOptionsManager.Instance != null) {
-                SettingsOptionsManager.Instance.ApplyCurrentLanguageToChildren(reviewCalendar); // Applies the selected language to the newly instantiated review calendar
+            if (SettingsManager.Instance != null) {
+                SettingsManager.Instance.ApplyCurrentLanguageToChildren(reviewCalendar); // Applies the selected language to the newly instantiated review calendar
             }
             reviewCalendar.transform.GetChild(1).GetComponent<Button>().onClick.AddListener(() => ReviewButton(currentDate)); // Adding the correspondent listener to review button
             reviewCalendar.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(() => CalendarButton(beaches[beachIndex])); // Adding the correspondent listener to calendar button
@@ -166,8 +166,8 @@ public class BeachManager : MonoBehaviour {
 
     // Checks if the selected application language is English
     private bool IsEnglishSelected() {
-        return SettingsOptionsManager.Instance != null
-            && SettingsOptionsManager.Instance.GetSelectedLanguageIndex() == 1;
+        return SettingsManager.Instance != null
+            && SettingsManager.Instance.GetSelectedLanguageIndex() == 1;
     }
 
     /* Getters */

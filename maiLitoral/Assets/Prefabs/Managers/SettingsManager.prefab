@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7452751953668036558}
   - component: {fileID: 7732280050008161714}
   m_Layer: 0
-  m_Name: SettingsOptionsManager
+  m_Name: SettingsManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,7 +114,7 @@ MonoBehaviour:
     mediumColor: {r: 0.9019608, g: 0.65882355, b: 0.7137255, a: 0}
     accentColor: {r: 0.7529412, g: 0.5176471, b: 0.5921569, a: 0}
     darkColor: {r: 0.5568628, g: 0.3529412, b: 0.41568628, a: 0}
-  themeModes:
+  themes:
   - themeName: Light
     brightnessMultiplier: 1
   - themeName: Soft

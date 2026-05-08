@@ -26,17 +26,15 @@ public class CalendarManager : MonoBehaviour {
 
     /* Custom methods */
 
-    // Returns the culture that matches the selected language
-    private CultureInfo GetCurrentCulture() {
-        if (SettingsOptionsManager.Instance == null) {
+    private CultureInfo GetCurrentCulture() { // Returns the culture that matches the selected language
+        if (SettingsManager.Instance == null) {
             return new CultureInfo("ro-RO");
         }
-        if (SettingsOptionsManager.Instance.GetSelectedLanguageIndex() == 0) {
+        if (SettingsManager.Instance.GetSelectedLanguageIndex() == 0) {
             return new CultureInfo("ro-RO");
         }
         return new CultureInfo("en-US");
     }
-
     public void LoadCalendar(DateTime currentDate, GameObject currentBeach) { // Loading the calendar data
         this.currentBeach = currentBeach;
         for(int i = 0; i < 5; i++) {  // Destroying already shown days (for each week)

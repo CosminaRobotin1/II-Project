@@ -9,6 +9,7 @@ public enum OptionButtonType {
 }
 
 public class OptionButton : MonoBehaviour {
+
     /* Attributes */
 
     [SerializeField] private Button button; // Button component that receives the user click
@@ -22,33 +23,20 @@ public class OptionButton : MonoBehaviour {
     public OptionButtonType ButtonType => buttonType; // Allows the manager to group buttons automatically
     public int OptionIndex => optionIndex; // Allows the manager to sort buttons in the correct order
 
-    /* Initialization method */
+    /* Custom Methods */
 
-    // Connects this button to the manager callback in a reusable way
-    public void Initialize(Action<int> callback) {
+    public void Initialize(Action<int> callback) { // Connects this button to the manager callback in a reusable way
         onSelected = callback;
         if (button == null) {
             return; // Prevents errors if the Button component was not assigned
         }
-
-        // Avoids adding the same listener multiple times after scene reloads
-        button.onClick.RemoveListener(SelectOption);
-
-        // Adds the click listener for this option
-        button.onClick.AddListener(SelectOption);
+        button.onClick.RemoveListener(SelectOption); // Avoids adding the same listener multiple times after scene reloads
+        button.onClick.AddListener(SelectOption); // Adds the click listener for this option
     }
-
-    /* Selection method */
-
-    // Sends this option index to the settings manager
-    private void SelectOption() {
+    private void SelectOption() { // Sends this option index to the settings manager
         onSelected?.Invoke(optionIndex);
     }
-
-    /* Visual method */
-
-    // Updates the selected check mark for this button
-    public void SetSelected(bool isSelected) {
+    public void SetSelected(bool isSelected) { // Updates the selected check mark for this button
         if (selectedCheck == null)  {
             return; // Some buttons may not have a check mark assigned yet
         }

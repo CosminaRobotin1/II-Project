@@ -11,6 +11,7 @@ public enum PaletteColorRole {
 }
 
 public class PaletteTarget : MonoBehaviour {
+
     /* Attributes */
 
     [SerializeField] private Image targetImage; // Image component affected by palette and theme changes
@@ -22,26 +23,20 @@ public class PaletteTarget : MonoBehaviour {
 
     public PaletteColorRole ColorRole => colorRole; // Gives the manager access to the selected color role
 
-    /* Unity method */
+    /* Custom Methods */
 
-    // Applies the current settings when this object becomes active
-    private void OnEnable() {
-        if (SettingsOptionsManager.Instance != null) {
-            SettingsOptionsManager.Instance.ApplyCurrentSettingsToTarget(this);
+    private void OnEnable() { // Applies the current settings when this object becomes active
+        if (SettingsManager.Instance != null) {
+            SettingsManager.Instance.ApplyCurrentSettingsToTarget(this);
         }
     }
-
-    /* Color method */
-
-    // Applies the received color to the assigned Image or TMP_Text component
-    public void ApplyColor(Color newColor) {
+    public void ApplyColor(Color newColor) { // Applies the received color to the assigned Image and TMP_Text component
         if (targetImage != null) {
             if (preserveAlpha) {
                 newColor.a = targetImage.color.a; // Keeps the original image transparency
             }
             targetImage.color = newColor;
         }
-
         if (targetText != null) {
             if (preserveAlpha) {
                 newColor.a = targetText.color.a; // Keeps the original text transparency

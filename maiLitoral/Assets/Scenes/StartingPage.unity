@@ -561,6 +561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 95360080}
+  languages: []
   romanianText: Starea plajelor
   englishText: Beaches state
 --- !u!114 &95360084
@@ -1022,7 +1023,7 @@ Animator:
   m_GameObject: {fileID: 126708430}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8d285090bc03d5a4980803358376b53f, type: 2}
+  m_Controller: {fileID: 9100000, guid: d114d056163b710458f3d669b926dcce, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2502,6 +2503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 267011118}
+  languages: []
   romanianText: "Notific\u0103ri"
   englishText: Notifications
 --- !u!114 &267011122
@@ -2973,7 +2975,7 @@ Animator:
   m_GameObject: {fileID: 287434427}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b6e4870b313bbff44873bb8380bf8c5f, type: 2}
+  m_Controller: {fileID: 9100000, guid: d114d056163b710458f3d669b926dcce, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3504,6 +3506,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 308894702}
+  languages: []
   romanianText: "Notific\u0103ri"
   englishText: Notifications
 --- !u!1 &315173210
@@ -3847,6 +3850,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 324717831}
+  languages: []
   romanianText: "Prime\u0219te recomand\u0103ri personalizate despre plajele potrivite
     pentru tine."
   englishText: Receive personalized recommendations about the right beaches for you.
@@ -4385,7 +4389,7 @@ Animator:
   m_GameObject: {fileID: 392948498}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5d1e67eb23baffd4f857d6b2b9338bf6, type: 2}
+  m_Controller: {fileID: 9100000, guid: 619d0103b9c32e643911faa59e8635b6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5951,7 +5955,7 @@ Animator:
   m_GameObject: {fileID: 534822385}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3918b87663c04534b97b95ce85248ce2, type: 2}
+  m_Controller: {fileID: 9100000, guid: 619d0103b9c32e643911faa59e8635b6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -6254,6 +6258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 538552342}
+  languages: []
   romanianText: "\xCEnapoi"
   englishText: Back
 --- !u!1 &539997177
@@ -6482,6 +6487,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 544731934}
+  languages: []
   romanianText: "\xCEnapoi"
   englishText: Back
 --- !u!1 &551376830
@@ -6612,7 +6618,7 @@ Animator:
   m_GameObject: {fileID: 559270125}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2dc6a184613b2004e8adfc629337324d, type: 2}
+  m_Controller: {fileID: 9100000, guid: d114d056163b710458f3d669b926dcce, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -7591,6 +7597,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 621991189}
+  languages: []
   romanianText: "Numele aplica\u021Biei:"
   englishText: 'App Name:'
 --- !u!114 &621991193
@@ -7864,6 +7871,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 637389570}
+  languages: []
   romanianText: "Despre aplica\u021Bie"
   englishText: About the app
 --- !u!1 &645918739
@@ -8633,7 +8641,7 @@ Animator:
   m_GameObject: {fileID: 710584307}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cffa6dfff08efdb44aca347a3f3fc6f3, type: 2}
+  m_Controller: {fileID: 9100000, guid: d114d056163b710458f3d669b926dcce, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -9528,6 +9536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 792245271}
+  languages: []
   romanianText: "\xCEnapoi"
   englishText: Back
 --- !u!1 &808132844
@@ -9941,6 +9950,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 824071527}
+  languages: []
   romanianText: "Limb\u0103"
   englishText: Language
 --- !u!114 &824071531
@@ -10610,6 +10620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 0}
+  languages: []
   romanianText: "    Aplica\u021Bia este dedicat\u0103 explor\u0103rii plajelor de
     pe litoralul rom\xE2nesc pentru a ajuta doritorii s\u0103 aleag\u0103 locul potrivit
     pentru o vacan\u021B\u0103 de vis. "
@@ -10950,6 +10961,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 903004613}
+  languages: []
   romanianText: "Proiect realizat \xEEn Unity."
   englishText: Project made in Unity.
 --- !u!114 &903004617
@@ -11269,6 +11281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 929250872}
+  languages: []
   romanianText: "\xCEnapoi"
   englishText: Back
 --- !u!1 &935920004
@@ -11572,6 +11585,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 959452822}
+  languages: []
   romanianText: "\xCEnapoi"
   englishText: Back
 --- !u!1 &959886516
@@ -11725,6 +11739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 959886518}
+  languages: []
   romanianText: "Recomand\u0103ri"
   englishText: Recommendation
 --- !u!1001 &976461163
@@ -12192,8 +12207,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 1007816594}
+  languages: []
   romanianText: "Personalizeaz\u0103 stilul"
-  englishText: ' Personalize the style'
+  englishText: Personalize the style
 --- !u!114 &1007816598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12437,6 +12453,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 1026770820}
+  languages: []
   romanianText: "Palet\u0103 de culori"
   englishText: Color palette
 --- !u!114 &1026770824
@@ -14365,6 +14382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 1146196585}
+  languages: []
   romanianText: Plaje pentru familii
   englishText: Beaches for families
 --- !u!114 &1146196589
@@ -14415,7 +14433,7 @@ Animator:
   m_GameObject: {fileID: 1175136488}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 65241be22533a4848b2517053376fe7f, type: 2}
+  m_Controller: {fileID: 9100000, guid: d114d056163b710458f3d669b926dcce, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -15132,6 +15150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 1264276157}
+  languages: []
   romanianText: "\xCEnapoi"
   englishText: Back
 --- !u!1 &1265904406
@@ -15286,6 +15305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 1265904408}
+  languages: []
   romanianText: Plaje populare
   englishText: Popular beaches
 --- !u!114 &1265904412
@@ -15530,6 +15550,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 1268705003}
+  languages: []
   romanianText: "Personalizeaz\u0103"
   englishText: Personalize
 --- !u!1 &1277902437
@@ -15683,6 +15704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 1277902439}
+  languages: []
   romanianText: "\xCEnapoi"
   englishText: Back
 --- !u!1 &1280446152
@@ -15837,6 +15859,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 1280446154}
+  languages: []
   romanianText: "Rom\xE2n\u0103"
   englishText: Romanian
 --- !u!114 &1280446157
@@ -16140,7 +16163,7 @@ Animator:
   m_GameObject: {fileID: 1350081510}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2dc6a184613b2004e8adfc629337324d, type: 2}
+  m_Controller: {fileID: 9100000, guid: d114d056163b710458f3d669b926dcce, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -17143,6 +17166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 1452859398}
+  languages: []
   romanianText: "R\u0103m\xE2i la curent cu schimb\u0103rile importante de pe litoral."
   englishText: Stay up to date with important changes on the coast.
 --- !u!114 &1452859402
@@ -17653,6 +17677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 1480489082}
+  languages: []
   romanianText: "Recomand\u0103ri despre plaje"
   englishText: Recommended Beaches
 --- !u!114 &1480489086
@@ -17795,7 +17820,7 @@ Animator:
   m_GameObject: {fileID: 1498777717}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: dac55de5af7a2f848a8fc1e6cc347301, type: 2}
+  m_Controller: {fileID: 9100000, guid: d114d056163b710458f3d669b926dcce, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -18114,6 +18139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 1502607363}
+  languages: []
   romanianText: "\xCEnapoi"
   englishText: Back
 --- !u!1 &1522952230
@@ -18515,6 +18541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 1529604177}
+  languages: []
   romanianText: "Englez\u0103"
   englishText: English
 --- !u!114 &1529604180
@@ -18760,6 +18787,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 1534711267}
+  languages: []
   romanianText: "Plaje lini\u0219tite"
   englishText: Quiet beaches
 --- !u!114 &1534711271
@@ -19171,6 +19199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 1548177862}
+  languages: []
   romanianText: Alege limba
   englishText: Choose the language
 --- !u!1 &1562600103
@@ -19205,7 +19234,7 @@ Animator:
   m_GameObject: {fileID: 1562600103}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d130dcf5c78e1a849a20fb0ce6446727, type: 2}
+  m_Controller: {fileID: 9100000, guid: d114d056163b710458f3d669b926dcce, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -20909,6 +20938,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 1637334965}
+  languages: []
   romanianText: Paleta de culori
   englishText: Color palette
 --- !u!114 &1637334969
@@ -21964,6 +21994,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 1697594029}
+  languages: []
   romanianText: Teme
   englishText: Themes
 --- !u!114 &1697594033
@@ -22679,6 +22710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 1752241000}
+  languages: []
   romanianText: "Nout\u0103\u021Bi&Actualiz\u0103ri"
   englishText: News&Updates
 --- !u!224 &1762013008 stripped
@@ -22971,7 +23003,7 @@ Animator:
   m_GameObject: {fileID: 1798784830}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2dc6a184613b2004e8adfc629337324d, type: 2}
+  m_Controller: {fileID: 9100000, guid: d114d056163b710458f3d669b926dcce, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -23903,6 +23935,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 1861902432}
+  languages: []
   romanianText: Teme
   englishText: Themes
 --- !u!114 &1861902436
@@ -24151,7 +24184,7 @@ Animator:
   m_GameObject: {fileID: 1913055312}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cd13eee0819f2c54f8982ad6f32b642f, type: 2}
+  m_Controller: {fileID: 9100000, guid: d114d056163b710458f3d669b926dcce, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -24374,7 +24407,7 @@ Animator:
   m_GameObject: {fileID: 1925386746}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c30bc54759f96024bb0da9983a48a308, type: 2}
+  m_Controller: {fileID: 9100000, guid: fa50773e808f3994a9700bb530df493a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -25141,6 +25174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 1952295750}
+  languages: []
   romanianText: "Nout\u0103\u021Bi \u0219i actualiz\u0103ri"
   englishText: News and updates
 --- !u!114 &1952295754
@@ -26107,6 +26141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 2005512235}
+  languages: []
   romanianText: "Actualiz\u0103ri meteo"
   englishText: Weather updates
 --- !u!114 &2005512239
@@ -26277,6 +26312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 2006641321}
+  languages: []
   romanianText: "Despre aplica\u021Bie"
   englishText: About the app
 --- !u!114 &2006641325
@@ -26743,7 +26779,7 @@ Animator:
   m_GameObject: {fileID: 2046959459}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bd1244e5d16be394c8037403ebab6b96, type: 2}
+  m_Controller: {fileID: 9100000, guid: d114d056163b710458f3d669b926dcce, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -27536,6 +27572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 2116953147}
+  languages: []
   romanianText: 'Descriere:'
   englishText: 'Description:'
 --- !u!114 &2116953151
@@ -28101,6 +28138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 2131269359}
+  languages: []
   romanianText: "\xCEnapoi"
   englishText: Back
 --- !u!1 &2133696064
@@ -28206,7 +28244,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3180460605883322822, guid: 21ad5eeb2210d1244b1697a6bbebb819, type: 3}
       propertyPath: m_Name
-      value: SettingsOptionsManager
+      value: SettingsManager
       objectReference: {fileID: 0}
     - target: {fileID: 7452751953668036558, guid: 21ad5eeb2210d1244b1697a6bbebb819, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28502,6 +28540,10 @@ PrefabInstance:
     - target: {fileID: 5974266213927970502, guid: 7a95dcbaed2b18f4e95907e856fc588a, type: 3}
       propertyPath: m_Name
       value: TransitionsManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974266213927970502, guid: 7a95dcbaed2b18f4e95907e856fc588a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
