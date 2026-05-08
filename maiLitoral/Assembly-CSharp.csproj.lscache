@@ -53,6 +53,14 @@ TemporaryDependencyNodeTargetIdentifier=netstandard2.1
 Assets/Scripts/Beach/
  Beach.cs
  BeachProperties.cs
+Assets/Scripts/Database/
+ BeachData.cs
+ BeachDayPropertyData.cs
+ CalendarDayData.cs
+ DatabaseManager.cs
+ Plugins/SQLite.cs
+ PropertyData.cs
+ ZoneData.cs
 Assets/Scripts/Managers/
  BeachManager.cs
  ButtonsManager.cs
