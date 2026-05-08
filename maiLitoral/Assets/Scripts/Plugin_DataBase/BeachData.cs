@@ -1,8 +1,7 @@
 using SQLite4Unity3d;
 
 // Database model used for storing beach data and its associated zone.
-public class BeachData
-{
+public class BeachData {
 
     // Unique database id for the beach.
     [PrimaryKey, AutoIncrement]

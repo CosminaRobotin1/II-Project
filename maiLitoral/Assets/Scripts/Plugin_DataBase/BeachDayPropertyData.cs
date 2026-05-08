@@ -1,8 +1,7 @@
 using SQLite4Unity3d;
 
 // Stores property values for a specific beach calendar day.
-public class BeachDayPropertyData
-{
+public class BeachDayPropertyData {
 
     // Unique database id for the property value.
     [PrimaryKey, AutoIncrement]

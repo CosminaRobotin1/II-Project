@@ -1,8 +1,7 @@
 using SQLite4Unity3d;
 
 // Stores property definitions used by all beaches.
-public class PropertyData
-{
+public class PropertyData{
     // Unique database id for the property.
     [PrimaryKey, AutoIncrement]
     public int Id { get; set; }

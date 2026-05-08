@@ -1,8 +1,7 @@
 using SQLite4Unity3d;
 
 // Stores zone information from the database.
-public class ZoneData
-{
+public class ZoneData {
 
     // Unique database id for the zone.
     [PrimaryKey, AutoIncrement]

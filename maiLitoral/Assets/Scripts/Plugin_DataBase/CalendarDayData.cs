@@ -1,8 +1,7 @@
 using SQLite4Unity3d;
 
 // Stores a calendar day associated with a specific beach.
-public class CalendarDayData
-{
+public class CalendarDayData {
 
     // Unique database id for the calendar day.
     [PrimaryKey, AutoIncrement]
