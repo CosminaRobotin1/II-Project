@@ -71,7 +71,7 @@ public class SettingsManager : MonoBehaviour {
     /* Custom Methods */
 
     private void Awake() { // Initializes the manager and keeps it alive between scenes
-        ResetSavedSettings(); // ONLY FOR NOW *TO BE DELETED WHEN FINISHING THE APP*
+        // ResetSavedSettings(); // ONLY FOR NOW *TO BE DELETED WHEN FINISHING THE APP*
         if (Instance != null && Instance != this) {
             Destroy(gameObject); // Prevents duplicated settings managers after scene reloads
             return;
@@ -143,6 +143,17 @@ public class SettingsManager : MonoBehaviour {
         }
     }
     private void SelectPalette(int index) { // Selects a new palette and saves it locally
+        if (index < 0) { // Checks if the received index represents the default palette reset 
+            hasSavedPalette = false; // Marks that there is no custom palette selected
+            PlayerPrefs.DeleteKey(PaletteKey); // Removes the saved palette from local storage  
+            PlayerPrefs.Save(); // Forces unity to save the updated preferences
+            ApplyVisualOptions(); // Applies the default palette visually
+            RefreshChecks(); // Refreshes all palette check marks
+            return;
+        }
+        if (!IsValidIndex(index, colorPalettes.Count)) { // Stops invalid indexes safely
+            return;
+        }
         selectedPaletteIndex = index;
         hasSavedPalette = true;
         PlayerPrefs.SetInt(PaletteKey, selectedPaletteIndex); // Stores the selected palette index
@@ -170,13 +181,16 @@ public class SettingsManager : MonoBehaviour {
         ApplyLanguage();
         RefreshChecks();
     }
-    private void ApplySavedOptions() { // Applies only the options that were previously selected by the user
-        if (hasSavedPalette || hasSavedTheme) {
-            ApplyVisualOptions();
-        }
+    private void ApplySavedOptions() { // Applies current saved settings or default settings
+        // Applies visual settings every time; this ensures that the default palette is restored after scene changes or play mode restarts
+        ApplyVisualOptions();
+        // Applies the saved language only if
+        // The user selected a language before
         if (hasSavedLanguage) {
             ApplyLanguage();
         }
+        // Refreshes all selected check marks
+        // After visuals and language are updated
         RefreshChecks();
     }
     private void ApplyVisualOptions() { // Applies the selected palette and selected theme to all palette targets
@@ -248,13 +262,15 @@ public class SettingsManager : MonoBehaviour {
     }
     private void RefreshButtonGroup(List<OptionButton> buttons, bool hasSavedSelection, int selectedIndex) { // Refreshes one option button group
         if (buttons == null) {
-            return;
+            return; // Stops safely if the button list is missing
         }
         for (int i = 0; i < buttons.Count; i++) {
             if (buttons[i] == null) {
-                continue;
+                continue; // Ignores missing button references
             }
-            bool isSelected = hasSavedSelection && i == selectedIndex;
+            // Compares the saved index with the real option index from the button, not with the position of the button inside the sorted list.
+            bool isSelected = hasSavedSelection && buttons[i].OptionIndex == selectedIndex;
+            // Activates the selected check only on the correct option button.
             buttons[i].SetSelected(isSelected);
         }
     }
