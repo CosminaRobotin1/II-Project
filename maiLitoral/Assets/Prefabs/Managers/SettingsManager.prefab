@@ -46,11 +46,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SettingsOptionsManager
   defaultPalette:
     paletteName: Default
-    lightColor: {r: 1, g: 0.9490196, b: 0.88235295, a: 0}
-    softColor: {r: 0.8784314, g: 0.8, b: 0.69803923, a: 0}
-    mediumColor: {r: 0.98039216, g: 0.8235294, b: 0.62352943, a: 0}
-    accentColor: {r: 0.972549, g: 0.654902, b: 0.2509804, a: 0}
-    darkColor: {r: 0.16470589, g: 0.18039216, b: 0.23137255, a: 0}
+    lightColor: {r: 1, g: 0.9490196, b: 0.88235295, a: 1}
+    softColor: {r: 0.96981126, g: 0.8515759, b: 0.7008258, a: 1}
+    mediumColor: {r: 0.972549, g: 0.654902, b: 0.2509804, a: 1}
+    accentColor: {r: 0.8113208, g: 0.5532239, b: 0.2250267, a: 1}
+    darkColor: {r: 0.16470589, g: 0.18039216, b: 0.23137255, a: 1}
   defaultThemeIndex: 0
   defaultLanguageIndex: 0
   colorPalettes:
