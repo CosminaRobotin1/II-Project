@@ -66,13 +66,25 @@
     <Compile Include="Assets\Scripts\Beach\BeachProperties.cs" />
     <Compile Include="Assets\Tests\Managers\ZoneManagerTest.cs" />
     <Compile Include="Assets\Scripts\Managers\ZonesManager.cs" />
+<<<<<<< main
     <Compile Include="Assets\Tests\Managers\SearchManagerTest.cs" />
+=======
+    <Compile Include="Assets\Scripts\Settings\Style\PaletteTarget.cs" />
+>>>>>>> main
     <Compile Include="Assets\Scripts\Managers\ButtonsManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\SettingsManager.cs" />
     <Compile Include="Assets\Scripts\Managers\SoundManager.cs" />
     <Compile Include="Assets\Scripts\Managers\SearchManager.cs" />
     <Compile Include="Assets\Scripts\Beach\Beach.cs" />
+<<<<<<< main
+=======
+    <Compile Include="Assets\Tests\Settings\LanguageSelectionManagerTest.cs" />
+    <Compile Include="Assets\Tests\Search\SearchAutoCompleteControllerTest.cs" />
+    <Compile Include="Assets\Scripts\Settings\OptionButton.cs" />
+>>>>>>> main
     <Compile Include="Assets\Scripts\Managers\CalendarManager.cs" />
     <Compile Include="Assets\Scripts\Managers\TransitionsManager.cs" />
+    <Compile Include="Assets\Scripts\Settings\Language\LocalizedText.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

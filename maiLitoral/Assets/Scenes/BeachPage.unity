@@ -219,10 +219,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BeachManager
       objectReference: {fileID: 0}
-    - target: {fileID: 5791828246941081167, guid: 290631a48e81d364bb065f04ab14574b, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: df0d4ae0d3fae2c488dc72c02adc532f, type: 2}
     - target: {fileID: 6235997638662104970, guid: 290631a48e81d364bb065f04ab14574b, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -235,10 +231,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8916560030178900824, guid: 290631a48e81d364bb065f04ab14574b, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: df0d4ae0d3fae2c488dc72c02adc532f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -339,22 +331,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5070748449015011486, guid: beafad787a9090a4a89a2c9c409bce28, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5719717204118970926, guid: beafad787a9090a4a89a2c9c409bce28, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5719717204118970926, guid: beafad787a9090a4a89a2c9c409bce28, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8990465674874668760, guid: beafad787a9090a4a89a2c9c409bce28, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8990465674874668760, guid: beafad787a9090a4a89a2c9c409bce28, type: 3}
-      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -883,10 +859,6 @@ PrefabInstance:
       propertyPath: beachManager
       value: 
       objectReference: {fileID: 1675015882}
-    - target: {fileID: 2140693774480134236, guid: 1e5f5bddd2c19a647a25c52848a44a9b, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: df0d4ae0d3fae2c488dc72c02adc532f, type: 2}
     - target: {fileID: 4610532256990217141, guid: 1e5f5bddd2c19a647a25c52848a44a9b, type: 3}
       propertyPath: m_Name
       value: CalendarManager

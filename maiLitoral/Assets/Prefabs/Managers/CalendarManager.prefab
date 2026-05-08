@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5789374589242861841}
   - component: {fileID: 2625278826627187632}
   - component: {fileID: 1631291494160746460}
+  - component: {fileID: 7849829287653842701}
   m_Layer: 5
   m_Name: CalendarContent
   m_TagString: Untagged
@@ -80,6 +81,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7849829287653842701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164980868949386845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 1631291494160746460}
+  targetText: {fileID: 0}
+  colorRole: 4
+  preserveAlpha: 1
 --- !u!1 &378295851844351573
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,6 +109,8 @@ GameObject:
   - component: {fileID: 5194533101893270044}
   - component: {fileID: 6277541493463648127}
   - component: {fileID: 127372545489814873}
+  - component: {fileID: 3631377225503507885}
+  - component: {fileID: 8198256685402406879}
   m_Layer: 5
   m_Name: Wednesday
   m_TagString: Untagged
@@ -113,9 +132,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2349170976332293177}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 279.64285, y: -50}
   m_SizeDelta: {x: 115, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5194533101893270044
@@ -238,6 +257,38 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &3631377225503507885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378295851844351573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 0}
+  targetText: {fileID: 6277541493463648127}
+  colorRole: 0
+  preserveAlpha: 1
+--- !u!114 &8198256685402406879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378295851844351573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf88eecb0ff2b6549a61b1943e469a7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
+  targetText: {fileID: 6277541493463648127}
+  languages: []
+  romanianText: Miercuri
+  englishText: Wed
 --- !u!1 &484753595182577811
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,6 +301,8 @@ GameObject:
   - component: {fileID: 8778554486586861698}
   - component: {fileID: 379690787377009684}
   - component: {fileID: 1056626777275704027}
+  - component: {fileID: 1717333413723934100}
+  - component: {fileID: 4589654180733613693}
   m_Layer: 5
   m_Name: Tuesday
   m_TagString: Untagged
@@ -271,9 +324,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2349170976332293177}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 159.2857, y: -50}
   m_SizeDelta: {x: 100, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8778554486586861698
@@ -396,6 +449,38 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &1717333413723934100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484753595182577811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 0}
+  targetText: {fileID: 379690787377009684}
+  colorRole: 0
+  preserveAlpha: 1
+--- !u!114 &4589654180733613693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484753595182577811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf88eecb0ff2b6549a61b1943e469a7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
+  targetText: {fileID: 379690787377009684}
+  languages: []
+  romanianText: "Mar\u021Bi"
+  englishText: Tue
 --- !u!1 &516608896883105543
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,6 +492,7 @@ GameObject:
   - component: {fileID: 8375655716142908541}
   - component: {fileID: 3762193924509245654}
   - component: {fileID: 7554866233433210693}
+  - component: {fileID: 3205819351106841350}
   m_Layer: 5
   m_Name: CalendarMask
   m_TagString: Untagged
@@ -472,6 +558,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3205819351106841350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516608896883105543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 7554866233433210693}
+  targetText: {fileID: 0}
+  colorRole: 1
+  preserveAlpha: 1
 --- !u!1 &749215416080759417
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,6 +586,7 @@ GameObject:
   - component: {fileID: 4986850093735742928}
   - component: {fileID: 1004943867550863925}
   - component: {fileID: 7460575809314003847}
+  - component: {fileID: 5428055773379478108}
   m_Layer: 5
   m_Name: Icon
   m_TagString: Untagged
@@ -568,6 +671,22 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &5428055773379478108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749215416080759417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 1004943867550863925}
+  targetText: {fileID: 0}
+  colorRole: 0
+  preserveAlpha: 1
 --- !u!1 &1045832581331516444
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,6 +700,7 @@ GameObject:
   - component: {fileID: 2042367875104225734}
   - component: {fileID: 5193859406845407567}
   - component: {fileID: 2140693774480134236}
+  - component: {fileID: 4592066955321359505}
   m_Layer: 5
   m_Name: 'BackButton '
   m_TagString: Untagged
@@ -712,7 +832,7 @@ Animator:
   m_GameObject: {fileID: 1045832581331516444}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c4e5bdb61b802f4408b04a49e43fabd3, type: 2}
+  m_Controller: {fileID: 9100000, guid: df0d4ae0d3fae2c488dc72c02adc532f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -724,6 +844,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4592066955321359505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045832581331516444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 2042367875104225734}
+  targetText: {fileID: 0}
+  colorRole: 2
+  preserveAlpha: 1
 --- !u!1 &1361534642632698699
 GameObject:
   m_ObjectHideFlags: 0
@@ -735,6 +871,7 @@ GameObject:
   - component: {fileID: 7387733264899468938}
   - component: {fileID: 1067869644455407530}
   - component: {fileID: 8825338331048446095}
+  - component: {fileID: 4358862238904349898}
   m_Layer: 5
   m_Name: BeachCalendar
   m_TagString: Untagged
@@ -802,6 +939,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4358862238904349898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361534642632698699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 8825338331048446095}
+  targetText: {fileID: 0}
+  colorRole: 0
+  preserveAlpha: 1
 --- !u!1 &2060782104225854056
 GameObject:
   m_ObjectHideFlags: 0
@@ -814,6 +967,7 @@ GameObject:
   - component: {fileID: 2609203479466731553}
   - component: {fileID: 6025146604078444637}
   - component: {fileID: 7315311718568352590}
+  - component: {fileID: 5764134683112024613}
   m_Layer: 5
   m_Name: Week5
   m_TagString: Untagged
@@ -835,10 +989,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 997451254435197280}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 100}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 20, y: -870}
+  m_SizeDelta: {x: 860, y: 100}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &2609203479466731553
 CanvasRenderer:
@@ -904,6 +1058,22 @@ MonoBehaviour:
   m_ChildScaleWidth: 1
   m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
+--- !u!114 &5764134683112024613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060782104225854056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 6025146604078444637}
+  targetText: {fileID: 0}
+  colorRole: 1
+  preserveAlpha: 1
 --- !u!1 &3017365711228029494
 GameObject:
   m_ObjectHideFlags: 0
@@ -916,6 +1086,8 @@ GameObject:
   - component: {fileID: 7207083663766102948}
   - component: {fileID: 3454796792770611877}
   - component: {fileID: 3865785789583442722}
+  - component: {fileID: 6323776262773618702}
+  - component: {fileID: 1995380804327875468}
   m_Layer: 5
   m_Name: Saturday
   m_TagString: Untagged
@@ -937,9 +1109,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2349170976332293177}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 638.2143, y: -50}
   m_SizeDelta: {x: 125, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7207083663766102948
@@ -1062,6 +1234,38 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &6323776262773618702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3017365711228029494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 0}
+  targetText: {fileID: 3454796792770611877}
+  colorRole: 0
+  preserveAlpha: 1
+--- !u!114 &1995380804327875468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3017365711228029494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf88eecb0ff2b6549a61b1943e469a7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
+  targetText: {fileID: 3454796792770611877}
+  languages: []
+  romanianText: "S\xE2mb\u0103t\u0103"
+  englishText: Sat
 --- !u!1 &3489759181939838028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1074,6 +1278,7 @@ GameObject:
   - component: {fileID: 4050094678245864448}
   - component: {fileID: 2596640063478347445}
   - component: {fileID: 5700421149660328002}
+  - component: {fileID: 46486871027955838}
   m_Layer: 5
   m_Name: DayNames
   m_TagString: Untagged
@@ -1102,10 +1307,10 @@ RectTransform:
   - {fileID: 5640899524943518723}
   m_Father: {fileID: 997451254435197280}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 100}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 450, y: -20}
+  m_SizeDelta: {x: 860, y: 100}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &4050094678245864448
 CanvasRenderer:
@@ -1171,6 +1376,22 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &46486871027955838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3489759181939838028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 2596640063478347445}
+  targetText: {fileID: 0}
+  colorRole: 2
+  preserveAlpha: 1
 --- !u!1 &3509202422655374364
 GameObject:
   m_ObjectHideFlags: 0
@@ -1183,6 +1404,7 @@ GameObject:
   - component: {fileID: 2037526546791790777}
   - component: {fileID: 8712579936104594916}
   - component: {fileID: 4694577223071855537}
+  - component: {fileID: 1166417136566717633}
   m_Layer: 5
   m_Name: Week1
   m_TagString: Untagged
@@ -1204,10 +1426,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 997451254435197280}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 100}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 20, y: -270}
+  m_SizeDelta: {x: 860, y: 100}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &2037526546791790777
 CanvasRenderer:
@@ -1273,6 +1495,22 @@ MonoBehaviour:
   m_ChildScaleWidth: 1
   m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
+--- !u!114 &1166417136566717633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3509202422655374364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 8712579936104594916}
+  targetText: {fileID: 0}
+  colorRole: 1
+  preserveAlpha: 1
 --- !u!1 &3543161067561858145
 GameObject:
   m_ObjectHideFlags: 0
@@ -1285,6 +1523,8 @@ GameObject:
   - component: {fileID: 1059669173700438388}
   - component: {fileID: 1251200610484586701}
   - component: {fileID: 5849018872463123444}
+  - component: {fileID: 2527395240636903679}
+  - component: {fileID: 2216363399704397752}
   m_Layer: 5
   m_Name: Friday
   m_TagString: Untagged
@@ -1306,9 +1546,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2349170976332293177}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 512.8571, y: -50}
   m_SizeDelta: {x: 100, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1059669173700438388
@@ -1431,6 +1671,38 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &2527395240636903679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3543161067561858145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 0}
+  targetText: {fileID: 1251200610484586701}
+  colorRole: 0
+  preserveAlpha: 1
+--- !u!114 &2216363399704397752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3543161067561858145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf88eecb0ff2b6549a61b1943e469a7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
+  targetText: {fileID: 1251200610484586701}
+  languages: []
+  romanianText: Vineri
+  englishText: Fri
 --- !u!1 &3726262230402713116
 GameObject:
   m_ObjectHideFlags: 0
@@ -1443,6 +1715,8 @@ GameObject:
   - component: {fileID: 5537170551747244007}
   - component: {fileID: 3715176818958082836}
   - component: {fileID: 8700370539595558607}
+  - component: {fileID: 3087015846687669583}
+  - component: {fileID: 2621608188894943992}
   m_Layer: 5
   m_Name: Monday
   m_TagString: Untagged
@@ -1464,9 +1738,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2349170976332293177}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 46.42857, y: -50}
   m_SizeDelta: {x: 100, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5537170551747244007
@@ -1589,6 +1863,38 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &3087015846687669583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3726262230402713116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 0}
+  targetText: {fileID: 3715176818958082836}
+  colorRole: 0
+  preserveAlpha: 1
+--- !u!114 &2621608188894943992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3726262230402713116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf88eecb0ff2b6549a61b1943e469a7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
+  targetText: {fileID: 3715176818958082836}
+  languages: []
+  romanianText: Luni
+  englishText: Mon
 --- !u!1 &3848322705207602377
 GameObject:
   m_ObjectHideFlags: 0
@@ -1601,6 +1907,7 @@ GameObject:
   - component: {fileID: 4341001180899555513}
   - component: {fileID: 3242238263484212006}
   - component: {fileID: 791407561951613290}
+  - component: {fileID: 490002680175768290}
   m_Layer: 5
   m_Name: Week2
   m_TagString: Untagged
@@ -1622,10 +1929,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 997451254435197280}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 100}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 20, y: -420}
+  m_SizeDelta: {x: 860, y: 100}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &4341001180899555513
 CanvasRenderer:
@@ -1691,6 +1998,22 @@ MonoBehaviour:
   m_ChildScaleWidth: 1
   m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
+--- !u!114 &490002680175768290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3848322705207602377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 3242238263484212006}
+  targetText: {fileID: 0}
+  colorRole: 1
+  preserveAlpha: 1
 --- !u!1 &4446738515800526191
 GameObject:
   m_ObjectHideFlags: 0
@@ -1703,6 +2026,8 @@ GameObject:
   - component: {fileID: 4549420321691670227}
   - component: {fileID: 5342148477645197183}
   - component: {fileID: 2497615561937062934}
+  - component: {fileID: 4796738393318251315}
+  - component: {fileID: 2141168724734288229}
   m_Layer: 5
   m_Name: Sunday
   m_TagString: Untagged
@@ -1724,9 +2049,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2349170976332293177}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 778.5714, y: -50}
   m_SizeDelta: {x: 130, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4549420321691670227
@@ -1849,6 +2174,38 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &4796738393318251315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4446738515800526191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 0}
+  targetText: {fileID: 5342148477645197183}
+  colorRole: 0
+  preserveAlpha: 1
+--- !u!114 &2141168724734288229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4446738515800526191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf88eecb0ff2b6549a61b1943e469a7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
+  targetText: {fileID: 5342148477645197183}
+  languages: []
+  romanianText: "Duminic\u0103"
+  englishText: Sun
 --- !u!1 &4610532256990217141
 GameObject:
   m_ObjectHideFlags: 0
@@ -1930,6 +2287,7 @@ GameObject:
   - component: {fileID: 8520679475857122969}
   - component: {fileID: 850832837118888029}
   - component: {fileID: 1280934094934556234}
+  - component: {fileID: 5507774772700336410}
   m_Layer: 5
   m_Name: CalendarHolder
   m_TagString: Untagged
@@ -2026,6 +2384,22 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &5507774772700336410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4666994807806713574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 850832837118888029}
+  targetText: {fileID: 0}
+  colorRole: 3
+  preserveAlpha: 1
 --- !u!1 &4770602173585165030
 GameObject:
   m_ObjectHideFlags: 0
@@ -2037,6 +2411,8 @@ GameObject:
   - component: {fileID: 1982934308176745245}
   - component: {fileID: 3293926448314734797}
   - component: {fileID: 2398318828656161483}
+  - component: {fileID: 7873206650909114305}
+  - component: {fileID: 6973947483092165773}
   m_Layer: 5
   m_Name: CalendarText
   m_TagString: Untagged
@@ -2163,6 +2539,38 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7873206650909114305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4770602173585165030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 0}
+  targetText: {fileID: 2398318828656161483}
+  colorRole: 3
+  preserveAlpha: 1
+--- !u!114 &6973947483092165773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4770602173585165030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf88eecb0ff2b6549a61b1943e469a7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
+  targetText: {fileID: 2398318828656161483}
+  languages: []
+  romanianText: "Selecteaz\u0103 ziua"
+  englishText: Select the day
 --- !u!1 &5283137571880867086
 GameObject:
   m_ObjectHideFlags: 0
@@ -2174,6 +2582,8 @@ GameObject:
   - component: {fileID: 1412581153840601221}
   - component: {fileID: 93024417660230389}
   - component: {fileID: 5346298614912562992}
+  - component: {fileID: 9168829424813876315}
+  - component: {fileID: 3882865232812443200}
   m_Layer: 5
   m_Name: CurrentBeach
   m_TagString: Untagged
@@ -2228,7 +2638,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Current Beach
+  m_text: "Plaja actual\u0103"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 06d688c6684c2804599a521bb0fda393, type: 2}
   m_sharedMaterial: {fileID: -5583523190763574906, guid: 06d688c6684c2804599a521bb0fda393, type: 2}
@@ -2300,6 +2710,38 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &9168829424813876315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5283137571880867086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 0}
+  targetText: {fileID: 5346298614912562992}
+  colorRole: 4
+  preserveAlpha: 1
+--- !u!114 &3882865232812443200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5283137571880867086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf88eecb0ff2b6549a61b1943e469a7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
+  targetText: {fileID: 5346298614912562992}
+  languages: []
+  romanianText: "Plaja actual\u0103"
+  englishText: Current Beach
 --- !u!1 &6015837323549834166
 GameObject:
   m_ObjectHideFlags: 0
@@ -2312,6 +2754,7 @@ GameObject:
   - component: {fileID: 4201432635752961164}
   - component: {fileID: 3540923879931824990}
   - component: {fileID: 5902775846880414814}
+  - component: {fileID: 399786687650864491}
   m_Layer: 5
   m_Name: Week3
   m_TagString: Untagged
@@ -2333,10 +2776,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 997451254435197280}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 100}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 20, y: -570}
+  m_SizeDelta: {x: 860, y: 100}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &4201432635752961164
 CanvasRenderer:
@@ -2402,6 +2845,22 @@ MonoBehaviour:
   m_ChildScaleWidth: 1
   m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
+--- !u!114 &399786687650864491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6015837323549834166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 3540923879931824990}
+  targetText: {fileID: 0}
+  colorRole: 1
+  preserveAlpha: 1
 --- !u!1 &7196792629530903065
 GameObject:
   m_ObjectHideFlags: 0
@@ -2414,6 +2873,7 @@ GameObject:
   - component: {fileID: 2089048000274924954}
   - component: {fileID: 6973278786927264374}
   - component: {fileID: 2652303281312862878}
+  - component: {fileID: 3991114295607950308}
   m_Layer: 5
   m_Name: MonthLeftButton
   m_TagString: Untagged
@@ -2534,6 +2994,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3991114295607950308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7196792629530903065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 6973278786927264374}
+  targetText: {fileID: 0}
+  colorRole: 1
+  preserveAlpha: 1
 --- !u!1 &7295875913437306196
 GameObject:
   m_ObjectHideFlags: 0
@@ -2546,6 +3022,8 @@ GameObject:
   - component: {fileID: 501001569487568690}
   - component: {fileID: 83862246195969143}
   - component: {fileID: 6605592779203453514}
+  - component: {fileID: 9074131634679419224}
+  - component: {fileID: 6578636682666983620}
   m_Layer: 5
   m_Name: Thursday
   m_TagString: Untagged
@@ -2567,9 +3045,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2349170976332293177}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 399.99997, y: -50}
   m_SizeDelta: {x: 100, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &501001569487568690
@@ -2692,6 +3170,38 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &9074131634679419224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7295875913437306196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 0}
+  targetText: {fileID: 83862246195969143}
+  colorRole: 0
+  preserveAlpha: 1
+--- !u!114 &6578636682666983620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7295875913437306196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf88eecb0ff2b6549a61b1943e469a7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
+  targetText: {fileID: 83862246195969143}
+  languages: []
+  romanianText: Joi
+  englishText: Thu
 --- !u!1 &7494509770394414216
 GameObject:
   m_ObjectHideFlags: 0
@@ -2704,6 +3214,7 @@ GameObject:
   - component: {fileID: 1229022195280042601}
   - component: {fileID: 3362698182129530618}
   - component: {fileID: 5416258043244027232}
+  - component: {fileID: 3442456804989861249}
   m_Layer: 5
   m_Name: Week4
   m_TagString: Untagged
@@ -2725,10 +3236,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 997451254435197280}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 100}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 20, y: -720}
+  m_SizeDelta: {x: 860, y: 100}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &1229022195280042601
 CanvasRenderer:
@@ -2794,6 +3305,22 @@ MonoBehaviour:
   m_ChildScaleWidth: 1
   m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
+--- !u!114 &3442456804989861249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7494509770394414216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 3362698182129530618}
+  targetText: {fileID: 0}
+  colorRole: 1
+  preserveAlpha: 1
 --- !u!1 &8599377862120382132
 GameObject:
   m_ObjectHideFlags: 0
@@ -2806,6 +3333,7 @@ GameObject:
   - component: {fileID: 2200770566083176176}
   - component: {fileID: 6448187605944199710}
   - component: {fileID: 8829785306459498803}
+  - component: {fileID: 5569434828920146926}
   m_Layer: 5
   m_Name: MonthRightButton
   m_TagString: Untagged
@@ -2926,6 +3454,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5569434828920146926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8599377862120382132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 6448187605944199710}
+  targetText: {fileID: 0}
+  colorRole: 1
+  preserveAlpha: 1
 --- !u!1 &9185025894243368331
 GameObject:
   m_ObjectHideFlags: 0
@@ -2937,6 +3481,7 @@ GameObject:
   - component: {fileID: 3108862438980937865}
   - component: {fileID: 8257066652997884451}
   - component: {fileID: 1057840313818759765}
+  - component: {fileID: 7997974991034085017}
   m_Layer: 5
   m_Name: CurrentDate
   m_TagString: Untagged
@@ -3063,3 +3608,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7997974991034085017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9185025894243368331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
+  targetImage: {fileID: 0}
+  targetText: {fileID: 1057840313818759765}
+  colorRole: 3
+  preserveAlpha: 1

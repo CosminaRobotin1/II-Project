@@ -58,9 +58,14 @@ Assets/Scripts/Managers/
  ButtonsManager.cs
  CalendarManager.cs
  SearchManager.cs
+ SettingsManager.cs
  SoundManager.cs
  TransitionsManager.cs
  ZonesManager.cs
+Assets/Scripts/Settings/
+ Language/LocalizedText.cs
+ OptionButton.cs
+ Style/PaletteTarget.cs
 Assets/Tests/
  Beach/BeachPropertiesNavigationManagerTest.cs
  Search/
