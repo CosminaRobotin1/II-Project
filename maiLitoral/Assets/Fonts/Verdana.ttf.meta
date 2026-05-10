@@ -11,7 +11,7 @@ TrueTypeFontImporter:
   fontNames:
   - Verdana
   fallbackFontReferences: []
-  customCharacters: 
+  customCharacters: "\u0103\xE2\xEE\u0219\u021B\u0102\xC2\xCE\u0218\u021A"
   fontRenderingMode: 0
   ascentCalculationMode: 1
   useLegacyBoundsCalculation: 0

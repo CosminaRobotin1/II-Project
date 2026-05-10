@@ -15,38 +15,42 @@ public class ZonesManager : MonoBehaviour {
     private static int currentPressedZone; // Attribute for identifying the current pressed zone
 
     /* Main Methods */
-    
-    private void Awake() {
-        LoadZonesFromDatabase(); // Loading zones from data base *needs to be implemented*
+
+    private void Start() { // Loads all zones from the database and creates a button for each one
+        LoadZonesFromDatabase();
     }
 
     /* Custom Methods */
 
-    private void LoadZonesFromDatabase() { // Loading zones from data base *needs to be implemented*
-        // For each zone in database, add a new object inside zone list
-        if(zones == null || SceneManager.GetActiveScene().name != "StartingPage") {
+    private void LoadZonesFromDatabase() { // Loads all zones from the database and creates a button for each one
+        if (zones == null || SceneManager.GetActiveScene().name != "StartingPage") {
             return;
         }
-        for(int i = 0; i < 10; i++) { // Example of implementation
-            GameObject newZone = Instantiate(zonePrefab, zonesContent.transform); // Instantiating a new zone
-            newZone.name = "Zone_" + i; // Take the name from the database
-            newZone.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = newZone.name; // Setting the zone name in it's text field
-            int index = i; // Referencing index (so that it can be transmitted as parameter)
-            newZone.GetComponent<Button>().onClick.AddListener(() => SelectZone(index)); // Adding the correspondent listener to zone button
-            zones.Add(newZone); // Adding the zone in the list
+        if (DatabaseManager.Instance == null) {
+            UnityEngine.Debug.LogError("DatabaseManager instance is missing.");
+            return;
+        }
+        List<ZoneData> zonesFromDatabase = DatabaseManager.Instance.GetAllZones();
+        foreach (ZoneData zoneData in zonesFromDatabase) {
+            GameObject newZone = Instantiate(zonePrefab, zonesContent.transform);
+            newZone.name = zoneData.Name;
+            newZone.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = zoneData.Name;
+            int zoneId = zoneData.Id;
+            newZone.GetComponent<Button>().onClick.AddListener(() => SelectZone(zoneId));
+            zones.Add(newZone);
         }
     }
-    public void SelectZone(int index) { // Open selected zone panel
-        currentPressedZone = index; // Saving the current pressed zone
-        ButtonsManager.ReturnToPage("BeachPage"); // Switching scene
+    private void SelectZone(int index) { // Saves the selected zone id and opens the beach page
+        currentPressedZone = index;
+        ButtonsManager.ReturnToPage("BeachPage");
     }
 
     /* Getters */
 
-    public static int GetCurrentPressedZone() { // Getter for the current zone pressed
+    public static int GetCurrentPressedZone() { // Returns the id of the currently selected zone
         return currentPressedZone;
     }
-    public List<GameObject> GetZones() { // Getter for zones list
+    public List<GameObject> GetZones() { // Returns the instantiated zone objects
         return zones;
     }
 }

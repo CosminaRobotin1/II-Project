@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -10,8 +9,8 @@ public class BeachManager : MonoBehaviour {
 
     /* Attributes */
 
-    [SerializeField] private GameObject calendarManager; // Attribute for calendar manager (reference from calendar manager)_
-    [SerializeField] private GameObject beachCalendar; // Attribute for calendar object (reference from calendar manager)
+    [SerializeField] private GameObject calendarManager; // Attribute for calendar manager
+    [SerializeField] private GameObject beachCalendar; // Attribute for calendar object
     [SerializeField] private GameObject beachesContent; // Attribute for beaches panel content
     [SerializeField] private GameObject propertiesContent; // Attribute for properties panel content
     [SerializeField] private GameObject beachPrefab; // Attribute that represents the standard form of a beach
@@ -20,12 +19,7 @@ public class BeachManager : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI propertiesText; // Attribute for properties text
     [SerializeField] private List<GameObject> scrollViews; // Attribute for beach manager scroll views
     private List<GameObject> beaches = new List<GameObject>(); // Attribute for beaches list
-    private List<(string name, float rank)> top3Ranks = new List<(string name, float rank)>() { // Attribute for top 3 beaches *delete values after database implementation*
-        ("Mamaia", 0.4f),
-        ("Mangalia", 2.6f),
-        ("Vama Veche", 3.5f),
-    };
-    private Color[] statusColors = new Color[] { // Attribute for 5 colors (each for status 0 -> 4)
+    private Color[] statusColors = new Color[] { // Attribute for 5 colors, each for status 0 -> 4
         Color.red,
         new Color(1f, 0.5f, 0f),
         Color.yellow,
@@ -38,130 +32,145 @@ public class BeachManager : MonoBehaviour {
     /* Main Methods */
 
     private void Start() {
-        LoadBeachesFromDatabase(); // Loading beaches from data base *needs to be implemented*
+        LoadBeachesFromDatabase();
     }
 
     /* Custom Methods */
 
-    private void LoadBeachesFromDatabase() { // Loading beaches from data base *needs to be implemented*
-        // For each beach in database, add a new object inside beach list
-        if (beaches == null || SceneManager.GetActiveScene().name == "StartingPage") { // What happend on starting page with the top beaches *needs to be implemented*
-            for (int i = 0; i < 3; i++) {
-                GameObject topBeaches = GameObject.Find("TopBeaches"); // Finding in scene the needed object by it's name (redundant, needs to be changed)
+    private void LoadBeachesFromDatabase() { // Loads top beaches, beach buttons, ranks and properties from the database
+        if (beaches == null) {
+            return;
+        }
+        string today = DateTime.Now.ToString("dd-MM-yyyy");
+        if (SceneManager.GetActiveScene().name == "StartingPage") {
+            List<(string name, float rank)> top3Ranks = DatabaseManager.Instance.GetTop3BeachesByRank(today);
+            GameObject topBeaches = GameObject.Find("TopBeaches");
+            if (topBeaches == null) {
+                return;
+            }
+            for (int i = 0; i < top3Ranks.Count && i < 3; i++) {
                 topBeaches.transform.GetChild(i).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = top3Ranks[i].name;
-                topBeaches.transform.GetChild(i).transform.GetChild(1).GetComponent<Image>().color = statusColors[Mathf.FloorToInt(top3Ranks[i].rank + 0.5f)]; // Adding status color
-                // topBeaches.transform.GetChild(i).transform.GetChild(2).GetComponent<Image>().sprite = something; // Need to add image from database (most probably from database)
+                topBeaches.transform.GetChild(i).transform.GetChild(1).GetComponent<Image>().color = statusColors[Mathf.Clamp(Mathf.FloorToInt(top3Ranks[i].rank + 0.5f), 0, 4)];
             }
             return;
         }
-
+        int selectedZoneId = ZonesManager.GetCurrentPressedZone();
+        List<BeachData> beachesFromDatabase = DatabaseManager.Instance.GetBeachesByZone(selectedZoneId);
         DateTime firstDayOfThisMonth = new DateTime(DateTime.Now.Date.Year, DateTime.Now.Date.Month, 1);
         DateTime firstDayOfLastMonth = firstDayOfThisMonth.AddMonths(-1);
-
-        for (int i = 0; i < ZonesManager.GetCurrentPressedZone() * UnityEngine.Random.Range(1, 5) + 1; i++) { // Example of implementation *needs database implementation*
-            GameObject newBeach = Instantiate(beachPrefab, beachesContent.transform); // Instantiating a new beach
-            newBeach.name = "Beach_" + i; // Take the name from the database *needs database implementation*
-            newBeach.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = newBeach.name; // Setting the zone name in it's text field
-            newBeach.AddComponent<Beach>(); // Adding beach script for each beach
-            Beach currentBeachScript = newBeach.GetComponent<Beach>(); // Getting the previous script aded
-
-            for (DateTime indexDate = firstDayOfLastMonth; indexDate <= DateTime.Now.Date; indexDate = indexDate.AddDays(1)) { // Example of implementation *needs database implementation*
+        for (int i = 0; i < beachesFromDatabase.Count; i++) {
+            BeachData beachData = beachesFromDatabase[i];
+            GameObject newBeach = Instantiate(beachPrefab, beachesContent.transform);
+            newBeach.name = beachData.Name;
+            newBeach.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = beachData.Name;
+            newBeach.AddComponent<Beach>();
+            Beach currentBeachScript = newBeach.GetComponent<Beach>();
+            currentBeachScript.SetBeachId(beachData.Id);
+            for (DateTime indexDate = firstDayOfLastMonth; indexDate <= DateTime.Now.Date; indexDate = indexDate.AddDays(1)) {
                 string date = indexDate.ToString("dd-MM-yyyy");
-                currentBeachScript.AddRank(date, UnityEngine.Random.Range(1f, 8f) / 2); // Example of adding rank *needs database implementation*
-                for(int j = 0; j < 5 * UnityEngine.Random.Range(4, 8); j++) { // Example of adding properties *needs database implementation*
-                    currentBeachScript.AddProperty(date, "Property_" + j, UnityEngine.Random.Range(1, 25) % 2 == 0);
+                float beachRank = DatabaseManager.Instance.GetRankForBeachDay(beachData.Id, date);
+                currentBeachScript.LoadRankFromDatabase(date, beachRank);
+                List<(string description, bool status)> properties = DatabaseManager.Instance.GetPropertiesForBeachDay(beachData.Id, date);
+                foreach (var property in properties) {
+                    currentBeachScript.LoadPropertyFromDatabase(date, property.description, property.status);
                 }
-                newBeach.transform.GetChild(1).GetComponent<Image>().color = statusColors[Mathf.FloorToInt(currentBeachScript.GetRank()[date] + 0.5f)]; // Adding status color for each beach
+                if (indexDate.Date == DateTime.Now.Date) {
+                    newBeach.transform.GetChild(1).GetComponent<Image>().color = statusColors[Mathf.Clamp(Mathf.FloorToInt(beachRank + 0.5f), 0, 4)];
+                }
             }
-            
-            int index = i; // Referencing index (so that it can be transmitted as parameter)
-            newBeach.GetComponent<Button>().onClick.AddListener(() => SelectBeach(index)); // Adding the correspondent listener to beach button
-            // newBeach.transform.GetChild(2).GetComponent<Image>().sprite = something; // Need to add image from database (most probably from database)
-            beaches.Add(newBeach); // Adding the beach in the list
+            int index = i;
+            newBeach.GetComponent<Button>().onClick.AddListener(() => SelectBeach(index));
+            beaches.Add(newBeach);
         }
     }
-    public void LoadBeachProperties(DateTime currentDate, int beachIndex) { // Loading properties for each beach
-        if (beaches == null || SceneManager.GetActiveScene().name != "BeachPage") { // Making sure there are beaches in list and the scene is the proper one
+    public void LoadBeachProperties(DateTime currentDate, int beachIndex) { // Loads properties for the selected beach and date
+        if (beaches == null || SceneManager.GetActiveScene().name != "BeachPage") {
             return;
         }
-        foreach(Transform property in propertiesContent.transform) { // Destroying already shown properties
+        foreach (Transform property in propertiesContent.transform) {
             Destroy(property.gameObject);
         }
-
-        string date = currentDate.ToString("dd-MM-yyyy"); // Setting a date format
-        List<(string description, bool status)> beachProperties = beaches[beachIndex].GetComponent<Beach>().GetBeachProperties()[date]; // Getting the beach properties for the current beach index
-        List<bool> propertiesModified = beaches[beachIndex].GetComponent<Beach>().GetPropertiesModified()[date]; // Getting the beach properties modified for the current beach index
-
+        string date = currentDate.ToString("dd-MM-yyyy");
+        List<(string description, bool status)> beachProperties = beaches[beachIndex].GetComponent<Beach>().GetBeachProperties()[date];
+        List<bool> propertiesModified = beaches[beachIndex].GetComponent<Beach>().GetPropertiesModified()[date];
         for (int i = 0; i < beachProperties.Count; i++) {
-            GameObject newProperty = Instantiate(propertyPrefab, propertiesContent.transform); // Instantiating a new property
+            GameObject newProperty = Instantiate(propertyPrefab, propertiesContent.transform);
             newProperty.name = beachProperties[i].description;
             newProperty.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = newProperty.name;
-
-            if(reviewMode == true) { // If user is in review mode there can be buttons on the property statuses
+            if (reviewMode == true) {
                 newProperty.transform.GetChild(1).GetComponent<Image>().color = Color.gray;
                 newProperty.transform.GetChild(2).GetComponent<Image>().color = Color.gray;
-                newProperty.transform.GetChild(1).AddComponent<Button>(); newProperty.transform.GetChild(2).AddComponent<Button>(); // Adding buttons on statuses
-                int propertyIndex = i; // Referencing index (so that it can be transmitted as parameter)
-                newProperty.transform.GetChild(1).GetComponent<Button>().onClick.AddListener(() => ReviewProperty(date, beachIndex, propertyIndex, newProperty, true)); // Adding the correspondent listener to positive status button
-                newProperty.transform.GetChild(2).GetComponent<Button>().onClick.AddListener(() => ReviewProperty(date, beachIndex, propertyIndex, newProperty, false)); // Adding the correspondent listener to negative status button
+                newProperty.transform.GetChild(1).gameObject.AddComponent<Button>();
+                newProperty.transform.GetChild(2).gameObject.AddComponent<Button>();
+                int propertyIndex = i;
+                newProperty.transform.GetChild(1).GetComponent<Button>().onClick.AddListener(() => ReviewProperty(date, beachIndex, propertyIndex, newProperty, true));
+                newProperty.transform.GetChild(2).GetComponent<Button>().onClick.AddListener(() => ReviewProperty(date, beachIndex, propertyIndex, newProperty, false));
                 continue;
             }
-            if (propertiesModified[i] == false) { // If there was no edit in database or user is in review mode, property statuses become gray
-                newProperty.transform.GetChild(1).GetComponent<Image>().color = Color.gray;
-                newProperty.transform.GetChild(2).GetComponent<Image>().color = Color.gray;
+            if (propertiesModified[i] == false) {
+                newProperty.transform.GetChild(1).GetComponent<UnityEngine.UI.Image>().color = Color.gray;
+                newProperty.transform.GetChild(2).GetComponent<UnityEngine.UI.Image>().color = Color.gray;
                 continue;
             }
-            if(beachProperties[i].status == true) { // Based on property status, the status indicator gets a color
-                newProperty.transform.GetChild(1).GetComponent<Image>().color = Color.green;
-                newProperty.transform.GetChild(2).GetComponent<Image>().color = Color.gray;
+            if (beachProperties[i].status == true) {
+                newProperty.transform.GetChild(1).GetComponent<UnityEngine.UI.Image>().color = Color.green;
+                newProperty.transform.GetChild(2).GetComponent<UnityEngine.UI.Image>().color = Color.gray;
+            
             } else {
-                newProperty.transform.GetChild(2).GetComponent<Image>().color = Color.red;
-                newProperty.transform.GetChild(1).GetComponent<Image>().color = Color.gray;
+                newProperty.transform.GetChild(2).GetComponent<UnityEngine.UI.Image>().color = Color.red;
+                newProperty.transform.GetChild(1).GetComponent<UnityEngine.UI.Image>().color = Color.gray;
             }
         }
-        if(reviewMode == false) { // If user is not in review mode already he can review the beach or search in calendar
-            GameObject reviewCalendar = Instantiate(reviewCalendarPrefab, propertiesContent.transform); // Instantiating a new review&calendar panel
-            reviewCalendar.transform.GetChild(1).GetComponent<Button>().onClick.AddListener(() => ReviewButton(currentDate)); // Adding the correspondent listener to review button
-            reviewCalendar.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(() => CalendarButton(beaches[beachIndex])); // Adding the correspondent listener to calendar button
-            if (currentDate.Date == DateTime.Now.Date || currentDate.Date == DateTime.Now.AddDays(-1).Date) { // User can add review only today or yesterday
+        if (reviewMode == false) {
+            GameObject reviewCalendar = Instantiate(reviewCalendarPrefab, propertiesContent.transform);
+            reviewCalendar.transform.GetChild(1).GetComponent<Button>().onClick.AddListener(() => ReviewButton(currentDate));
+            reviewCalendar.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(() => CalendarButton(beaches[beachIndex]));
+            if (currentDate.Date == DateTime.Now.Date || currentDate.Date == DateTime.Now.AddDays(-1).Date) {
                 reviewCalendar.transform.GetChild(1).gameObject.SetActive(true);
             }
-            propertiesText.text = "Facilitățile din " + date;
+            propertiesText.text = GetPropertiesTitle(date);
         }
     }
-    private void SelectBeach(int index) { // Open selected beach panel
+    private void SelectBeach(int index) { // Opens the selected beach panel
         currentPressedBeach = index;
-        ButtonsManager.ToggleObject(scrollViews[1]); // Showing the properties panel
-        ButtonsManager.ToggleObject(scrollViews[0]); // hiding the beaches panel
-        LoadBeachProperties(DateTime.Now, index); // Showing the properties for today 
+        ButtonsManager.ToggleObject(scrollViews[1]);
+        ButtonsManager.ToggleObject(scrollViews[0]);
+        LoadBeachProperties(DateTime.Now, index);
     }
-    private void ReviewProperty(string date, int beachIndex, int propertyIndex, GameObject property, bool mode) { // Based on type of button pressed in review mode, the property change
-        beaches[beachIndex].GetComponent<Beach>().ModifyProperty(date, property.name, mode, propertyIndex); // Modifying selected property
-        if(mode == true) { // Toggle between status indicator colors
-            property.transform.GetChild(1).GetComponent<Image>().color = Color.green;
-            property.transform.GetChild(2).GetComponent<Image>().color = Color.gray;
+    private void ReviewProperty(string date, int beachIndex, int propertyIndex, GameObject property, bool mode) { // Updates a selected property based on the user review
+        beaches[beachIndex].GetComponent<Beach>().ModifyProperty(date, property.name, mode, propertyIndex);
+        if (mode == true) {
+            property.transform.GetChild(1).GetComponent<UnityEngine.UI.Image>().color = Color.green;
+            property.transform.GetChild(2).GetComponent<UnityEngine.UI.Image>().color = Color.gray;
+
         } else {
-            property.transform.GetChild(2).GetComponent<Image>().color = Color.red;
-            property.transform.GetChild(1).GetComponent<Image>().color = Color.gray;
+            property.transform.GetChild(2).GetComponent<UnityEngine.UI.Image>().color = Color.red;
+            property.transform.GetChild(1).GetComponent<UnityEngine.UI.Image>().color = Color.gray;
         }
     }
-    private void ReviewButton(DateTime currentDate) { // Enters review mode
+    private void ReviewButton(DateTime currentDate) { // Enters review mode for the selected beach
         reviewMode = true;
-        propertiesText.text = "Finalizează";
-        scrollViews[1].transform.GetChild(1).GetComponent<Scrollbar>().value = 1; // Resetting the slider
-        LoadBeachProperties(currentDate, currentPressedBeach); // Loading properties in review mode
+        propertiesText.text = GetFinishReviewText();
+        scrollViews[1].transform.GetChild(1).GetComponent<Scrollbar>().value = 1;
+        LoadBeachProperties(currentDate, currentPressedBeach);
     }
-    private void CalendarButton(GameObject currentBeach) { // Enters calendar
+    private void CalendarButton(GameObject currentBeach) { // Opens the calendar for the selected beach
         ButtonsManager.ToggleObject(beachCalendar);
         calendarManager.GetComponent<CalendarManager>().LoadCalendar(DateTime.Now, currentBeach);
     }
-    public void BackToBeaches() { // Returning to beach panel and setting review mode false
+    public void BackToBeaches() { // Returns to the beach panel and disables review mode
         reviewMode = false;
     }
 
     /* Getters */
 
-    public static int GetCurrentPressedBeach() { // Getter for the current beach pressed
+    public static int GetCurrentPressedBeach() { // Returns the index of the currently selected beach
         return currentPressedBeach;
+    }
+    private string GetPropertiesTitle(string date) { // Returns the title used for the properties panel
+        return "Facilities from " + date;
+    }
+    private string GetFinishReviewText() { // Returns the text used while the user is reviewing properties
+        return "Finalizează";
     }
 }

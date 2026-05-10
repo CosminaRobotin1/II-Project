@@ -53,25 +53,32 @@ TemporaryDependencyNodeTargetIdentifier=netstandard2.1
 Assets/Scripts/Beach/
  Beach.cs
  BeachProperties.cs
+Assets/Scripts/Database/
+ BeachData.cs
+ BeachDayPropertyData.cs
+ CalendarDayData.cs
+ DatabaseManager.cs
+ Plugins/SQLite.cs
+ PropertyData.cs
+ ZoneData.cs
 Assets/Scripts/Managers/
  BeachManager.cs
  ButtonsManager.cs
  CalendarManager.cs
  SearchManager.cs
+ SettingsManager.cs
  SoundManager.cs
  TransitionsManager.cs
  ZonesManager.cs
+Assets/Scripts/Settings/
+ Language/LocalizedText.cs
+ OptionButton.cs
+ Style/PaletteTarget.cs
 Assets/Tests/
- Beach/BeachPropertiesNavigationManagerTest.cs
- Search/
-  MainContentSearchHandlerTest.cs
-  SearchAutoCompleteControllerTest.cs
-  SearchBarScriptTest.cs
- Settings/
-  AppearanceSelectionManagerTest.cs
-  BeachRecommendationSelectionManagerTest.cs
-  LanguageSelectionManagerTest.cs
-  NotificationsSelectionManagerTest.cs
+ Beach/BeachTest.cs
+ Managers/
+  SearchManagerTest.cs
+  ZoneManagerTest.cs
 Temp/obj/Assembly-CSharp/.NETStandard,Version=v2.1.AssemblyAttributes.cs
 
 [metadataReferences]
