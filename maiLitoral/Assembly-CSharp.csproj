@@ -81,6 +81,7 @@
     <Compile Include="Assets\Scripts\Settings\OptionButton.cs" />
     <Compile Include="Assets\Scripts\Managers\CalendarManager.cs" />
     <Compile Include="Assets\Scripts\Database\BeachData.cs" />
+    <Compile Include="Assets\Tests\Managers\SettingsManagerTest.cs" />
     <Compile Include="Assets\Scripts\Managers\TransitionsManager.cs" />
     <Compile Include="Assets\Scripts\Settings\Language\LocalizedText.cs" />
     <Compile Include="Assets\Scripts\Database\DatabaseManager.cs" />
