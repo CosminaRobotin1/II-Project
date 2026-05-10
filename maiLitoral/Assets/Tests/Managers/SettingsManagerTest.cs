@@ -117,7 +117,7 @@ public class SettingsManagerTest {
     }
 
     [Test]
-    public void ResetSavedSettings_ShouldDeleteSavedPlayerPrefsKeys() { // Tests that saved settings are deleted from local storage.
+    public void ResetSavedSettingsDeleteSavedPlayerPrefsKeys() { // Tests that saved settings are deleted from local storage.
         SettingsManager manager = CreateManager();
 
         PlayerPrefs.SetInt(PaletteKey, 1);
@@ -133,7 +133,7 @@ public class SettingsManagerTest {
     }
 
     [Test]
-    public void LoadSettings_ShouldReadSavedValuesFromPlayerPrefs() { // Tests that saved settings are loaded from local storage.
+    public void LoadSettingsReadSavedValuesFromPlayerPrefs() { // Tests that saved settings are loaded from local storage.
         SettingsManager manager = CreateManager();
 
         PlayerPrefs.SetInt(PaletteKey, 2);
@@ -153,7 +153,7 @@ public class SettingsManagerTest {
     }
 
     [Test]
-    public void SelectPalette_WithValidIndex_ShouldSavePaletteIndex() { // Tests that a valid palette index is saved locally.
+    public void SelectPaletteValidIndexSavePaletteIndex() { // Tests that a valid palette index is saved locally.
         SettingsManager manager = CreateManager();
 
         SetPrivateField(manager, "colorPalettes", CreatePaletteListWithOnePalette()); // Gives the manager one valid palette.
@@ -167,7 +167,7 @@ public class SettingsManagerTest {
     }
 
     [Test]
-    public void SelectPalette_WithInvalidIndex_ShouldNotSavePaletteIndex() { // Tests that an invalid palette index is ignored.
+    public void SelectPaletteInvalidIndexSavePaletteIndex() { // Tests that an invalid palette index is ignored.
         SettingsManager manager = CreateManager();
 
         SetPrivateField(manager, "colorPalettes", CreatePaletteListWithOnePalette());
@@ -179,7 +179,7 @@ public class SettingsManagerTest {
     }
 
     [Test]
-    public void SelectPalette_WithNegativeIndex_ShouldResetSavedPalette() { // Tests that negative palette index resets the palette setting.
+    public void SelectPaletteNegativeIndexResetSavedPalette() { // Tests that negative palette index resets the palette setting.
         SettingsManager manager = CreateManager();
 
         PlayerPrefs.SetInt(PaletteKey, 0);
@@ -194,7 +194,7 @@ public class SettingsManagerTest {
     }
 
     [Test]
-    public void SelectTheme_WithInvalidIndex_ShouldSaveInvalidIndex_CurrentBug() { // Tests that theme selection currently saves invalid indexes.
+    public void SelectThemeInvalidIndex() { // Tests that theme selection currently saves invalid indexes.
         SettingsManager manager = CreateManager();
 
         SetPrivateField(manager, "paletteTargets", new PaletteTarget[0]); // Avoids applying visuals to real UI targets.
@@ -207,7 +207,7 @@ public class SettingsManagerTest {
     }
 
     [Test]
-    public void SelectLanguage_WithInvalidIndex_ShouldSaveInvalidIndex_CurrentBug() { // Tests that language selection currently saves invalid indexes.
+    public void SelectLanguageInvalidIndex() { // Tests that language selection currently saves invalid indexes.
         SettingsManager manager = CreateManager();
 
         SetPrivateField(manager, "localizedTexts", new LocalizedText[0]); // Avoids applying language to real scene text.
@@ -220,7 +220,7 @@ public class SettingsManagerTest {
     }
 
     [Test]
-    public void GetSelectedLanguageIndex_AfterSelectingLanguage_ShouldReturnSelectedIndex() { // Tests that the selected language index can be read back.
+    public void GetSelectedLanguageIndexSelectingLanguage() { // Tests that the selected language index can be read back.
         SettingsManager manager = CreateManager();
 
         SetPrivateField(manager, "localizedTexts", new LocalizedText[0]);
@@ -231,7 +231,7 @@ public class SettingsManagerTest {
     }
 
     [Test]
-    public void ApplyCurrentSettingsToTarget_WithNullTarget_ShouldNotThrowException() { // Tests that null palette targets are ignored safely.
+    public void ApplyCurrentSettingsToTargetNullTarget() { // Tests that null palette targets are ignored safely.
         SettingsManager manager = CreateManager();
 
         Assert.DoesNotThrow(() => {
@@ -240,7 +240,7 @@ public class SettingsManagerTest {
     }
 
     [Test]
-    public void ApplyCurrentLanguageToText_WithNullText_ShouldNotThrowException() { // Tests that null localized text is ignored safely.
+    public void ApplyCurrentLanguageToTextNullText() { // Tests that null localized text is ignored safely.
         SettingsManager manager = CreateManager();
 
         Assert.DoesNotThrow(() => {
@@ -249,7 +249,7 @@ public class SettingsManagerTest {
     }
 
     [Test]
-    public void ApplyCurrentLanguageToChildren_WithNullRoot_ShouldNotThrowException() { // Tests that null root objects are ignored safely.
+    public void ApplyCurrentLanguageToChildrenNullRoot() { // Tests that null root objects are ignored safely.
         SettingsManager manager = CreateManager();
 
         Assert.DoesNotThrow(() => {
@@ -258,7 +258,7 @@ public class SettingsManagerTest {
     }
 
     [Test]
-    public void ApplyVisualOptions_WithMissingDefaultPaletteAndPaletteTarget_ShouldThrowException() { // Tests that missing default palette can crash visual application.
+    public void ApplyVisualOptionshMissingDefaultPaletteAndTarget() { // Tests that missing default palette can crash visual application.
         SettingsManager manager = CreateManager();
 
         PaletteTarget target = CreatePaletteTarget();
