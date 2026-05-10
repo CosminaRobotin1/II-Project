@@ -78,6 +78,7 @@
     <Compile Include="Assets\Scripts\Managers\SoundManager.cs" />
     <Compile Include="Assets\Scripts\Managers\SearchManager.cs" />
     <Compile Include="Assets\Scripts\Beach\Beach.cs" />
+    <Compile Include="Assets\Tests\Managers\CalendarManagerTest.cs" />
     <Compile Include="Assets\Scripts\Settings\OptionButton.cs" />
     <Compile Include="Assets\Scripts\Managers\CalendarManager.cs" />
     <Compile Include="Assets\Scripts\Database\BeachData.cs" />
