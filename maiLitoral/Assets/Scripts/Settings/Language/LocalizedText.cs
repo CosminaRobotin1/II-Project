@@ -7,7 +7,6 @@ public class LocalizedText : MonoBehaviour {
     /* Attributes */
 
     [SerializeField] private TMP_Text targetText; // Text component that will be updated when the language changes
-    [SerializeField] private List<string> languages; // App languages
     [SerializeField] private string romanianText; // Romanian version of this UI text
     [SerializeField] private string englishText; // English version of this UI text
 
