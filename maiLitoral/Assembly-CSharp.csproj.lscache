@@ -62,6 +62,7 @@ Assets/Scripts/Database/
  PropertyData.cs
  ZoneData.cs
 Assets/Scripts/Managers/
+ AdminManager.cs
  BeachManager.cs
  ButtonsManager.cs
  CalendarManager.cs
