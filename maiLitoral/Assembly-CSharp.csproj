@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\Settings\Style\PaletteTarget.cs" />
     <Compile Include="Assets\Scripts\Database\BeachDayPropertyData.cs" />
     <Compile Include="Assets\Scripts\Managers\ButtonsManager.cs" />
+    <Compile Include="Assets\Tests\Managers\SoundManagerTest.cs" />
     <Compile Include="Assets\Scripts\Database\Plugins\SQLite.cs" />
     <Compile Include="Assets\Scripts\Managers\SettingsManager.cs" />
     <Compile Include="Assets\Scripts\Database\PropertyData.cs" />
