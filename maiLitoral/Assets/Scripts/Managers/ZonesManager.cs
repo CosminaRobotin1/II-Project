@@ -40,7 +40,7 @@ public class ZonesManager : MonoBehaviour {
             zones.Add(newZone);
         }
     }
-    private void SelectZone(int index) { // Saves the selected zone id and opens the beach page
+    public void SelectZone(int index) { // Saves the selected zone id and opens the beach page
         currentPressedZone = index;
         ButtonsManager.ReturnToPage("BeachPage");
     }
