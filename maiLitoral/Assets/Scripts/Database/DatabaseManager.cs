@@ -322,4 +322,35 @@ public class DatabaseManager : MonoBehaviour {
         }
         return result.OrderByDescending(b => b.rank).Take(3).ToList();
     }
+
+    public List<string> GetBeachesByActiveBoolProperty(string date, string propertyName) { // Returns all beach names that have a specific boolean property active on a specific date
+        List<string> result = new List<string>(); // Stores the matching beach names
+        foreach (BeachData beach in db.Table<BeachData>()) { // Goes through all beaches from the database
+            List<(string description, bool status)> properties = GetPropertiesForBeachDay(beach.Id, date); // Gets the boolean properties for the current beach and date
+            foreach ((string description, bool status) property in properties) { // Goes through every boolean property of the beach
+                if (!string.Equals(property.description, propertyName, StringComparison.OrdinalIgnoreCase)) {
+                    continue; // Skips properties that are not the requested one
+                }
+                if (!property.status) {
+                    continue; // Skips beaches where the requested property is inactive
+                }
+                result.Add(beach.Name); // Adds the beach because it matches the requested active property
+            }
+        }
+        return result; // Returns all matching beach names
+    }
+    public List<string> GetLatestBeachNames(int count) { // Returns the latest added beaches based on database id order
+        return db.Table<BeachData>()
+            .OrderByDescending(beach => beach.Id)
+            .Take(count)
+            .Select(beach => beach.Name)
+            .ToList(); // Returns the newest beach names
+    }
+    public List<string> GetLatestPropertyNames(int count) { // Returns the latest added properties based on database id order
+        return db.Table<PropertyData>()
+            .OrderByDescending(property => property.Id)
+            .Take(count)
+            .Select(property => property.Name)
+            .ToList(); // Returns the newest property names
+    }
 }
