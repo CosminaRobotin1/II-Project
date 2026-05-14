@@ -1,75 +1,34 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class AdminManager : MonoBehaviour
-{
+public class AdminManager : MonoBehaviour {
 
-    /* Attributes */
+    //* Attributes *//
 
-    [SerializeField] private GameObject adminLoginPanel; // Attribute for admin login panel
-    [SerializeField] private GameObject adminMainPanel; // Attribute for admin main panel
-    [SerializeField] private GameObject beachesPanel; // Attribute for beaches panel
-    [SerializeField] private GameObject parametersPanel; // Attribute for parameters panel
-    [SerializeField] private GameObject standardOptions; // Attribute for standard settings options
+    private string adminName = "admin"; // Attribute for admin name
+    private string adminPassword = "1234"; // Attribute for admin password (*needs to be encrypted*)
+    [SerializeField] private GameObject loginPanel; // Attribute for login panel
+    [SerializeField] private TMP_InputField adminNameInputField; // Attribute for admin name input field
+    [SerializeField] private TMP_InputField adminPasswordInputField; // Attribute for admin password input field
 
-    private void Start()
-    {
-        SetupAdminPanels(); // Setting up admin panels at start
+    //* Main Methods *//
+
+
+
+    //* Custom Methods *//
+
+    public void Login() { // Logins the admin to the admin page
+        if(adminName == adminNameInputField.text && adminPassword == adminPasswordInputField.text) { // * Needs to be encrypted so check the encryption key, not the text!*
+            ButtonsManager.ToggleObject(loginPanel);
+        }
     }
 
+    //* Getters *//
 
-    private void SetupAdminPanels()
-    { // Setting up the default admin panels states
-        adminLoginPanel.SetActive(false); // Hiding login panel first
-        adminMainPanel.SetActive(false); // Hiding main admin panel first
-        beachesPanel.SetActive(false); // Hiding beaches panel first
-        parametersPanel.SetActive(false); // Hiding parameters panel first
-    }
 
-    public void OpenAdminLoginPanel()
-    { // Opening admin login panel from settings
-        adminLoginPanel.SetActive(true); // Showing admin login panel
-        adminMainPanel.SetActive(false); // Hiding admin main panel
-        beachesPanel.SetActive(false); // Hiding beaches panel
-        parametersPanel.SetActive(false); // Hiding parameters panel
-    }
 
-    public void OpenAdminPanel()
-    { // Opening admin main panel after login
-        adminLoginPanel.SetActive(false); // Hiding login panel
-        adminMainPanel.SetActive(true); // Showing admin main panel
-        beachesPanel.SetActive(false); // Hiding beaches panel first
-        parametersPanel.SetActive(false); // Hiding parameters panel first
-    }
+    //* Setters *//
 
-    public void OpenBeachesPanel()
-    { // Showing beaches management panel
-        beachesPanel.SetActive(true); // Showing beaches panel
-        parametersPanel.SetActive(false); // Hiding parameters panel
-    }
-
-    public void OpenParametersPanel()
-    { // Showing parameters management panel
-        beachesPanel.SetActive(false); // Hiding beaches panel
-        parametersPanel.SetActive(true); // Showing parameters panel
-    }
-
-    public void CloseAdminPanel()
-    { // Closing admin main panel and returning to login panel
-        adminMainPanel.SetActive(false); // Hiding admin main panel
-        beachesPanel.SetActive(false); // Hiding beaches panel
-        parametersPanel.SetActive(false); // Hiding parameters panel
-        adminLoginPanel.SetActive(true); // Showing login panel again
-    }
-
-    public void CloseAdminLoginPanel()
-    { // Closing admin login panel and returning to settings options
-        adminLoginPanel.SetActive(false); // Hiding admin login panel
-        standardOptions.SetActive(true); // Showing standard settings options
-    }
-
-    public void ReturnToAdminTabs()
-    { // Returning from admin sub panels to admin tabs
-        beachesPanel.SetActive(false); // Hiding beaches panel
-        parametersPanel.SetActive(false); // Hiding parameters panel
-    }
+    
 }

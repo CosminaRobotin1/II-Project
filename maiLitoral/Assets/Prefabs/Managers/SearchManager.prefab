@@ -188,6 +188,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SearchManager
   zonesManager: {fileID: 0}
+  zonesContent: {fileID: 0}
+  zoneUnavailable: {fileID: 0}
+  searchButton: {fileID: 6708338171012365478}
   searchInputField: {fileID: 9113940332202923573}
   autoCompleteText: {fileID: 7459360198255998245}
 --- !u!1 &3200904563379739781
@@ -382,10 +385,16 @@ MonoBehaviour:
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
+      m_Calls: []
+  m_OnSubmit:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelect:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3056998228006915634}
         m_TargetAssemblyTypeName: SearchManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: HideZoneUnavailable
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -395,12 +404,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnSubmit:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelect:
-    m_PersistentCalls:
-      m_Calls: []
   m_OnDeselect:
     m_PersistentCalls:
       m_Calls: []
@@ -751,7 +754,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -427, y: -97.5}
+  m_AnchoredPosition: {x: -427, y: -98}
   m_SizeDelta: {x: 125, y: 125}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &3827334650183508255
@@ -939,7 +942,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -0.00001335144, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7834375925550916929
 CanvasRenderer:

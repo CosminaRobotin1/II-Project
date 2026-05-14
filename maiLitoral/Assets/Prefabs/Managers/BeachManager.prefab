@@ -965,8 +965,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5344759902591026536}
   m_HandleRect: {fileID: 6235997638662104970}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.2857143
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1458,7 +1458,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 1485441032296832921}
-  languages: []
   romanianText: Plaje disponibile
   englishText: 'Available beaches '
 --- !u!1 &6621510988720395339
@@ -2378,7 +2377,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 1754033976163930764}
-  languages: []
   romanianText: "Facilit\u0103\u021Bile din"
   englishText: The facilities of
 --- !u!114 &2077874482025228218
@@ -2394,7 +2392,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 1754033976163930764}
-  languages: []
   romanianText: "Facilit\u0103\u021Bile din"
   englishText: The facilities of
 --- !u!114 &1343395885579882268
