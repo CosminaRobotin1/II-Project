@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4619982452510712108
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5473401162709485430}
+  - component: {fileID: 2015493940963443293}
+  - component: {fileID: 7776842727930715549}
+  - component: {fileID: 1503076664142921673}
+  - component: {fileID: 8511471824139838625}
+  - component: {fileID: 5889501772649612432}
+  m_Layer: 5
+  m_Name: NotificationsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5473401162709485430
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4619982452510712108}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2015493940963443293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4619982452510712108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eeee7d5a3a7e6141a9840d167f9a76e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NotificationsManager
+  notificationSender: {fileID: 7776842727930715549}
+  recommendationProvider: {fileID: 8511471824139838625}
+  updatesProvider: {fileID: 5889501772649612432}
+  weatherProvider: {fileID: 1503076664142921673}
+--- !u!114 &7776842727930715549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4619982452510712108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38e7f4dc04eedbf4f9d9f0f9406d1858, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DeviceNotificationSender
+--- !u!114 &1503076664142921673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4619982452510712108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5642fa662d1c7de489e547ceed10f3ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WeatherNotificationProvider
+--- !u!114 &8511471824139838625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4619982452510712108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2b50f63278fb1d489936b04d2c02121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BeachRecommendationNotificationProvider
+  quietPropertyName: Quiet
+  familyPropertyName: Family
+--- !u!114 &5889501772649612432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4619982452510712108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52da3e7f2fb360a458424b3444381cb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BeachUpdatesNotificationProvider
+  maximumItems: 3
