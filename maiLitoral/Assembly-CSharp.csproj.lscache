@@ -66,6 +66,7 @@ Assets/Scripts/Managers/
  BeachManager.cs
  ButtonsManager.cs
  CalendarManager.cs
+ NotificationsManager.cs
  SearchManager.cs
  SettingsManager.cs
  SoundManager.cs
@@ -73,6 +74,14 @@ Assets/Scripts/Managers/
  ZonesManager.cs
 Assets/Scripts/Settings/
  Language/LocalizedText.cs
+ Notifications/
+  AppNotification.cs
+  BeachRecommendationNotificationProvider.cs
+  BeachUpdatesNotificationProvider.cs
+  DeviceNotificationSender.cs
+  NotificationToggleButton.cs
+  NotificationType.cs
+  WeatherNotificationProvider.cs
  OptionButton.cs
  Style/PaletteTarget.cs
 Assets/Tests/
@@ -390,6 +399,10 @@ Library/ScriptAssemblies/
  Unity.Mathematics.Editor.dll
  Unity.Multiplayer.Center.Common.dll
  Unity.Multiplayer.Center.Editor.dll
+ Unity.Notifications.Android.dll
+ Unity.Notifications.dll
+ Unity.Notifications.iOS.dll
+ Unity.Notifications.Unified.dll
  Unity.PlasticSCM.Editor.dll
  Unity.Rendering.LightTransport.Editor.dll
  Unity.RenderPipeline.Universal.ShaderLibrary.dll
