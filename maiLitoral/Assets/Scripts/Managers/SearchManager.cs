@@ -36,29 +36,31 @@ public class SearchManager : MonoBehaviour {
         FilterZones(currentText); // Showing only the matched searched zones
     }
 
-    private void UpdateSuggestion(string currentText) { // Updating the panels when typing
-        currentSuggestion = "";
-        if (string.IsNullOrWhiteSpace(currentText)) { // What happends if there is no text
-            autoCompleteText.text = "";
-            return;
+    private void UpdateSuggestion(string currentText) { // Updating the autocomplete suggestion based on the typed text
+        currentSuggestion = ""; // Resetting the current suggestion first
+        if (string.IsNullOrWhiteSpace(currentText)) { // Checking if the input field is empty
+            autoCompleteText.text = ""; // Clearing the autocomplete text
+            return; // Stopping the method because there is no text to search for
         }
-        string lowerText = currentText.ToLower(); // Not case sensitive search
-        foreach (GameObject zone in zones) {
-            string label = zone.name;
-            if (label.ToLower().StartsWith(lowerText)) {
-                currentSuggestion = label;
-                break;
+        string lowerText = currentText.ToLower(); // Converting the typed text to lowercase for case insensitive search
+        foreach (GameObject zone in zones) { // Going through all available zones
+            string label = zone.name; // Getting the current zone name
+
+            if (label.ToLower().StartsWith(lowerText)) { // Checking if the zone starts with the typed text
+                currentSuggestion = label; // Saving the matching zone as the current suggestion
+                break; // Stopping the loop after finding the first matching suggestion
             }
         }
-        if (string.IsNullOrEmpty(currentSuggestion)) { // What happends if there is no suggestion
-            autoCompleteText.text = "";
-            return;
+        if (string.IsNullOrEmpty(currentSuggestion)) { // Checking if no suggestion was found
+            autoCompleteText.text = ""; // Clearing the autocomplete text
+            return; // Stopping the method because there is no valid suggestion
         }
-        if (currentSuggestion.Length == currentText.Length) { // Do not autocomplete if the suggestion mathes the input field
-            autoCompleteText.text = "";
-            return;
+        bool sameCase = currentSuggestion.StartsWith(currentText); // Checking if the typed text matches the same uppercase/lowercase format
+        if (!sameCase) { // Checking if the user typed with different uppercase/lowercase letters
+            autoCompleteText.text = ""; // Hiding the autocomplete text because it looks visually incorrect
+            return; // Stopping the method because the casing does not match
         }
-        autoCompleteText.text = currentSuggestion; // Filling the autocomplete text with the suggestion found
+        autoCompleteText.text = currentSuggestion; // Showing the autocomplete suggestion if the casing matches correctly
     }
     private void SearchButton() { // Opens the right zone based on autocompleted text
         if (autoCompleteText.text == "" || autoCompleteText.text == null) {
