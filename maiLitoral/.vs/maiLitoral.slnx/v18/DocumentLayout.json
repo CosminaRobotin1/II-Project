@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\Assets\\Scripts\\Managers\\SettingsManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Managers\\SettingsManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\daria\\desktop\\proiect ii\\mailitoral\\assets\\scripts\\settings\\notifications\\weathernotificationprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\settings\\notifications\\weathernotificationprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\daria\\desktop\\proiect ii\\mailitoral\\assets\\scripts\\managers\\notificationsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\managers\\notificationsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\daria\\desktop\\proiect ii\\mailitoral\\assets\\scripts\\settings\\notifications\\beachrecommendationnotificationprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\settings\\notifications\\beachrecommendationnotificationprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,36 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "NotificationsManager.cs",
-              "DocumentMoniker": "C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\Assets\\Scripts\\Managers\\NotificationsManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\NotificationsManager.cs",
-              "ToolTip": "C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\Assets\\Scripts\\Managers\\NotificationsManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Managers\\NotificationsManager.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAswBAAAAAWAAAAAAAAAA==",
+              "Title": "BeachRecommendationNotificationProvider.cs",
+              "DocumentMoniker": "C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\Assets\\Scripts\\Settings\\Notifications\\BeachRecommendationNotificationProvider.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Settings\\Notifications\\BeachRecommendationNotificationProvider.cs",
+              "ToolTip": "C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\Assets\\Scripts\\Settings\\Notifications\\BeachRecommendationNotificationProvider.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Settings\\Notifications\\BeachRecommendationNotificationProvider.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-14T08:50:34.932Z",
+              "WhenOpened": "2026-05-17T08:19:56.061Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "SettingsManager.cs",
-              "DocumentMoniker": "C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\Assets\\Scripts\\Managers\\SettingsManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\SettingsManager.cs",
-              "ToolTip": "C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\Assets\\Scripts\\Managers\\SettingsManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Managers\\SettingsManager.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAkwEYAAAAAAAAAAAAAAA==",
+              "Title": "WeatherNotificationProvider.cs",
+              "DocumentMoniker": "C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\Assets\\Scripts\\Settings\\Notifications\\WeatherNotificationProvider.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Settings\\Notifications\\WeatherNotificationProvider.cs",
+              "ToolTip": "C:\\Users\\daria\\Desktop\\PROIECT II\\maiLitoral\\Assets\\Scripts\\Settings\\Notifications\\WeatherNotificationProvider.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Settings\\Notifications\\WeatherNotificationProvider.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-14T15:33:04.309Z",
+              "WhenOpened": "2026-05-17T08:14:50.11Z",
               "EditorCaption": ""
             }
           ]

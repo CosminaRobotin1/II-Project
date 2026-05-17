@@ -11,13 +11,16 @@ public class BeachRecommendationNotificationProvider : MonoBehaviour {
 
     /* Custom Methods */
 
+    private bool IsEnglishSelected() { // Checks if the selected app language is English
+        return PlayerPrefs.GetInt("selected_language", 0) == 1; // English uses index 1 in the language settings
+    }
     public List<AppNotification> CreateRecommendationNotifications(List<NotificationType> selectedTypes) { // Creates recommendation notifications only for selected options
         List<AppNotification> notifications = new List<AppNotification>(); // Stores all generated notifications
         string today = DateTime.Now.ToString("dd-MM-yyyy"); // Uses today's date to read daily beach data
         Dictionary<NotificationType, Func<AppNotification>> notificationCreators = new Dictionary<NotificationType, Func<AppNotification>> {
             { NotificationType.PopularBeaches, () => CreatePopularBeachesNotification(today) }, // Maps popular beaches option to its creator
-            { NotificationType.QuietBeaches, () => CreatePropertyBasedNotification(NotificationType.QuietBeaches, today, quietPropertyName, "Plaje linistite", "Iti recomandam aceste plaje linistite: ") }, // Maps quiet beaches option to its creator
-            { NotificationType.FamilyBeaches, () => CreatePropertyBasedNotification(NotificationType.FamilyBeaches, today, familyPropertyName, "Plaje pentru familii", "Iti recomandam aceste plaje potrivite pentru familii: ") } // Maps family beaches option to its creator
+            { NotificationType.QuietBeaches, () => CreatePropertyBasedNotification(NotificationType.QuietBeaches, today, quietPropertyName, "Plaje linistite", "Quiet beaches", "Iti recomandam aceste plaje linistite: ", "We recommend these quiet beaches: ") }, // Maps quiet beaches option to its creator
+            { NotificationType.FamilyBeaches, () => CreatePropertyBasedNotification(NotificationType.FamilyBeaches, today, familyPropertyName, "Plaje pentru familii", "Family beaches", "Iti recomandam aceste plaje potrivite pentru familii: ", "We recommend these family-friendly beaches: ") } // Maps family beaches option to its creator
         }; // Keeps logic extensible without if chains
         foreach (NotificationType selectedType in selectedTypes) { // Goes through all options selected by the user
             if (!notificationCreators.ContainsKey(selectedType)) {
@@ -37,14 +40,18 @@ public class BeachRecommendationNotificationProvider : MonoBehaviour {
             return null; // Stops if there are no beaches in the database
         }
         string beachNames = string.Join(", ", beaches.Select(beach => beach.name)); // Builds a readable beach list
-        return new AppNotification(NotificationType.PopularBeaches, "Plaje populare", "Cele mai populare plaje azi: " + beachNames); // Returns the popular beaches notification
+        string title = IsEnglishSelected() ? "Popular beaches" : "Plaje populare"; // Chooses the title based on the selected language
+        string messagePrefix = IsEnglishSelected() ? "The most popular beaches today: " : "Cele mai populare plaje azi: "; // Chooses the message based on the selected language
+        return new AppNotification(NotificationType.PopularBeaches, title, messagePrefix + beachNames); // Returns the popular beaches notification
     }
-    private AppNotification CreatePropertyBasedNotification(NotificationType notificationType, string date, string propertyName, string title, string messagePrefix) { // Creates a notification based on a boolean beach property
+    private AppNotification CreatePropertyBasedNotification(NotificationType notificationType, string date, string propertyName, string romanianTitle, string englishTitle, string romanianMessagePrefix, string englishMessagePrefix) { // Creates a notification based on a boolean beach property
         List<string> beaches = DatabaseManager.Instance.GetBeachesByActiveBoolProperty(date, propertyName); // Gets beaches where the property is active
         if (beaches.Count == 0) {
             return null; // Stops if no beaches match the selected property
         }
         string beachNames = string.Join(", ", beaches.Take(3)); // Keeps the notification short and readable
+        string title = IsEnglishSelected() ? englishTitle : romanianTitle; // Chooses the title based on the selected language
+        string messagePrefix = IsEnglishSelected() ? englishMessagePrefix : romanianMessagePrefix; // Chooses the message based on the selected language
         return new AppNotification(notificationType, title, messagePrefix + beachNames); // Returns the property based notification
     }
 }

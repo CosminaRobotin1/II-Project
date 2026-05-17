@@ -51,6 +51,7 @@
     <Compile Include="Assets\Scripts\Database\CalendarDayData.cs" />
     <Compile Include="Assets\Scripts\Managers\BeachManager.cs" />
     <Compile Include="Assets\Scripts\Managers\NotificationsManager.cs" />
+    <Compile Include="Assets\Tests\Database\DatabaseManagerTest.cs" />
     <Compile Include="Assets\Tests\Beach\BeachTest.cs" />
     <Compile Include="Assets\Scripts\Database\ZoneData.cs" />
     <Compile Include="Assets\Scripts\Beach\BeachProperties.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="Assets\Scripts\Settings\Style\PaletteTarget.cs" />
     <Compile Include="Assets\Scripts\Database\BeachDayPropertyData.cs" />
     <Compile Include="Assets\Scripts\Managers\ButtonsManager.cs" />
+    <Compile Include="Assets\Tests\Managers\SoundManagerTest.cs" />
     <Compile Include="Assets\Scripts\Database\Plugins\SQLite.cs" />
     <Compile Include="Assets\Scripts\Settings\Notifications\DeviceNotificationSender.cs" />
     <Compile Include="Assets\Scripts\Managers\SettingsManager.cs" />
@@ -72,11 +74,14 @@
     <Compile Include="Assets\Scripts\Beach\Beach.cs" />
     <Compile Include="Assets\Scripts\Settings\Notifications\WeatherNotificationProvider.cs" />
     <Compile Include="Assets\Scripts\Settings\Notifications\BeachRecommendationNotificationProvider.cs" />
+    <Compile Include="Assets\Tests\Managers\CalendarManagerTest.cs" />
     <Compile Include="Assets\Scripts\Settings\Notifications\BeachUpdatesNotificationProvider.cs" />
     <Compile Include="Assets\Scripts\Settings\OptionButton.cs" />
     <Compile Include="Assets\Scripts\Managers\CalendarManager.cs" />
     <Compile Include="Assets\Scripts\Database\BeachData.cs" />
     <Compile Include="Assets\Scripts\Settings\Notifications\NotificationToggleButton.cs" />
+    <Compile Include="Assets\Tests\Managers\SettingsManagerTest.cs" />
+    <Compile Include="Assets\Tests\Managers\BeachManagerTest.cs" />
     <Compile Include="Assets\Scripts\Managers\TransitionsManager.cs" />
     <Compile Include="Assets\Scripts\Settings\Language\LocalizedText.cs" />
     <Compile Include="Assets\Scripts\Database\DatabaseManager.cs" />
