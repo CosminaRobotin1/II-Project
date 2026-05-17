@@ -47,18 +47,80 @@ public class DatabaseManager : MonoBehaviour {
     }
     private void InsertStartData() { // Inserts example data in the database only when the database is empty
         db.Insert(new ZoneData { Name = "Mamaia Nord" });
-        db.Insert(new ZoneData { Name = "Constanta" });
-        int mamaiaId = db.Table<ZoneData>().First(z => z.Name == "Mamaia Nord").Id;
-        int constantaId = db.Table<ZoneData>().First(z => z.Name == "Constanta").Id;
-        db.Insert(new BeachData { Name = "Beach One", ZoneId = mamaiaId });
+        db.Insert(new ZoneData { Name = "Mamaia" });
+        db.Insert(new ZoneData { Name = "Constanta" });//* Insert Zones *//
+        db.Insert(new ZoneData { Name = "Eforie Nord" });
+        db.Insert(new ZoneData { Name = "Vama Veche" });
+
+        int mamaiaNordId = db.Table<ZoneData>().First(z => z.Name == "Mamaia Nord").Id;
+        int mamaiaId = db.Table<ZoneData>().First(z => z.Name == "Mamaia").Id;
+        int constantaId = db.Table<ZoneData>().First(z => z.Name == "Constanta").Id;//* Get Zone Ids *//
+        int eforieNordId = db.Table<ZoneData>().First(z => z.Name == "Eforie Nord").Id;
+        int vamaVecheId = db.Table<ZoneData>().First(z => z.Name == "Vama Veche").Id;
+
+        //* Insert Beaches *//
+
+        db.Insert(new BeachData { Name = "Zanzibar Beach", ZoneId = mamaiaNordId });
+        db.Insert(new BeachData { Name = "Oneiro Beach", ZoneId = mamaiaNordId });
+        db.Insert(new BeachData { Name = "Kazeboo Beach", ZoneId = mamaiaNordId });
+
+        db.Insert(new BeachData { Name = "H2O Beach", ZoneId = mamaiaId });
+        db.Insert(new BeachData { Name = "Princess Beach", ZoneId = mamaiaId });
+        db.Insert(new BeachData { Name = "Ipanera Beach", ZoneId = mamaiaId });
+
         db.Insert(new BeachData { Name = "Modern Beach", ZoneId = constantaId });
-        db.Insert(new PropertyData { Name = "Has Lifeguard", Type = "bool" });
-        db.Insert(new PropertyData { Name = "Water Temperature", Type = "int" });
-        db.Insert(new PropertyData { Name = "Description", Type = "string" });
-        foreach (BeachData beach in db.Table<BeachData>()) {
+        db.Insert(new BeachData { Name = "Zoom Beach", ZoneId = constantaId });
+        db.Insert(new BeachData { Name = "Trei Papuci", ZoneId = constantaId });
+
+        db.Insert(new BeachData { Name = "Belona Beach", ZoneId = eforieNordId });
+        db.Insert(new BeachData { Name = "Debarcader Beach", ZoneId = eforieNordId });
+        db.Insert(new BeachData { Name = "Azur Beach", ZoneId = eforieNordId });
+
+        db.Insert(new BeachData { Name = "Amphora Beach", ZoneId = vamaVecheId });
+        db.Insert(new BeachData { Name = "Stuf Beach", ZoneId = vamaVecheId });
+        db.Insert(new BeachData { Name = "Expirat Beach", ZoneId = vamaVecheId });
+
+        //* Insert Properties *//
+
+        db.Insert(new PropertyData { Name = "Type", Type = "string" });
+        db.Insert(new PropertyData { Name = "Cleanliness", Type = "int" });
+        db.Insert(new PropertyData { Name = "Safeness", Type = "int" });
+
+        db.Insert(new PropertyData { Name = "Sunbeds", Type = "bool" });
+        db.Insert(new PropertyData { Name = "Umbrellas", Type = "bool" });
+        db.Insert(new PropertyData { Name = "Showers", Type = "bool" });
+        db.Insert(new PropertyData { Name = "Toilets", Type = "bool" });
+
+        db.Insert(new PropertyData { Name = "Parking", Type = "string" });
+
+        db.Insert(new PropertyData { Name = "Algae", Type = "bool" });
+        db.Insert(new PropertyData { Name = "Jellyfish", Type = "bool" });
+        db.Insert(new PropertyData { Name = "Sea Shells", Type = "bool" });
+
+        db.Insert(new PropertyData { Name = "Wind", Type = "string" });
+        db.Insert(new PropertyData { Name = "Weather", Type = "string" });
+
+        db.Insert(new PropertyData { Name = "Crowdedness", Type = "int" });
+        db.Insert(new PropertyData { Name = "Lifeguards", Type = "bool" });
+
+        //* Create Calendar Days *//
+
+        foreach (BeachData beach in db.Table<BeachData>())
+        {
+
             CreateCalendarDayIfMissing(beach.Id, DateTime.Now.ToString("dd-MM-yyyy"));
+            CreateCalendarDayIfMissing(beach.Id, DateTime.Now.AddDays(1).ToString("dd-MM-yyyy"));
+            CreateCalendarDayIfMissing(beach.Id, DateTime.Now.AddDays(2).ToString("dd-MM-yyyy"));
+            CreateCalendarDayIfMissing(beach.Id, DateTime.Now.AddDays(7).ToString("dd-MM-yyyy"));
+
         }
     }
+
+
+
+
+
+
     public bool IsValidText(string text) { // Checks if a text contains only accepted characters
         if (string.IsNullOrWhiteSpace(text)) {
             return false;
@@ -78,15 +140,22 @@ public class DatabaseManager : MonoBehaviour {
         return DateTime.TryParse(date, out _);
     }
     public void AddZone(string zoneName) { // Adds a new zone in the database
+
         if (!IsValidText(zoneName)) {
-            UnityEngine.Debug.LogError("Invalid zone name.");
-            return;
-        }
-        if (db.Table<ZoneData>().Any(z => z.Name == zoneName)) {
+        UnityEngine.Debug.LogError("Invalid zone name.");
+        return;}
+
+        if (db.Table<ZoneData>().Any(z => z.Name == zoneName)){
             UnityEngine.Debug.LogError("Zone already exists.");
-            return;
-        }
+            return;}
+
         db.Insert(new ZoneData { Name = zoneName });
+
+        //* Upload Zone To Firebase *//
+
+        ZoneData newZone = db.Table<ZoneData>().First(z => z.Name == zoneName);
+        FirebaseDatabaseManager.Instance.UploadZone(newZone.Id, newZone.Name);
+
     }
     public void AddBeach(string beachName, int zoneId) { // Adds a new beach in the database and connects it to an existing zone
         if (!IsValidText(beachName)) {
@@ -351,5 +420,8 @@ public class DatabaseManager : MonoBehaviour {
             .Take(count)
             .Select(property => property.Name)
             .ToList(); // Returns the newest property names
+    }
+    public List<PropertyData> GetAllProperties() { // Returns all properties from the database
+        return db.Table<PropertyData>().ToList();
     }
 }
