@@ -13,7 +13,6 @@ public class WeatherNotificationProvider : MonoBehaviour {
     private class WeatherResponse {
         public CurrentWeather current; // Current weather object returned by the API
     }
-
     [System.Serializable]
     private class CurrentWeather {
         public float temperature_2m; // Current temperature in Celsius
@@ -23,6 +22,9 @@ public class WeatherNotificationProvider : MonoBehaviour {
 
     /* Custom Methods */
 
+    private bool IsEnglishSelected() { // Checks if the selected app language is English
+        return PlayerPrefs.GetInt("selected_language", 0) == 1; // English uses index 1 in the language settings
+    }
     public IEnumerator CreateWeatherNotification(System.Action<AppNotification> onNotificationCreated) { // Creates a weather notification using real API data
         UnityWebRequest request = UnityWebRequest.Get(WeatherUrl); // Creates a GET request to the weather API
         yield return request.SendWebRequest(); // Waits until the API request finishes
@@ -33,18 +35,23 @@ public class WeatherNotificationProvider : MonoBehaviour {
         if (weatherResponse == null || weatherResponse.current == null) {
             yield break; // Stops safely if the response could not be parsed
         }
-        string message = "Temperatura pe litoral este de " +
-                         weatherResponse.current.temperature_2m +
-                         "°C, vantul are " +
-                         weatherResponse.current.wind_speed_10m +
-                         " km/h, iar precipitatii: " +
-                         weatherResponse.current.precipitation +
-                         " mm."; // Builds the weather notification message
-        AppNotification notification = new AppNotification(
-            NotificationType.WeatherNews,
-            "Actualizare meteo litoral",
-            message
-        ); // Creates the weather notification object
+        string title = IsEnglishSelected() ? "Seaside weather update" : "Actualizare meteo litoral"; // Chooses the title based on the selected language
+        string message = IsEnglishSelected()
+            ? "The seaside temperature is " +
+              weatherResponse.current.temperature_2m +
+              "°C, the wind speed is " +
+              weatherResponse.current.wind_speed_10m +
+              " km/h, and precipitation is " +
+              weatherResponse.current.precipitation +
+              " mm."
+            : "Temperatura pe litoral este de " +
+              weatherResponse.current.temperature_2m +
+              "°C, vantul are " +
+              weatherResponse.current.wind_speed_10m +
+              " km/h, iar precipitatii: " +
+              weatherResponse.current.precipitation +
+              " mm."; // Builds the weather notification message based on the selected language
+        AppNotification notification = new AppNotification(NotificationType.WeatherNews, title, message); // Creates the weather notification object
         onNotificationCreated?.Invoke(notification); // Sends the created notification back to the manager
     }
 }
