@@ -54,7 +54,7 @@ public class DatabaseManager : MonoBehaviour {
         }
         int index = 1;
         foreach(string beachName in beaches) {
-            db.Insert(new BeachData { Name = beachName, ZoneId = ((index - 1) % 3) + 1 });
+            db.Insert(new BeachData { Name = beachName, ZoneId = ((index - 1) / 3) + 1 });
             index++;
         }
         foreach((string propertyName, string type) in properties) {

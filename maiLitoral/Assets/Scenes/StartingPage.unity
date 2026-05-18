@@ -119,6 +119,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &24648717 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5686919439704980151, guid: 08f4276f6d2fd9547893c721297bf923, type: 3}
+  m_PrefabInstance: {fileID: 1856342345973770803}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &26335772
 GameObject:
   m_ObjectHideFlags: 0
@@ -10903,6 +10914,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 839207759}
   m_CullTransparentMesh: 1
+--- !u!114 &843514005 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 615145058871338524, guid: 08f4276f6d2fd9547893c721297bf923, type: 3}
+  m_PrefabInstance: {fileID: 1856342345973770803}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b743370ac3e4ec2a1668f5455a8ef8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TMP_Dropdown
 --- !u!1 &846443409
 GameObject:
   m_ObjectHideFlags: 0
@@ -11792,6 +11814,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 958366250}
   m_CullTransparentMesh: 1
+--- !u!114 &958529820 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 413536560176885682, guid: 08f4276f6d2fd9547893c721297bf923, type: 3}
+  m_PrefabInstance: {fileID: 1856342345973770803}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &959452820
 GameObject:
   m_ObjectHideFlags: 0
@@ -12374,6 +12407,17 @@ MonoBehaviour:
   targetText: {fileID: 987895244}
   colorRole: 3
   preserveAlpha: 1
+--- !u!114 &992590417 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4289389880250556999, guid: 08f4276f6d2fd9547893c721297bf923, type: 3}
+  m_PrefabInstance: {fileID: 1856342345973770803}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b743370ac3e4ec2a1668f5455a8ef8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TMP_Dropdown
 --- !u!1 &1007268213
 GameObject:
   m_ObjectHideFlags: 0
@@ -14912,6 +14956,17 @@ MonoBehaviour:
   targetText: {fileID: 1146196585}
   colorRole: 0
   preserveAlpha: 1
+--- !u!114 &1162912244 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 375009495051876259, guid: 08f4276f6d2fd9547893c721297bf923, type: 3}
+  m_PrefabInstance: {fileID: 1856342345973770803}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b743370ac3e4ec2a1668f5455a8ef8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TMP_Dropdown
 --- !u!1 &1175136488
 GameObject:
   m_ObjectHideFlags: 0
@@ -15510,6 +15565,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1258443380}
   m_CullTransparentMesh: 1
+--- !u!114 &1262456182 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7511725167620382636, guid: 08f4276f6d2fd9547893c721297bf923, type: 3}
+  m_PrefabInstance: {fileID: 1856342345973770803}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &1264276155
 GameObject:
   m_ObjectHideFlags: 0
@@ -28849,6 +28915,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 413536560176885682, guid: 08f4276f6d2fd9547893c721297bf923, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 512785918204907396, guid: 08f4276f6d2fd9547893c721297bf923, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -28893,6 +28963,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1042373663485348263, guid: 08f4276f6d2fd9547893c721297bf923, type: 3}
+      propertyPath: m_TextComponent
+      value: 
+      objectReference: {fileID: 24648717}
     - target: {fileID: 1461902259863960375, guid: 08f4276f6d2fd9547893c721297bf923, type: 3}
       propertyPath: m_Name
       value: AdminManager
@@ -29054,6 +29128,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1917250270}
     - target: {fileID: 2810647731183803379, guid: 08f4276f6d2fd9547893c721297bf923, type: 3}
+      propertyPath: zonesDropdown
+      value: 
+      objectReference: {fileID: 992590417}
+    - target: {fileID: 2810647731183803379, guid: 08f4276f6d2fd9547893c721297bf923, type: 3}
+      propertyPath: beachesDropdown
+      value: 
+      objectReference: {fileID: 1162912244}
+    - target: {fileID: 2810647731183803379, guid: 08f4276f6d2fd9547893c721297bf923, type: 3}
+      propertyPath: propertiesDropdown
+      value: 
+      objectReference: {fileID: 843514005}
+    - target: {fileID: 2810647731183803379, guid: 08f4276f6d2fd9547893c721297bf923, type: 3}
       propertyPath: adminNameInputField
       value: 
       objectReference: {fileID: 1730683311}
@@ -29159,7 +29245,7 @@ PrefabInstance:
       objectReference: {fileID: 1331822654}
     - target: {fileID: 4308462864573210703, guid: 08f4276f6d2fd9547893c721297bf923, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4377074614410223339, guid: 08f4276f6d2fd9547893c721297bf923, type: 3}
       propertyPath: m_AnchorMax.y
@@ -29193,6 +29279,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4487917187595021590, guid: 08f4276f6d2fd9547893c721297bf923, type: 3}
+      propertyPath: m_TextComponent
+      value: 
+      objectReference: {fileID: 1262456182}
     - target: {fileID: 4708431638024797230, guid: 08f4276f6d2fd9547893c721297bf923, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -29245,10 +29335,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5349426995665949048, guid: 08f4276f6d2fd9547893c721297bf923, type: 3}
+      propertyPath: m_TextComponent
+      value: 
+      objectReference: {fileID: 958529820}
     - target: {fileID: 5423393982330044610, guid: 08f4276f6d2fd9547893c721297bf923, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1331822654}
+    - target: {fileID: 5686919439704980151, guid: 08f4276f6d2fd9547893c721297bf923, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5958775193036959571, guid: 08f4276f6d2fd9547893c721297bf923, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -29279,7 +29377,7 @@ PrefabInstance:
       objectReference: {fileID: 1331822654}
     - target: {fileID: 6781810059991257388, guid: 08f4276f6d2fd9547893c721297bf923, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7268320716545140893, guid: 08f4276f6d2fd9547893c721297bf923, type: 3}
       propertyPath: m_AnchorMax.y
@@ -29317,6 +29415,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1331822654}
+    - target: {fileID: 7525325024806321037, guid: 08f4276f6d2fd9547893c721297bf923, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 284081961}
+    - target: {fileID: 8083130600612245744, guid: 08f4276f6d2fd9547893c721297bf923, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8247080912314028806, guid: 08f4276f6d2fd9547893c721297bf923, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -29801,10 +29907,6 @@ PrefabInstance:
     - target: {fileID: 5974266213927970502, guid: 7a95dcbaed2b18f4e95907e856fc588a, type: 3}
       propertyPath: m_Name
       value: TransitionsManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 5974266213927970502, guid: 7a95dcbaed2b18f4e95907e856fc588a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
