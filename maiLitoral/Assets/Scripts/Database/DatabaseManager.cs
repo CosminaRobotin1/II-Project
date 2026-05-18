@@ -11,6 +11,9 @@ public class DatabaseManager : MonoBehaviour {
 
     public static DatabaseManager Instance; // Instance of database manager
     private SQLiteConnection db; // Database reference from SQLite
+    private List<string> zones = new List<string>() {"Mamaia Nord", "Mamaia", "Constanta", "Eforie Nord", "Vama Veche"};
+    private List<string> beaches = new List<string>() {"Zanzibar Beach", "Oneiro Beach", "Kazeboo Beach", "H2O Beach", "Princess Beach", "Ipanera Beach", "Modern Beach", "Zoom Beach", "Trei Papuci", "Belona Beach", "Debarcader Beach", "Azur Beach", "Amphora Beach", "Stuf Beach", "Expirat Beach"};
+    private List<(string Name, string Type)> properties = new() {("Type", "string"), ("Cleanliness", "int"), ("Safeness", "int"), ("Sunbeds", "bool"), ("Umbrellas", "bool"), ("Showers", "bool"), ("Toilets", "bool"), ("Parking", "string"), ("Algae", "bool"), ("Jellyfish", "bool"), ("Sea Shells", "bool"), ("Wind", "string"), ("Weather", "string"), ("Crowdedness", "int"), ("Lifeguards", "bool")};
 
     //* Main Methods *//
 
@@ -46,17 +49,22 @@ public class DatabaseManager : MonoBehaviour {
         return db.Table<ZoneData>().Count() > 0;
     }
     private void InsertStartData() { // Inserts example data in the database only when the database is empty
-        db.Insert(new ZoneData { Name = "Mamaia Nord" });
-        db.Insert(new ZoneData { Name = "Constanta" });
-        int mamaiaId = db.Table<ZoneData>().First(z => z.Name == "Mamaia Nord").Id;
-        int constantaId = db.Table<ZoneData>().First(z => z.Name == "Constanta").Id;
-        db.Insert(new BeachData { Name = "Beach One", ZoneId = mamaiaId });
-        db.Insert(new BeachData { Name = "Modern Beach", ZoneId = constantaId });
-        db.Insert(new PropertyData { Name = "Has Lifeguard", Type = "bool" });
-        db.Insert(new PropertyData { Name = "Water Temperature", Type = "int" });
-        db.Insert(new PropertyData { Name = "Description", Type = "string" });
-        foreach (BeachData beach in db.Table<BeachData>()) {
+        foreach(string zoneName in zones) {
+            db.Insert(new ZoneData { Name = zoneName });
+        }
+        int index = 1;
+        foreach(string beachName in beaches) {
+            db.Insert(new BeachData { Name = beachName, ZoneId = ((index - 1) % 3) + 1 });
+            index++;
+        }
+        foreach((string propertyName, string type) in properties) {
+            db.Insert(new PropertyData { Name = propertyName, Type = type });
+        }
+        foreach (BeachData beach in db.Table<BeachData>()) { // Create calendar day
             CreateCalendarDayIfMissing(beach.Id, DateTime.Now.ToString("dd-MM-yyyy"));
+            CreateCalendarDayIfMissing(beach.Id, DateTime.Now.AddDays(1).ToString("dd-MM-yyyy"));
+            CreateCalendarDayIfMissing(beach.Id, DateTime.Now.AddDays(2).ToString("dd-MM-yyyy"));
+            CreateCalendarDayIfMissing(beach.Id, DateTime.Now.AddDays(7).ToString("dd-MM-yyyy"));
         }
     }
     public bool IsValidText(string text) { // Checks if a text contains only accepted characters
@@ -79,7 +87,7 @@ public class DatabaseManager : MonoBehaviour {
     }
     public void AddZone(string zoneName) { // Adds a new zone in the database
         if (!IsValidText(zoneName)) {
-            UnityEngine.Debug.LogError("Invalid zone name.");
+        UnityEngine.Debug.LogError("Invalid zone name.");
             return;
         }
         if (db.Table<ZoneData>().Any(z => z.Name == zoneName)) {
@@ -87,6 +95,10 @@ public class DatabaseManager : MonoBehaviour {
             return;
         }
         db.Insert(new ZoneData { Name = zoneName });
+
+        //ZoneData newZone = db.Table<ZoneData>().First(z => z.Name == zoneName); // Upload Zone To Firebase
+        //FirebaseDatabaseManager.Instance.UploadZone(newZone.Id, newZone.Name);
+
     }
     public void AddBeach(string beachName, int zoneId) { // Adds a new beach in the database and connects it to an existing zone
         if (!IsValidText(beachName)) {
@@ -125,9 +137,7 @@ public class DatabaseManager : MonoBehaviour {
             BeachId = beachId,
             Date = date
         });
-
         day = db.Table<CalendarDayData>().First(d => d.BeachId == beachId && d.Date == date);
-
         foreach (PropertyData property in db.Table<PropertyData>()){
             db.Insert(new BeachDayPropertyData
             {
@@ -351,5 +361,8 @@ public class DatabaseManager : MonoBehaviour {
             .Take(count)
             .Select(property => property.Name)
             .ToList(); // Returns the newest property names
+    }
+    public List<PropertyData> GetAllProperties() { // Returns all properties from the database
+        return db.Table<PropertyData>().ToList();
     }
 }
