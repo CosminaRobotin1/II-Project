@@ -18,6 +18,7 @@ public class BeachManager : MonoBehaviour {
     [SerializeField] private GameObject reviewCalendarPrefab; // Attribute that represents the standard form of review and calendar preset
     [SerializeField] private TextMeshProUGUI propertiesText; // Attribute for properties text
     [SerializeField] private List<GameObject> scrollViews; // Attribute for beach manager scroll views
+    private bool propertiesTexting = false; // Attribute for checking if the properties text was changed
     private List<GameObject> beaches = new List<GameObject>(); // Attribute for beaches list
     private Color[] statusColors = new Color[] { // Attribute for 5 colors, each for status 0 -> 4
         Color.red,
@@ -128,7 +129,10 @@ public class BeachManager : MonoBehaviour {
             if (currentDate.Date == DateTime.Now.Date || currentDate.Date == DateTime.Now.AddDays(-1).Date) {
                 reviewCalendar.transform.GetChild(1).gameObject.SetActive(true);
             }
-            propertiesText.text = GetPropertiesTitle(date);
+            if(propertiesTexting == false) {
+                propertiesText.text = propertiesText.text + " " + date;
+                propertiesTexting = true;
+            }
         }
     }
     private void SelectBeach(int index) { // Opens the selected beach panel
@@ -150,7 +154,6 @@ public class BeachManager : MonoBehaviour {
     }
     private void ReviewButton(DateTime currentDate) { // Enters review mode for the selected beach
         reviewMode = true;
-        propertiesText.text = GetFinishReviewText();
         scrollViews[1].transform.GetChild(1).GetComponent<Scrollbar>().value = 1;
         LoadBeachProperties(currentDate, currentPressedBeach);
     }
@@ -166,11 +169,5 @@ public class BeachManager : MonoBehaviour {
 
     public static int GetCurrentPressedBeach() { // Returns the index of the currently selected beach
         return currentPressedBeach;
-    }
-    private string GetPropertiesTitle(string date) { // Returns the title used for the properties panel
-        return "Facilities from " + date;
-    }
-    private string GetFinishReviewText() { // Returns the text used while the user is reviewing properties
-        return "Finalizează";
     }
 }

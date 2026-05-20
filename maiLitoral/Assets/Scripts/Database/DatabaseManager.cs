@@ -34,6 +34,7 @@ public class DatabaseManager : MonoBehaviour {
         if (!IsDatabasePopulated()) {
             InsertStartData();
         }
+        EnsureCurrentDayExistsForAll(); // Ensures that current date is in database
     }
 
     /* Custom Methods */
@@ -62,9 +63,6 @@ public class DatabaseManager : MonoBehaviour {
         }
         foreach (BeachData beach in db.Table<BeachData>()) { // Create calendar day
             CreateCalendarDayIfMissing(beach.Id, DateTime.Now.ToString("dd-MM-yyyy"));
-            CreateCalendarDayIfMissing(beach.Id, DateTime.Now.AddDays(1).ToString("dd-MM-yyyy"));
-            CreateCalendarDayIfMissing(beach.Id, DateTime.Now.AddDays(2).ToString("dd-MM-yyyy"));
-            CreateCalendarDayIfMissing(beach.Id, DateTime.Now.AddDays(7).ToString("dd-MM-yyyy"));
         }
     }
     public bool IsValidText(string text) { // Checks if a text contains only accepted characters
@@ -83,11 +81,17 @@ public class DatabaseManager : MonoBehaviour {
         return type == "bool" || type == "int" || type == "string";
     }
     public bool IsValidDate(string date) { // Checks if the provided date can be parsed
-        return DateTime.TryParse(date, out _);
+        return DateTime.TryParseExact(
+            date,
+            "dd-MM-yyyy",
+            System.Globalization.CultureInfo.InvariantCulture,
+            System.Globalization.DateTimeStyles.None,
+            out _
+        );
     }
     public void AddZone(string zoneName) { // Adds a new zone in the database
         if (!IsValidText(zoneName)) {
-        UnityEngine.Debug.LogError("Invalid zone name.");
+            UnityEngine.Debug.LogError("Invalid zone name.");
             return;
         }
         if (db.Table<ZoneData>().Any(z => z.Name == zoneName)) {
@@ -150,6 +154,12 @@ public class DatabaseManager : MonoBehaviour {
         }
         return day;
     }
+    private void EnsureCurrentDayExistsForAll() { // Ensures that current date is in database
+    string today = DateTime.Now.ToString("dd-MM-yyyy");
+    foreach (BeachData beach in db.Table<BeachData>()) {
+        CreateCalendarDayIfMissing(beach.Id, today);
+    }
+}
     public void AddPropertyToAllBeaches(string propertyName, string propertyType) { // Adds a new property definition and gives this property to all existing calendar days
         if (!IsValidText(propertyName)) {
             UnityEngine.Debug.LogError("Invalid property name.");

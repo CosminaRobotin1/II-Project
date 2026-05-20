@@ -965,8 +965,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5344759902591026536}
   m_HandleRect: {fileID: 6235997638662104970}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.2857143
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2218,8 +2218,6 @@ GameObject:
   - component: {fileID: 4110915331658320985}
   - component: {fileID: 5854564759536990893}
   - component: {fileID: 1754033976163930764}
-  - component: {fileID: 697049346015083424}
-  - component: {fileID: 2409773575778012017}
   - component: {fileID: 2077874482025228218}
   - component: {fileID: 1343395885579882268}
   m_Layer: 5
@@ -2246,7 +2244,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 25, y: 0}
-  m_SizeDelta: {x: 590, y: 50}
+  m_SizeDelta: {x: 650, y: 50}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &5854564759536990893
 CanvasRenderer:
@@ -2348,37 +2346,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &697049346015083424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8611302641754572620}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccbc7b06a3e4b9d4c960fea5bac96601, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
-  targetImage: {fileID: 0}
-  targetText: {fileID: 1754033976163930764}
-  colorRole: 3
-  preserveAlpha: 1
---- !u!114 &2409773575778012017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8611302641754572620}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf88eecb0ff2b6549a61b1943e469a7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
-  targetText: {fileID: 1754033976163930764}
-  romanianText: "Facilit\u0103\u021Bile din"
-  englishText: The facilities of
 --- !u!114 &2077874482025228218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2408,7 +2375,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
   targetImage: {fileID: 0}
   targetText: {fileID: 1754033976163930764}
-  colorRole: 4
+  colorRole: 3
   preserveAlpha: 1
 --- !u!1 &8896827001794202613
 GameObject:
