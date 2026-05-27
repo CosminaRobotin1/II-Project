@@ -157,8 +157,8 @@ public class BeachManagerTest {
     private GameObject CreateBeachWithProperties(string date) { // Creates a beach object with test properties
         GameObject beachObject = new GameObject("TestBeachObject");
         Beach beach = beachObject.AddComponent<Beach>();
-        beach.LoadPropertyFromDatabase(date, "Clean water", true); // Adds a property without writing to database
-        beach.LoadPropertyFromDatabase(date, "Has lifeguard", false); // Adds a second property without writing to database
+        beach.LoadPropertiesFromDatabase(date, new List<string> { "Clean water", "Apa curata" }, "bool", "true"); // Adds a property without writing to database
+        beach.LoadPropertiesFromDatabase(date, new List<string> { "Lifeguard", "Salvamar" }, "bool", "false"); // Adds a second property without writing to database
         return beachObject;
     }
     [Test]

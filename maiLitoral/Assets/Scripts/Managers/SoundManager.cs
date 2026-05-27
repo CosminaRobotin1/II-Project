@@ -54,8 +54,10 @@ public class SoundManager : MonoBehaviour {
     /* Custom Methods */
 
     public void PlayBackgroundMusic() {
-        if (musicSource == null || backgroundMusic == null)
+        if (musicSource == null || backgroundMusic == null) {
+            Debug.LogError("Music source clip is invalid!");
             return;
+        }
         if (musicSource.clip != backgroundMusic) {
             musicSource.clip = backgroundMusic;
         }
@@ -82,21 +84,23 @@ public class SoundManager : MonoBehaviour {
         }
     }
     public void SetMusicVolume(float value) {
-        musicVolume = value;
+        musicVolume = Mathf.Clamp(value, 0f, 1f);
         if (musicSource != null) {
             musicSource.volume = musicVolume;
         }
     }
 
     public void SetSFXVolume(float value) {
-        sfxVolume = value;
+        sfxVolume = Mathf.Clamp(value, 0f, 1f);
         if (sfxSource != null) {
             sfxSource.volume = sfxVolume;
         }
     }
     public void PlaySFX(AudioClip clip) {
-        if (sfxSource == null || clip == null)
+        if (sfxSource == null || clip == null) {
+            Debug.LogError(clip.name + " is invalid!");
             return;
+        }
         sfxSource.PlayOneShot(clip, sfxVolume);
     }
 }

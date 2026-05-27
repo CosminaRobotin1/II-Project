@@ -349,7 +349,7 @@ RectTransform:
   m_Father: {fileID: 3158822964053850581}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1007,7 +1007,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: -2050}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &6702934318676224542
 MonoBehaviour:
@@ -1027,7 +1027,7 @@ MonoBehaviour:
     m_Top: 300
     m_Bottom: 50
   m_ChildAlignment: 4
-  m_Spacing: 50
+  m_Spacing: 100
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
@@ -1268,7 +1268,10 @@ MonoBehaviour:
   beachesContent: {fileID: 6848007734322831529}
   propertiesContent: {fileID: 4133961061046375362}
   beachPrefab: {fileID: 5346638195889540712, guid: 8205436b6e1689940b49893162d38b77, type: 3}
-  propertyPrefab: {fileID: 1438523200595088554, guid: d355a7a599b67eb41a19b74e2b988137, type: 3}
+  propertyPrefabs:
+  - {fileID: 5942360292764966879, guid: c9adbbeab3c335c46bcf6fa1168c3d79, type: 3}
+  - {fileID: 1727568386172383458, guid: afe2642b201e5d94cb7072fb2fbe0ff0, type: 3}
+  - {fileID: 8185650546706392639, guid: 8f560dea6e3d42d4cb90fcb0808bf0ad, type: 3}
   reviewCalendarPrefab: {fileID: 6942025687210616913, guid: 0a9290268c9c3774da51f536e2e5d243, type: 3}
   propertiesText: {fileID: 1754033976163930764}
   scrollViews:

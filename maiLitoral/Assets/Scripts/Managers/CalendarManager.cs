@@ -17,11 +17,11 @@ public class CalendarManager : MonoBehaviour {
     [SerializeField] private List<GameObject> weeks; // Attribute for list of weeks in calendar
     private GameObject currentBeach; // Attribute for current beach (reference from beach manager) 
     private Color[] statusColors = new Color[] { // Attribute for 5 colors (each for status 0->4)
-        Color.red,
-        new Color(1f, 0.5f, 0f),
-        Color.yellow,
-        new Color(0.5f, 1f, 0f),
         Color.green,
+        new Color(0.5f, 1f, 0f),
+        Color.yellow,
+        new Color(1f, 0.5f, 0f),
+        Color.red,
     };
 
     /* Custom methods */
@@ -36,6 +36,10 @@ public class CalendarManager : MonoBehaviour {
         return new CultureInfo("en-US");
     }
     public void LoadCalendar(DateTime currentDate, GameObject currentBeach) { // Loading the calendar data
+        if(currentBeach == null) {
+            Debug.LogError("Beach is null!");
+            return;
+        }
         this.currentBeach = currentBeach;
         for(int i = 0; i < 5; i++) {  // Destroying already shown days (for each week)
             foreach(Transform day in weeks[i].transform) {

@@ -132,9 +132,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2349170976332293177}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 279.64285, y: -50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 115, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5194533101893270044
@@ -286,7 +286,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 6277541493463648127}
-  languages: []
   romanianText: Miercuri
   englishText: Wed
 --- !u!1 &484753595182577811
@@ -324,9 +323,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2349170976332293177}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 159.2857, y: -50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8778554486586861698
@@ -478,7 +477,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 379690787377009684}
-  languages: []
   romanianText: "Mar\u021Bi"
   englishText: Tue
 --- !u!1 &516608896883105543
@@ -989,10 +987,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 997451254435197280}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 20, y: -870}
-  m_SizeDelta: {x: 860, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &2609203479466731553
 CanvasRenderer:
@@ -1072,7 +1070,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
   targetImage: {fileID: 6025146604078444637}
   targetText: {fileID: 0}
-  colorRole: 1
+  colorRole: 0
   preserveAlpha: 1
 --- !u!1 &3017365711228029494
 GameObject:
@@ -1109,9 +1107,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2349170976332293177}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 638.2143, y: -50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 125, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7207083663766102948
@@ -1263,7 +1261,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 3454796792770611877}
-  languages: []
   romanianText: "S\xE2mb\u0103t\u0103"
   englishText: Sat
 --- !u!1 &3489759181939838028
@@ -1307,10 +1304,10 @@ RectTransform:
   - {fileID: 5640899524943518723}
   m_Father: {fileID: 997451254435197280}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 450, y: -20}
-  m_SizeDelta: {x: 860, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &4050094678245864448
 CanvasRenderer:
@@ -1426,10 +1423,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 997451254435197280}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 20, y: -270}
-  m_SizeDelta: {x: 860, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &2037526546791790777
 CanvasRenderer:
@@ -1509,7 +1506,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
   targetImage: {fileID: 8712579936104594916}
   targetText: {fileID: 0}
-  colorRole: 1
+  colorRole: 0
   preserveAlpha: 1
 --- !u!1 &3543161067561858145
 GameObject:
@@ -1546,9 +1543,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2349170976332293177}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 512.8571, y: -50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1059669173700438388
@@ -1700,7 +1697,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 1251200610484586701}
-  languages: []
   romanianText: Vineri
   englishText: Fri
 --- !u!1 &3726262230402713116
@@ -1738,9 +1734,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2349170976332293177}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 46.42857, y: -50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5537170551747244007
@@ -1892,7 +1888,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 3715176818958082836}
-  languages: []
   romanianText: Luni
   englishText: Mon
 --- !u!1 &3848322705207602377
@@ -1929,10 +1924,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 997451254435197280}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 20, y: -420}
-  m_SizeDelta: {x: 860, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &4341001180899555513
 CanvasRenderer:
@@ -2012,7 +2007,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
   targetImage: {fileID: 3242238263484212006}
   targetText: {fileID: 0}
-  colorRole: 1
+  colorRole: 0
   preserveAlpha: 1
 --- !u!1 &4446738515800526191
 GameObject:
@@ -2049,9 +2044,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2349170976332293177}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 778.5714, y: -50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 130, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4549420321691670227
@@ -2203,7 +2198,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 5342148477645197183}
-  languages: []
   romanianText: "Duminic\u0103"
   englishText: Sun
 --- !u!1 &4610532256990217141
@@ -2568,7 +2562,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 2398318828656161483}
-  languages: []
   romanianText: "Selecteaz\u0103 ziua"
   englishText: Select the day
 --- !u!1 &5283137571880867086
@@ -2739,7 +2732,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 5346298614912562992}
-  languages: []
   romanianText: "Plaja actual\u0103"
   englishText: Current Beach
 --- !u!1 &6015837323549834166
@@ -2776,10 +2768,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 997451254435197280}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 20, y: -570}
-  m_SizeDelta: {x: 860, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &4201432635752961164
 CanvasRenderer:
@@ -2859,7 +2851,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
   targetImage: {fileID: 3540923879931824990}
   targetText: {fileID: 0}
-  colorRole: 1
+  colorRole: 0
   preserveAlpha: 1
 --- !u!1 &7196792629530903065
 GameObject:
@@ -3045,9 +3037,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2349170976332293177}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 399.99997, y: -50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &501001569487568690
@@ -3199,7 +3191,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
   targetText: {fileID: 83862246195969143}
-  languages: []
   romanianText: Joi
   englishText: Thu
 --- !u!1 &7494509770394414216
@@ -3236,10 +3227,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 997451254435197280}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 20, y: -720}
-  m_SizeDelta: {x: 860, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &1229022195280042601
 CanvasRenderer:
@@ -3319,7 +3310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PaletteTarget
   targetImage: {fileID: 3362698182129530618}
   targetText: {fileID: 0}
-  colorRole: 1
+  colorRole: 0
   preserveAlpha: 1
 --- !u!1 &8599377862120382132
 GameObject:

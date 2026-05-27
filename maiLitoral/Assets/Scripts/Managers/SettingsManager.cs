@@ -161,22 +161,26 @@ public class SettingsManager : MonoBehaviour {
         RefreshChecks();
     }
     private void SelectTheme(int index) { // Selects a new theme and saves it locally
+        if(index < 0 || index > themes.Count) {
+            Debug.LogError("Theme index is invalid!");
+            return;
+        }
         selectedThemeIndex = index;
         hasSavedTheme = true;
-
         PlayerPrefs.SetInt(ThemeKey, selectedThemeIndex); // Stores the selected theme index
         PlayerPrefs.Save(); // Forces Unity to save the updated preference
-
         ApplyVisualOptions();
         RefreshChecks();
     }
     private void SelectLanguage(int index) { // Selects a new language and saves it locally
+        if (index < 0 || index > 2) {
+            Debug.LogError("Languages index is invalid!");
+            return;
+        }
         selectedLanguageIndex = index;
         hasSavedLanguage = true;
-
         PlayerPrefs.SetInt(LanguageKey, selectedLanguageIndex); // Stores the selected language index
         PlayerPrefs.Save(); // Forces Unity to save the updated preference
-
         ApplyLanguage();
         RefreshChecks();
     }
@@ -193,6 +197,10 @@ public class SettingsManager : MonoBehaviour {
         RefreshChecks();
     }
     private void ApplyVisualOptions() { // Applies the selected palette and selected theme to all palette targets
+        if(defaultPalette == null) {
+            Debug.LogError("Default color palette is null!");
+            return;
+        }
         if (paletteTargets == null) {
             FindTargets(); // Reconnects targets if the scene was not initialized yet
         }

@@ -62,7 +62,7 @@ public class CalendarManagerTest {
     private GameObject CreateBeachWithData(string beachName, string date, float rank) { // Creates a beach object with calendar data
         GameObject beachObject = CreateBeachObject(beachName);
         Beach beach = beachObject.GetComponent<Beach>();
-        beach.LoadPropertyFromDatabase(date, "Clean water", true); // Adds data without writing to the database
+        beach.LoadPropertiesFromDatabase(date, new List<string> {"Clean water", "Apa curata"}, "bool", "true"); // Adds data without writing to the database
         beach.LoadRankFromDatabase(date, rank); // Adds rank without writing to the database
         return beachObject;
     }

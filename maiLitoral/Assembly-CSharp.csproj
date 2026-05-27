@@ -55,9 +55,9 @@
     <Compile Include="Assets\Tests\Database\DatabaseManagerTest.cs" />
     <Compile Include="Assets\Tests\Beach\BeachTest.cs" />
     <Compile Include="Assets\Scripts\Database\ZoneData.cs" />
-    <Compile Include="Assets\Scripts\Beach\BeachProperties.cs" />
     <Compile Include="Assets\Scripts\Managers\AdminManager.cs" />
     <Compile Include="Assets\Tests\Managers\ZoneManagerTest.cs" />
+    <Compile Include="Assets\Scripts\Managers\DatabaseManager.cs" />
     <Compile Include="Assets\Scripts\Managers\ZonesManager.cs" />
     <Compile Include="Assets\Scripts\Settings\Notifications\AppNotification.cs" />
     <Compile Include="Assets\Scripts\Settings\Notifications\NotificationType.cs" />
@@ -85,7 +85,6 @@
     <Compile Include="Assets\Tests\Managers\BeachManagerTest.cs" />
     <Compile Include="Assets\Scripts\Managers\TransitionsManager.cs" />
     <Compile Include="Assets\Scripts\Settings\Language\LocalizedText.cs" />
-    <Compile Include="Assets\Scripts\Database\DatabaseManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
